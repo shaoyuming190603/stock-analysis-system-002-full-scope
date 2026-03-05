@@ -1,0 +1,47 @@
+digraph "Message Collecting" {
+	graph [fontcolor="#2D3436" fontname="Sans-Serif" fontsize=15 label="Message Collecting" nodesep=0.60 pad=2.0 rankdir=LR ranksep=0.75 splines=ortho]
+	node [fixedsize=true fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13 height=1.4 imagescale=true labelloc=b shape=box style=rounded width=1.4]
+	edge [color="#7B8894"]
+	"0475d530825143738b1e4d3f302b5fe8" [label=pubsub height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/analytics\pubsub.png" shape=none]
+	"59654fe3c87645c2b835587373f3507b" -> "0475d530825143738b1e4d3f302b5fe8" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	fbcff14cfb65490fa952feda3515659d -> "0475d530825143738b1e4d3f302b5fe8" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	db3c47c183c140658a0ca98b5dd0b4e1 -> "0475d530825143738b1e4d3f302b5fe8" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph "cluster_Source of Data" {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label="Source of Data" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		"59654fe3c87645c2b835587373f3507b" [label=core1 height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/iot\iot-core.png" shape=none]
+		fbcff14cfb65490fa952feda3515659d [label=core2 height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/iot\iot-core.png" shape=none]
+		db3c47c183c140658a0ca98b5dd0b4e1 [label=core3 height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/iot\iot-core.png" shape=none]
+	}
+	"9fb29a4fda39409092307ffb7800a363" -> "3c7bc183aea1492a87ec6b26265e56e6" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9fb29a4fda39409092307ffb7800a363" -> "48001d95bcc0487aa9bbdb974608c2ca" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9fb29a4fda39409092307ffb7800a363" -> "5981191afa964baab7b7c5e111c6a4fa" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"5981191afa964baab7b7c5e111c6a4fa" -> "20bcab942aae42f28b88de38d1ea57e5" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"9fb29a4fda39409092307ffb7800a363" -> "4900b27477db49f5a9d748dcc27fdb76" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	"4900b27477db49f5a9d748dcc27fdb76" -> fbbc99085e414bd59020f6406a5aa295 [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+	subgraph cluster_Targets {
+		graph [bgcolor="#E5F5FD" fontname="Sans-Serif" fontsize=12 label=Targets labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+		subgraph "cluster_Data Flow" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Data Flow" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"9fb29a4fda39409092307ffb7800a363" [label="data flow" height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/analytics\dataflow.png" shape=none]
+		}
+		subgraph "cluster_Data Lake" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Data Lake" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			"3c7bc183aea1492a87ec6b26265e56e6" [label=bq height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/analytics\bigquery.png" shape=none]
+			"48001d95bcc0487aa9bbdb974608c2ca" [label=storage height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/storage\storage.png" shape=none]
+		}
+		subgraph "cluster_Event Driven" {
+			graph [bgcolor="#EBF3E7" fontname="Sans-Serif" fontsize=12 label="Event Driven" labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+			subgraph cluster_Processing {
+				graph [bgcolor="#ECE8F6" fontname="Sans-Serif" fontsize=12 label=Processing labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+				"5981191afa964baab7b7c5e111c6a4fa" [label=engine height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/compute\app-engine.png" shape=none]
+				"20bcab942aae42f28b88de38d1ea57e5" [label=bigtable height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/database\bigtable.png" shape=none]
+			}
+			subgraph cluster_Serverless {
+				graph [bgcolor="#ECE8F6" fontname="Sans-Serif" fontsize=12 label=Serverless labeljust=l pencolor="#AEB6BE" rankdir=LR shape=box style=rounded]
+				"4900b27477db49f5a9d748dcc27fdb76" [label=func height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/compute\functions.png" shape=none]
+				fbbc99085e414bd59020f6406a5aa295 [label=appengine height=1.9 image="C:\Users\shaobori\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\resources/gcp/compute\app-engine.png" shape=none]
+			}
+		}
+	}
+	"0475d530825143738b1e4d3f302b5fe8" -> "9fb29a4fda39409092307ffb7800a363" [dir=forward fontcolor="#2D3436" fontname="Sans-Serif" fontsize=13]
+}

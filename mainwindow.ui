@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1909</width>
+    <height>1310</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>哈哈，太好玩了</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget_mainWindow">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>1841</width>
+      <height>1221</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>楷体</family>
+      <pointsize>14</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LayoutDirection::LeftToRight</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::TextElideMode::ElideMiddle</enum>
+    </property>
+    <widget class="QWidget" name="tab01_DataSetting">
+     <attribute name="title">
+      <string>Tab01_数据设置</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>数据库连接、数据下载设置</string>
+     </attribute>
+     <widget class="QGroupBox" name="GroupBox01_DataSource">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>10</y>
+        <width>1741</width>
+        <height>331</height>
+       </rect>
+      </property>
+      <property name="baseSize">
+       <size>
+        <width>0</width>
+        <height>3</height>
+       </size>
+      </property>
+      <property name="title">
+       <string>选择数据来源：</string>
+      </property>
+      <widget class="QLabel" name="lab_Specify_API_list_Name">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>100</y>
+         <width>291</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TuShare接口列表</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txt_Specify_API_list_Name">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>90</y>
+         <width>441</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txt_Specify_API_log_Name">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>130</y>
+         <width>441</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lab_Specify_API_log_Name">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>140</y>
+         <width>291</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TuShareAPI初始化日志</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lab_Specify_Initial_Path">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>180</y>
+         <width>291</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TuShare初始化路径</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="txt_Specify_Initial_Path">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>170</y>
+         <width>1011</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushBttn_API_InitialPath">
+       <property name="geometry">
+        <rect>
+         <x>1390</x>
+         <y>160</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="mouseTracking">
+        <bool>true</bool>
+       </property>
+       <property name="text">
+        <string>指定TuShare初始化路径</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn04_Other">
+       <property name="geometry">
+        <rect>
+         <x>860</x>
+         <y>50</y>
+         <width>96</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Other</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn03_Choice">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>50</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Choice</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn02_AST">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>50</y>
+         <width>96</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>AST</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn01_TuShare">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>50</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TuShare</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushBttn_API_GeneratList">
+       <property name="geometry">
+        <rect>
+         <x>1390</x>
+         <y>220</y>
+         <width>261</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>生成API接口清单+log 练习</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="plainTextEdit">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>220</y>
+         <width>1011</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="maximumBlockCount">
+        <number>5</number>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GroupBox02_DataStorage">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>350</y>
+        <width>1081</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>选择数据存储：</string>
+      </property>
+      <widget class="QRadioButton" name="radioBttn01_SSMS_SQL">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>40</y>
+         <width>231</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Microsoft SQL</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn02_mySQL">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>40</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>mySQL</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioBttn03_OtherDB">
+       <property name="geometry">
+        <rect>
+         <x>790</x>
+         <y>50</y>
+         <width>161</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Other DB</string>
+       </property>
+      </widget>
+      <widget class="QTabWidget" name="tabWidgetTab01_DB_Select">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>1011</width>
+         <height>291</height>
+        </rect>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <widget class="QWidget" name="tab01_MS_SQL">
+        <attribute name="title">
+         <string>设置 Microsoft SQL</string>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="tab02_mySQL">
+        <attribute name="title">
+         <string>设置 mySQL</string>
+        </attribute>
+       </widget>
+       <widget class="QWidget" name="tab03_OtherDB">
+        <attribute name="title">
+         <string>设置 Other DB</string>
+        </attribute>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="GroupBox03_DataInitilization">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>760</y>
+        <width>1081</width>
+        <height>401</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>数据初始化设置</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab02_DataDownLoad">
+     <attribute name="title">
+      <string>Tab02_数据下载</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab03_AnalysisSetting">
+     <attribute name="title">
+      <string>Tab03_分析设置</string>
+     </attribute>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>80</y>
+        <width>1761</width>
+        <height>1071</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>T301_波动倍率</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>T302_均值方差</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>T303_回归</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>T304_时间序列</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_5">
+       <attribute name="title">
+        <string>T305_GARCH类</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_6">
+       <attribute name="title">
+        <string>T306_PCA主成分</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>T307_贝叶斯</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>T308_FFT频谱</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_9">
+       <attribute name="title">
+        <string>T309_ARIMA</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_10">
+       <attribute name="title">
+        <string>T310_</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_11">
+       <attribute name="title">
+        <string>T311_</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_12">
+       <attribute name="title">
+        <string>T312_</string>
+       </attribute>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab04_AnalysisOutput">
+     <attribute name="title">
+      <string>Tab04_分析结果</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab05_BackTesting">
+     <attribute name="title">
+      <string>Tab05_回测和执行</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab06_EffectRank">
+     <attribute name="title">
+      <string>Tab06_效果评价</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>对数据、规则、回测、实盘效果进行评级</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab07_VersionControl">
+     <attribute name="title">
+      <string>Tab07_版本控制</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab08_SystemMaintenance">
+     <attribute name="title">
+      <string>Tab08_系统维护</string>
+     </attribute>
+    </widget>
+    <widget class="QWidget" name="tab09_DevelopDocument">
+     <attribute name="title">
+      <string>Tab09_开发文档</string>
+     </attribute>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1909</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu01_File">
+    <property name="title">
+     <string>1_数据设置</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu02_Data">
+    <property name="title">
+     <string>2_数据下载</string>
+    </property>
+    <addaction name="menu02_Sub01_DataFolderSelect"/>
+    <addaction name="menu02_Sub02_Data2"/>
+    <addaction name="menu02_Sub03_Data3"/>
+    <addaction name="separator"/>
+    <addaction name="menu02_Sub04_Data4"/>
+   </widget>
+   <widget class="QMenu" name="menu03_AnalysisSetting">
+    <property name="title">
+     <string>3_分析设置</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionbodong"/>
+    <addaction name="actionma"/>
+    <addaction name="actionregression"/>
+    <addaction name="actiontimeseq"/>
+    <addaction name="actiongarch"/>
+    <addaction name="actionpca"/>
+    <addaction name="actionbaiys"/>
+    <addaction name="actionfft"/>
+    <addaction name="actionarima"/>
+   </widget>
+   <widget class="QMenu" name="menu04_AnalysisResult">
+    <property name="title">
+     <string>4_分析结果</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu05_BackTesting">
+    <property name="toolTipDuration">
+     <number>-3</number>
+    </property>
+    <property name="title">
+     <string>5_回测和执行</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu06_EffectRank">
+    <property name="title">
+     <string>6_效果评价</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu07_VersionControl">
+    <property name="title">
+     <string>7_版本控制</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu08_SystemMaintenance">
+    <property name="title">
+     <string>8_系统维护</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu09_DevelopmentDocument">
+    <property name="title">
+     <string>9_开发文档</string>
+    </property>
+    <addaction name="actionbdo"/>
+   </widget>
+   <addaction name="menu01_File"/>
+   <addaction name="menu02_Data"/>
+   <addaction name="menu03_AnalysisSetting"/>
+   <addaction name="menu04_AnalysisResult"/>
+   <addaction name="menu05_BackTesting"/>
+   <addaction name="menu06_EffectRank"/>
+   <addaction name="menu07_VersionControl"/>
+   <addaction name="menu08_SystemMaintenance"/>
+   <addaction name="menu09_DevelopmentDocument"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="menu02_Sub01_DataFolderSelect">
+   <property name="text">
+    <string>指定数据源</string>
+   </property>
+  </action>
+  <action name="menu02_Sub02_Data2">
+   <property name="text">
+    <string>Data02</string>
+   </property>
+  </action>
+  <action name="menu02_Sub03_Data3">
+   <property name="text">
+    <string>Data03</string>
+   </property>
+  </action>
+  <action name="menu02_Sub04_Data4">
+   <property name="text">
+    <string>Data04</string>
+   </property>
+  </action>
+  <action name="actionDataSub01_01">
+   <property name="text">
+    <string>DataSub01_01</string>
+   </property>
+  </action>
+  <action name="actionDataSub01_02">
+   <property name="text">
+    <string>DataSub01_02</string>
+   </property>
+  </action>
+  <action name="actionDataSub01_03">
+   <property name="text">
+    <string>DataSub01_03</string>
+   </property>
+  </action>
+  <action name="actionDataSub01_04">
+   <property name="text">
+    <string>DataSub01_04</string>
+   </property>
+  </action>
+  <action name="actionDataSub01_05">
+   <property name="text">
+    <string>DataSub01_05</string>
+   </property>
+  </action>
+  <action name="actionbdo">
+   <property name="text">
+    <string>1</string>
+   </property>
+  </action>
+  <action name="actionbodong">
+   <property name="text">
+    <string>波动倍率</string>
+   </property>
+  </action>
+  <action name="actionma">
+   <property name="text">
+    <string>ma</string>
+   </property>
+  </action>
+  <action name="actionregression">
+   <property name="text">
+    <string>regression</string>
+   </property>
+  </action>
+  <action name="actiontimeseq">
+   <property name="text">
+    <string>timeseq</string>
+   </property>
+  </action>
+  <action name="actiongarch">
+   <property name="text">
+    <string>garch</string>
+   </property>
+  </action>
+  <action name="actionpca">
+   <property name="text">
+    <string>pca</string>
+   </property>
+  </action>
+  <action name="actionbaiys">
+   <property name="text">
+    <string>baiys</string>
+   </property>
+  </action>
+  <action name="actionfft">
+   <property name="text">
+    <string>fft</string>
+   </property>
+  </action>
+  <action name="actionarima">
+   <property name="text">
+    <string>arima</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>tabWidget_mainWindow</tabstop>
+  <tabstop>radioBttn01_TuShare</tabstop>
+  <tabstop>radioBttn02_AST</tabstop>
+  <tabstop>pushBttn_API_GeneratList</tabstop>
+  <tabstop>radioBttn03_Choice</tabstop>
+  <tabstop>radioBttn04_Other</tabstop>
+  <tabstop>txt_Specify_API_list_Name</tabstop>
+  <tabstop>txt_Specify_API_log_Name</tabstop>
+  <tabstop>txt_Specify_Initial_Path</tabstop>
+  <tabstop>pushBttn_API_InitialPath</tabstop>
+  <tabstop>radioBttn01_SSMS_SQL</tabstop>
+  <tabstop>radioBttn02_mySQL</tabstop>
+  <tabstop>radioBttn03_OtherDB</tabstop>
+  <tabstop>tabWidgetTab01_DB_Select</tabstop>
+  <tabstop>tabWidget</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

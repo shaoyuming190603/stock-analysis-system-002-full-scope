@@ -1,0 +1,54 @@
+在GUI中，有两个单选radiobutton控件，还有一个TAB控件。tab控件包含两个tab标签。 需要绑定两个radiobutton与两个tab标签的动作对应关系： 1、鼠标点击radiobutton 1, 打开tab标签1； 2、鼠标点击radiobutton 2, 打开tab标签2； 3、鼠标点击tab标签1, radiobutton 1需被选中； 4、鼠标点击tab标签2, radiobutton 2需被选中； 也就是两组控件实现关联动作互锁。
+您的需求是**两个RadioButton与两个Tab标签实现互锁联动**，即点击任意一方，另一方自动同步。 这种场景在PySide6/PyQt6中非常常见，可以通过信号与槽机制轻松实现。 --- ## 实现思路 1. **RadioButton切换时，切换Tab** 2. **Tab切换时，切换RadioButton** 3. **防止信号递归死循环**（可选，但一般不会有问题） --- ## 示例代码（PySide6） 假设： - 两个RadioButton的objectName分别为`radioButton1`和`radioButton2` - Tab控件objectName为`tabWidget_mainWindow`，包含两个Tab ```python from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QRadioButton, QTabWidget, QVBoxLayout import sys class MainWindow(QMainWindow):
+
+Copy to Clipboard
+python
+from PySide6.QtWidgets import QApplication, QMainWindow, QWidget, QRadioButton, QTabWidget, QVBoxLayout
+import sys
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        # 假设你已经通过UI文件加载了控件
+        # self.ui = Ui_MainWindow()
+        # self.ui.setupUi(self)
+        # 这里用代码演示
+        central = QWidget()
+        layout = QVBoxLayout(central)
+        self.radioButton1 = QRadioButton("Tab 1")
+        self.radioButton2 = QRadioButton("Tab 2")
+        self.tabWidget_mainWindow = QTabWidget()
+        self.tabWidget_mainWindow.addTab(QWidget(), "Tab 1")
+        self.tabWidget_mainWindow.addTab(QWidget(), "Tab 2")
+        layout.addWidget(self.radioButton1)
+        layout.addWidget(self.radioButton2)
+        layout.addWidget(self.tabWidget_mainWindow)
+        self.setCentralWidget(central)
+
+        # 默认选中第一个
+        self.radioButton1.setChecked(True)
+
+        # 绑定信号
+        self.radioButton1.toggled.connect(self.on_radio1_toggled)
+        self.radioButton2.toggled.connect(self.on_radio2_toggled)
+        self.tabWidget_mainWindow.currentChanged.connect(self.on_tab_changed)
+
+    def on_radio1_toggled(self, checked):
+        if checked:
+            self.tabWidget_mainWindow.setCurrentIndex(0)
+
+    def on_radio2_toggled(self, checked):
+        if checked:
+            self.tabWidget_mainWindow.setCurrentIndex(1)
+
+    def on_tab_changed(self, index):
+        if index == 0:
+            self.radioButton1.setChecked(True)
+        elif index == 1:
+            self.radioButton2.setChecked(True)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec())

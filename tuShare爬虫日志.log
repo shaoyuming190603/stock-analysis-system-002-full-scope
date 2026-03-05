@@ -1,0 +1,2142 @@
+2026-03-01 21:01:17 - INFO - ==================================================
+2026-03-01 21:01:17 - INFO - 爬虫程序开始运行
+2026-03-01 21:01:17 - INFO - 目标起始页：https://tushare.pro/document/2
+2026-03-01 21:01:17 - INFO - 输出文件：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare接口输入输出参数清单Ae1.xlsx
+2026-03-01 21:01:17 - INFO - 日志文件：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare爬虫日志.log
+2026-03-01 21:01:17 - INFO - ==================================================
+2026-03-01 21:01:17 - INFO - 正在从起始页 https://tushare.pro/document/2 提取所有文档链接...
+2026-03-01 21:01:17 - INFO - 共找到 272 个接口文档链接。
+2026-03-01 21:01:17 - INFO - 开始遍历 272 个接口页面...
+2026-03-01 21:01:17 - INFO - 进度：1/272
+2026-03-01 21:01:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=246
+2026-03-01 21:01:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=246 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:17 - INFO - 成功解析接口：cb_price_chg，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:01:18 - INFO - 进度：2/272
+2026-03-01 21:01:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=143
+2026-03-01 21:01:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=143 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:18 - INFO - 成功解析接口：news，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:01:19 - INFO - 进度：3/272
+2026-03-01 21:01:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=221
+2026-03-01 21:01:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=221 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:19 - INFO - 成功解析接口：us_tbr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:20 - INFO - 进度：4/272
+2026-03-01 21:01:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=320
+2026-03-01 21:01:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=320 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:20 - INFO - 成功解析接口：ths_hot，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:21 - INFO - 进度：5/272
+2026-03-01 21:01:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=332
+2026-03-01 21:01:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=332 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:21 - INFO - 成功解析接口：slb_sec，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:22 - INFO - 进度：6/272
+2026-03-01 21:01:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=158
+2026-03-01 21:01:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=158 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:23 - INFO - 成功解析接口：opt_basic，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:24 - INFO - 进度：7/272
+2026-03-01 21:01:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=181
+2026-03-01 21:01:24 - INFO - 接口名称为 'index_classify'，根据要求跳过此页面。
+2026-03-01 21:01:25 - INFO - 进度：8/272
+2026-03-01 21:01:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=339
+2026-03-01 21:01:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=339 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:25 - INFO - 成功解析接口：hk_daily_adj，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:26 - INFO - 进度：9/272
+2026-03-01 21:01:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=115
+2026-03-01 21:01:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=115 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:26 - INFO - 成功解析接口：bo_daily，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:01:27 - INFO - 进度：10/272
+2026-03-01 21:01:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=191
+2026-03-01 21:01:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=191 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:27 - INFO - 成功解析接口：hk_basic，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:01:28 - INFO - 进度：11/272
+2026-03-01 21:01:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=402
+2026-03-01 21:01:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=402 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:28 - INFO - 成功解析接口：us_adjfactor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:29 - INFO - 进度：12/272
+2026-03-01 21:01:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=394
+2026-03-01 21:01:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=394 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:29 - INFO - 成功解析接口：us_income，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:01:30 - INFO - 进度：13/272
+2026-03-01 21:01:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=82
+2026-03-01 21:01:30 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=82 提取接口名称，跳过。
+2026-03-01 21:01:31 - INFO - 进度：14/272
+2026-03-01 21:01:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=291
+2026-03-01 21:01:31 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=291 提取接口名称，跳过。
+2026-03-01 21:01:32 - INFO - 进度：15/272
+2026-03-01 21:01:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=353
+2026-03-01 21:01:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=353 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:33 - INFO - 成功解析接口：stk_auction_o，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:34 - INFO - 进度：16/272
+2026-03-01 21:01:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=111
+2026-03-01 21:01:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=111 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:34 - INFO - 成功解析接口：pledge_detail，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:01:35 - INFO - 进度：17/272
+2026-03-01 21:01:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=80
+2026-03-01 21:01:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=80 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:35 - INFO - 成功解析接口：fina_audit，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:36 - INFO - 进度：18/272
+2026-03-01 21:01:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=266
+2026-03-01 21:01:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=266 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:36 - INFO - 成功解析接口：fund_sales_vol，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:01:37 - INFO - 进度：19/272
+2026-03-01 21:01:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=162
+2026-03-01 21:01:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=162 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:37 - INFO - 成功解析接口：disclosure_date，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:38 - INFO - 进度：20/272
+2026-03-01 21:01:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=384
+2026-03-01 21:01:38 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=384 提取接口名称，跳过。
+2026-03-01 21:01:39 - INFO - 进度：21/272
+2026-03-01 21:01:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=178
+2026-03-01 21:01:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=178 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:39 - INFO - 成功解析接口：fx_obasic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:01:40 - INFO - 进度：22/272
+2026-03-01 21:01:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=193
+2026-03-01 21:01:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=193 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:40 - INFO - 成功解析接口：stk_managers，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:41 - INFO - 进度：23/272
+2026-03-01 21:01:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=81
+2026-03-01 21:01:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=81 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:41 - INFO - 成功解析接口：fina_mainbz，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:42 - INFO - 进度：24/272
+2026-03-01 21:01:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=326
+2026-03-01 21:01:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=326 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:42 - INFO - 成功解析接口：margin_secs，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:43 - INFO - 进度：25/272
+2026-03-01 21:01:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=397
+2026-03-01 21:01:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=397 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:43 - INFO - 成功解析接口：stock_st，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:44 - INFO - 进度：26/272
+2026-03-01 21:01:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=216
+2026-03-01 21:01:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=216 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:45 - INFO - 成功解析接口：fut_weekly_detail，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:01:46 - INFO - 进度：27/272
+2026-03-01 21:01:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=363
+2026-03-01 21:01:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=363 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:46 - INFO - 成功解析接口：dc_member，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:01:47 - INFO - 进度：28/272
+2026-03-01 21:01:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=284
+2026-03-01 21:01:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=284 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:47 - INFO - 成功解析接口：sge_basic，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:01:48 - INFO - 进度：29/272
+2026-03-01 21:01:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=271
+2026-03-01 21:01:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=271 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:48 - INFO - 成功解析接口：bond_blk，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:49 - INFO - 进度：30/272
+2026-03-01 21:01:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=118
+2026-03-01 21:01:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=118 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:49 - INFO - 成功解析接口：fund_company，标题：，输入参数数：18，输出参数数：18
+2026-03-01 21:01:50 - INFO - 进度：31/272
+2026-03-01 21:01:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=391
+2026-03-01 21:01:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=391 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:50 - INFO - 成功解析接口：hk_cashflow，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:51 - INFO - 进度：32/272
+2026-03-01 21:01:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=396
+2026-03-01 21:01:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=396 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:51 - INFO - 成功解析接口：us_cashflow，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:01:52 - INFO - 进度：33/272
+2026-03-01 21:01:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=123
+2026-03-01 21:01:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=123 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:52 - INFO - 成功解析接口：new_share，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:01:53 - INFO - 进度：34/272
+2026-03-01 21:01:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=120
+2026-03-01 21:01:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=120 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:53 - INFO - 成功解析接口：fund_div，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:54 - INFO - 进度：35/272
+2026-03-01 21:01:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=87
+2026-03-01 21:01:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=87 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:54 - INFO - 成功解析接口：tmt_twincomedetail，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:01:55 - INFO - 进度：36/272
+2026-03-01 21:01:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=382
+2026-03-01 21:01:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=382 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:56 - INFO - 成功解析接口：dc_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:01:57 - INFO - 进度：37/272
+2026-03-01 21:01:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=267
+2026-03-01 21:01:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=267 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:57 - INFO - 成功解析接口：broker_recommend，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:01:58 - INFO - 进度：38/272
+2026-03-01 21:01:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=88
+2026-03-01 21:01:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=88 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:58 - INFO - 成功解析接口：tmt_twincome，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:01:59 - INFO - 进度：39/272
+2026-03-01 21:01:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=195
+2026-03-01 21:01:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=195 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:01:59 - INFO - 成功解析接口：major_news，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:00 - INFO - 进度：40/272
+2026-03-01 21:02:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=214
+2026-03-01 21:02:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=214 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:00 - INFO - 成功解析接口：suspend_d，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:01 - INFO - 进度：41/272
+2026-03-01 21:02:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=48
+2026-03-01 21:02:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=48 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:01 - INFO - 成功解析接口：hsgt_top10，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:02 - INFO - 进度：42/272
+2026-03-01 21:02:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=183
+2026-03-01 21:02:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=183 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:02 - INFO - 成功解析接口：stk_limit，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:03 - INFO - 进度：43/272
+2026-03-01 21:02:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=165
+2026-03-01 21:02:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=165 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:03 - INFO - 成功解析接口：stk_account_old，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:02:04 - INFO - 进度：44/272
+2026-03-01 21:02:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=373
+2026-03-01 21:02:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=373 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:04 - INFO - 成功解析接口：ci_index_member，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:05 - INFO - 进度：45/272
+2026-03-01 21:02:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=358
+2026-03-01 21:02:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=358 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:05 - INFO - 成功解析接口：idx_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:06 - INFO - 进度：46/272
+2026-03-01 21:02:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=94
+2026-03-01 21:02:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=94 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:06 - INFO - 成功解析接口：index_basic，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:07 - INFO - 进度：47/272
+2026-03-01 21:02:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=150
+2026-03-01 21:02:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=150 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:08 - INFO - 成功解析接口：shibor_quote，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:09 - INFO - 进度：48/272
+2026-03-01 21:02:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=79
+2026-03-01 21:02:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=79 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:09 - INFO - 成功解析接口：fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:10 - INFO - 进度：49/272
+2026-03-01 21:02:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=95
+2026-03-01 21:02:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=95 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:10 - INFO - 成功解析接口：index_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:11 - INFO - 进度：50/272
+2026-03-01 21:02:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=152
+2026-03-01 21:02:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=152 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:11 - INFO - 成功解析接口：libor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:12 - INFO - 进度：51/272
+2026-03-01 21:02:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=328
+2026-03-01 21:02:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=328 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:12 - INFO - 成功解析接口：stk_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:13 - INFO - 进度：52/272
+2026-03-01 21:02:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=153
+2026-03-01 21:02:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=153 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:13 - INFO - 成功解析接口：hibor，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:14 - INFO - 进度：53/272
+2026-03-01 21:02:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=49
+2026-03-01 21:02:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=49 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:14 - INFO - 成功解析接口：ggt_top10，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:15 - INFO - 进度：54/272
+2026-03-01 21:02:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=314
+2026-03-01 21:02:15 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=314 提取接口名称，跳过。
+2026-03-01 21:02:16 - INFO - 进度：55/272
+2026-03-01 21:02:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=259
+2026-03-01 21:02:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=259 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:16 - INFO - 成功解析接口：ths_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:17 - INFO - 进度：56/272
+2026-03-01 21:02:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=127
+2026-03-01 21:02:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=127 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:17 - INFO - 成功解析接口：fund_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:18 - INFO - 进度：57/272
+2026-03-01 21:02:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=175
+2026-03-01 21:02:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=175 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:18 - INFO - 成功解析接口：stk_holdertrade，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:02:19 - INFO - 进度：58/272
+2026-03-01 21:02:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=219
+2026-03-01 21:02:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=219 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:20 - INFO - 成功解析接口：us_tycr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:21 - INFO - 进度：59/272
+2026-03-01 21:02:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=331
+2026-03-01 21:02:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=331 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:21 - INFO - 成功解析接口：slb_len，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:22 - INFO - 进度：60/272
+2026-03-01 21:02:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=140
+2026-03-01 21:02:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=140 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:22 - INFO - 成功解析接口：fut_wsr，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:23 - INFO - 进度：61/272
+2026-03-01 21:02:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=392
+2026-03-01 21:02:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=392 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:23 - INFO - 成功解析接口：cb_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:24 - INFO - 进度：62/272
+2026-03-01 21:02:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=321
+2026-03-01 21:02:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=321 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:24 - INFO - 成功解析接口：dc_hot，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:25 - INFO - 进度：63/272
+2026-03-01 21:02:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=416
+2026-03-01 21:02:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=416 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:25 - INFO - 成功解析接口：rt_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:02:26 - INFO - 进度：64/272
+2026-03-01 21:02:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=383
+2026-03-01 21:02:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=383 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:26 - INFO - 成功解析接口：rt_hk_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:02:27 - INFO - 进度：65/272
+2026-03-01 21:02:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=174
+2026-03-01 21:02:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=174 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:27 - INFO - 成功解析接口：gz_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:28 - INFO - 进度：66/272
+2026-03-01 21:02:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=241
+2026-03-01 21:02:28 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=241 提取接口名称，跳过。
+2026-03-01 21:02:29 - INFO - 进度：67/272
+2026-03-01 21:02:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=25
+2026-03-01 21:02:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=25 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:29 - INFO - 成功解析接口：stock_basic，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:02:30 - INFO - 进度：68/272
+2026-03-01 21:02:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=254
+2026-03-01 21:02:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=254 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:30 - INFO - 成功解析接口：us_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:31 - INFO - 进度：69/272
+2026-03-01 21:02:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=242
+2026-03-01 21:02:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=242 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:32 - INFO - 成功解析接口：cn_m，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:33 - INFO - 进度：70/272
+2026-03-01 21:02:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=58
+2026-03-01 21:02:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=58 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:33 - INFO - 成功解析接口：margin，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:34 - INFO - 进度：71/272
+2026-03-01 21:02:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=26
+2026-03-01 21:02:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=26 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:34 - INFO - 成功解析接口：trade_cal，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:35 - INFO - 进度：72/272
+2026-03-01 21:02:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=15
+2026-03-01 21:02:35 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=15 提取接口名称，跳过。
+2026-03-01 21:02:36 - INFO - 进度：73/272
+2026-03-01 21:02:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=371
+2026-03-01 21:02:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=371 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:36 - INFO - 成功解析接口：moneyflow_cnt_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:37 - INFO - 进度：74/272
+2026-03-01 21:02:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=176
+2026-03-01 21:02:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=176 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:37 - INFO - 成功解析接口：anns_d，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:38 - INFO - 进度：75/272
+2026-03-01 21:02:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=283
+2026-03-01 21:02:38 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=283 提取接口名称，跳过。
+2026-03-01 21:02:39 - INFO - 进度：76/272
+2026-03-01 21:02:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=295
+2026-03-01 21:02:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=295 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:39 - INFO - 成功解析接口：ccass_hold，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:40 - INFO - 进度：77/272
+2026-03-01 21:02:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=304
+2026-03-01 21:02:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=304 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:40 - INFO - 成功解析接口：hk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:41 - INFO - 进度：78/272
+2026-03-01 21:02:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=144
+2026-03-01 21:02:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=144 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:41 - INFO - 成功解析接口：weekly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:42 - INFO - 进度：79/272
+2026-03-01 21:02:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=141
+2026-03-01 21:02:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=141 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:42 - INFO - 成功解析接口：fut_settle，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:43 - INFO - 进度：80/272
+2026-03-01 21:02:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=406
+2026-03-01 21:02:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=406 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:44 - INFO - 成功解析接口：npr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:45 - INFO - 进度：81/272
+2026-03-01 21:02:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=164
+2026-03-01 21:02:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=164 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:45 - INFO - 成功解析接口：stk_account，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:46 - INFO - 进度：82/272
+2026-03-01 21:02:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=346
+2026-03-01 21:02:46 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=346 提取接口名称，跳过。
+2026-03-01 21:02:47 - INFO - 进度：83/272
+2026-03-01 21:02:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=106
+2026-03-01 21:02:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=106 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:47 - INFO - 成功解析接口：top_list，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:02:48 - INFO - 进度：84/272
+2026-03-01 21:02:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=197
+2026-03-01 21:02:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=197 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:48 - INFO - 成功解析接口：ggt_monthly，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:02:49 - INFO - 进度：85/272
+2026-03-01 21:02:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=177
+2026-03-01 21:02:49 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=177 提取接口名称，跳过。
+2026-03-01 21:02:50 - INFO - 进度：86/272
+2026-03-01 21:02:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=285
+2026-03-01 21:02:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=285 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:50 - INFO - 成功解析接口：sge_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:51 - INFO - 进度：87/272
+2026-03-01 21:02:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=330
+2026-03-01 21:02:51 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=330 提取接口名称，跳过。
+2026-03-01 21:02:52 - INFO - 进度：88/272
+2026-03-01 21:02:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=222
+2026-03-01 21:02:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=222 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:52 - INFO - 成功解析接口：us_tltr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:02:53 - INFO - 进度：89/272
+2026-03-01 21:02:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=157
+2026-03-01 21:02:53 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=157 提取接口名称，跳过。
+2026-03-01 21:02:54 - INFO - 进度：90/272
+2026-03-01 21:02:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=311
+2026-03-01 21:02:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=311 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:54 - INFO - 成功解析接口：hm_list，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:02:55 - INFO - 进度：91/272
+2026-03-01 21:02:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=298
+2026-03-01 21:02:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=298 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:55 - INFO - 成功解析接口：limit_list_d，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:02:56 - INFO - 进度：92/272
+2026-03-01 21:02:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=119
+2026-03-01 21:02:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=119 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:57 - INFO - 成功解析接口：fund_nav，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:02:58 - INFO - 进度：93/272
+2026-03-01 21:02:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=36
+2026-03-01 21:02:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=36 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:58 - INFO - 成功解析接口：balancesheet，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:02:59 - INFO - 进度：94/272
+2026-03-01 21:02:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=338
+2026-03-01 21:02:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=338 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:02:59 - INFO - 成功解析接口：us_daily_adj，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:03:00 - INFO - 进度：95/272
+2026-03-01 21:03:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=28
+2026-03-01 21:03:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=28 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:00 - INFO - 成功解析接口：adj_factor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:01 - INFO - 进度：96/272
+2026-03-01 21:03:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=189
+2026-03-01 21:03:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=189 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:01 - INFO - 成功解析接口：fut_mapping，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:02 - INFO - 进度：97/272
+2026-03-01 21:03:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=327
+2026-03-01 21:03:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=327 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:02 - INFO - 成功解析接口：sw_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:03 - INFO - 进度：98/272
+2026-03-01 21:03:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=387
+2026-03-01 21:03:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=387 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:03 - INFO - 成功解析接口：stk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:04 - INFO - 进度：99/272
+2026-03-01 21:03:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=159
+2026-03-01 21:03:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=159 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:04 - INFO - 成功解析接口：opt_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:05 - INFO - 进度：100/272
+2026-03-01 21:03:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=367
+2026-03-01 21:03:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=367 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:05 - INFO - 成功解析接口：irm_qa_sz，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:03:06 - INFO - 进度：101/272
+2026-03-01 21:03:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=316
+2026-03-01 21:03:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=316 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:06 - INFO - 成功解析接口：realtime_tick，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:03:07 - INFO - 进度：102/272
+2026-03-01 21:03:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=188
+2026-03-01 21:03:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=188 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:08 - INFO - 成功解析接口：hk_hold，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:03:09 - INFO - 进度：103/272
+2026-03-01 21:03:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=96
+2026-03-01 21:03:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=96 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:09 - INFO - 成功解析接口：index_weight，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:10 - INFO - 进度：104/272
+2026-03-01 21:03:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=166
+2026-03-01 21:03:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=166 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:10 - INFO - 成功解析接口：stk_holdernumber，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:11 - INFO - 进度：105/272
+2026-03-01 21:03:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=401
+2026-03-01 21:03:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=401 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:11 - INFO - 成功解析接口：hk_adjfactor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:12 - INFO - 进度：106/272
+2026-03-01 21:03:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=333
+2026-03-01 21:03:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=333 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:12 - INFO - 成功解析接口：slb_sec_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:13 - INFO - 进度：107/272
+2026-03-01 21:03:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=351
+2026-03-01 21:03:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=351 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:13 - INFO - 成功解析接口：kpl_concept_cons，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:14 - INFO - 进度：108/272
+2026-03-01 21:03:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=103
+2026-03-01 21:03:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=103 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:14 - INFO - 成功解析接口：dividend，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:15 - INFO - 进度：109/272
+2026-03-01 21:03:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=349
+2026-03-01 21:03:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=349 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:15 - INFO - 成功解析接口：moneyflow_dc，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:16 - INFO - 进度：110/272
+2026-03-01 21:03:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=135
+2026-03-01 21:03:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=135 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:16 - INFO - 成功解析接口：fut_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:17 - INFO - 进度：111/272
+2026-03-01 21:03:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=420
+2026-03-01 21:03:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=420 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:17 - INFO - 成功解析接口：rt_idx_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:03:18 - INFO - 进度：112/272
+2026-03-01 21:03:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=185
+2026-03-01 21:03:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=185 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:18 - INFO - 成功解析接口：cb_basic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:19 - INFO - 进度：113/272
+2026-03-01 21:03:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=156
+2026-03-01 21:03:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=156 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:19 - INFO - 成功解析接口：film_record，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:20 - INFO - 进度：114/272
+2026-03-01 21:03:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=366
+2026-03-01 21:03:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=366 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:21 - INFO - 成功解析接口：irm_qa_sh，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:03:22 - INFO - 进度：115/272
+2026-03-01 21:03:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=244
+2026-03-01 21:03:22 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=244 提取接口名称，跳过。
+2026-03-01 21:03:23 - INFO - 进度：116/272
+2026-03-01 21:03:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=47
+2026-03-01 21:03:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=47 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:23 - INFO - 成功解析接口：moneyflow_hsgt，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:24 - INFO - 进度：117/272
+2026-03-01 21:03:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=272
+2026-03-01 21:03:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=272 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:24 - INFO - 成功解析接口：bond_blk_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:25 - INFO - 进度：118/272
+2026-03-01 21:03:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=27
+2026-03-01 21:03:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=27 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:25 - INFO - 成功解析接口：daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:26 - INFO - 进度：119/272
+2026-03-01 21:03:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=317
+2026-03-01 21:03:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=317 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:26 - INFO - 成功解析接口：realtime_list，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:03:27 - INFO - 进度：120/272
+2026-03-01 21:03:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=312
+2026-03-01 21:03:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=312 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:27 - INFO - 成功解析接口：hm_detail，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:28 - INFO - 进度：121/272
+2026-03-01 21:03:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=268
+2026-03-01 21:03:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=268 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:28 - INFO - 成功解析接口：sz_daily_info，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:29 - INFO - 进度：122/272
+2026-03-01 21:03:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=46
+2026-03-01 21:03:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=46 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:29 - INFO - 成功解析接口：express，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:30 - INFO - 进度：123/272
+2026-03-01 21:03:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=252
+2026-03-01 21:03:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=252 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:30 - INFO - 成功解析接口：us_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:31 - INFO - 进度：124/272
+2026-03-01 21:03:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=253
+2026-03-01 21:03:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=253 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:32 - INFO - 成功解析接口：us_tradecal，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:33 - INFO - 进度：125/272
+2026-03-01 21:03:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=357
+2026-03-01 21:03:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=357 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:33 - INFO - 成功解析接口：limit_cpt_list，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:34 - INFO - 进度：126/272
+2026-03-01 21:03:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=400
+2026-03-01 21:03:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=400 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:34 - INFO - 成功解析接口：rt_etf_k，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:03:35 - INFO - 进度：127/272
+2026-03-01 21:03:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=376
+2026-03-01 21:03:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=376 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:35 - INFO - 成功解析接口：tdx_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:36 - INFO - 进度：128/272
+2026-03-01 21:03:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=403
+2026-03-01 21:03:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=403 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:36 - INFO - 成功解析接口：rt_idx_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:03:37 - INFO - 进度：129/272
+2026-03-01 21:03:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=124
+2026-03-01 21:03:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=124 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:37 - INFO - 成功解析接口：repurchase，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:38 - INFO - 进度：130/272
+2026-03-01 21:03:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=335
+2026-03-01 21:03:38 - WARNING - 页面 https://tushare.pro/document/2?doc_id=335 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:38 - INFO - 成功解析接口：index_member_all，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:39 - INFO - 进度：131/272
+2026-03-01 21:03:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=137
+2026-03-01 21:03:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=137 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:39 - INFO - 成功解析接口：trade_cal，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:40 - INFO - 进度：132/272
+2026-03-01 21:03:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=269
+2026-03-01 21:03:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=269 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:40 - INFO - 成功解析接口：cb_call，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:41 - INFO - 进度：133/272
+2026-03-01 21:03:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=179
+2026-03-01 21:03:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=179 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:41 - INFO - 成功解析接口：fx_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:42 - INFO - 进度：134/272
+2026-03-01 21:03:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=190
+2026-03-01 21:03:42 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=190 提取接口名称，跳过。
+2026-03-01 21:03:43 - INFO - 进度：135/272
+2026-03-01 21:03:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=390
+2026-03-01 21:03:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=390 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:43 - INFO - 成功解析接口：hk_balancesheet，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:44 - INFO - 进度：136/272
+2026-03-01 21:03:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=323
+2026-03-01 21:03:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=323 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:45 - INFO - 成功解析接口：bc_bestotcqt，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:46 - INFO - 进度：137/272
+2026-03-01 21:03:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=395
+2026-03-01 21:03:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=395 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:46 - INFO - 成功解析接口：us_balancesheet，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:03:47 - INFO - 进度：138/272
+2026-03-01 21:03:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=83
+2026-03-01 21:03:47 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=83 提取接口名称，跳过。
+2026-03-01 21:03:48 - INFO - 进度：139/272
+2026-03-01 21:03:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=180
+2026-03-01 21:03:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=180 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:48 - INFO - 成功解析接口：teleplay_record，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:03:49 - INFO - 进度：140/272
+2026-03-01 21:03:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=224
+2026-03-01 21:03:49 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=224 提取接口名称，跳过。
+2026-03-01 21:03:50 - INFO - 进度：141/272
+2026-03-01 21:03:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=154
+2026-03-01 21:03:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=154 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:50 - INFO - 成功解析接口：cctv_news，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:03:51 - INFO - 进度：142/272
+2026-03-01 21:03:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=386
+2026-03-01 21:03:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=386 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:51 - INFO - 成功解析接口：etf_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:03:52 - INFO - 进度：143/272
+2026-03-01 21:03:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=109
+2026-03-01 21:03:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=109 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:52 - INFO - 成功解析接口：Tushare，标题：，输入参数数：9，输出参数数：0
+2026-03-01 21:03:53 - INFO - 进度：144/272
+2026-03-01 21:03:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=359
+2026-03-01 21:03:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=359 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:53 - INFO - 成功解析接口：fund_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:54 - INFO - 进度：145/272
+2026-03-01 21:03:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=415
+2026-03-01 21:03:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=415 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:54 - INFO - 成功解析接口：research_report，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:03:55 - INFO - 进度：146/272
+2026-03-01 21:03:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=262
+2026-03-01 21:03:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=262 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:55 - INFO - 成功解析接口：bak_basic，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:03:56 - INFO - 进度：147/272
+2026-03-01 21:03:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=170
+2026-03-01 21:03:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=170 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:56 - INFO - 成功解析接口：moneyflow，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:57 - INFO - 进度：148/272
+2026-03-01 21:03:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=369
+2026-03-01 21:03:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=369 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:58 - INFO - 成功解析接口：stk_auction，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:03:59 - INFO - 进度：149/272
+2026-03-01 21:03:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=201
+2026-03-01 21:03:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=201 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:03:59 - INFO - 成功解析接口：yc_cb，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:00 - INFO - 进度：150/272
+2026-03-01 21:04:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=199
+2026-03-01 21:04:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=199 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:00 - INFO - 成功解析接口：fund_adj，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:01 - INFO - 进度：151/272
+2026-03-01 21:04:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=113
+2026-03-01 21:04:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=113 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:01 - INFO - 成功解析接口：bo_monthly，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:04:02 - INFO - 进度：152/272
+2026-03-01 21:04:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=173
+2026-03-01 21:04:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=173 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:02 - INFO - 成功解析接口：wz_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:04:03 - INFO - 进度：153/272
+2026-03-01 21:04:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=16
+2026-03-01 21:04:03 - ERROR - 解析页面 https://tushare.pro/document/2?doc_id=16 时出错：list index out of range
+Traceback (most recent call last):
+  File "d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare参数爬虫_扩充字段 完善3 加log.py", line 133, in parse_api_page
+    candidate = parts[1].strip().split()[0]
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2026-03-01 21:04:04 - INFO - 进度：154/272
+2026-03-01 21:04:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=93
+2026-03-01 21:04:04 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=93 提取接口名称，跳过。
+2026-03-01 21:04:05 - INFO - 进度：155/272
+2026-03-01 21:04:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=220
+2026-03-01 21:04:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=220 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:05 - INFO - 成功解析接口：us_trycr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:06 - INFO - 进度：156/272
+2026-03-01 21:04:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=355
+2026-03-01 21:04:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=355 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:06 - INFO - 成功解析接口：limit_list_ths，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:07 - INFO - 进度：157/272
+2026-03-01 21:04:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=389
+2026-03-01 21:04:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=389 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:07 - INFO - 成功解析接口：hk_income，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:08 - INFO - 进度：158/272
+2026-03-01 21:04:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=116
+2026-03-01 21:04:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=116 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:08 - INFO - 成功解析接口：bo_cinema，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:04:09 - INFO - 进度：159/272
+2026-03-01 21:04:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=17
+2026-03-01 21:04:09 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=17 提取接口名称，跳过。
+2026-03-01 21:04:10 - INFO - 进度：160/272
+2026-03-01 21:04:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=247
+2026-03-01 21:04:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=247 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:11 - INFO - 成功解析接口：cb_share，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:12 - INFO - 进度：161/272
+2026-03-01 21:04:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=100
+2026-03-01 21:04:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=100 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:12 - INFO - 成功解析接口：namechange，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:04:13 - INFO - 进度：162/272
+2026-03-01 21:04:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=139
+2026-03-01 21:04:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=139 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:13 - INFO - 成功解析接口：fut_holding，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:14 - INFO - 进度：163/272
+2026-03-01 21:04:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=146
+2026-03-01 21:04:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=146 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:14 - INFO - 成功解析接口：pro_bar，标题：，输入参数数：0，输出参数数：0
+2026-03-01 21:04:15 - INFO - 进度：164/272
+2026-03-01 21:04:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=161
+2026-03-01 21:04:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=161 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:15 - INFO - 成功解析接口：block_trade，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:16 - INFO - 进度：165/272
+2026-03-01 21:04:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=377
+2026-03-01 21:04:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=377 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:16 - INFO - 成功解析接口：tdx_member，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:04:17 - INFO - 进度：166/272
+2026-03-01 21:04:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=44
+2026-03-01 21:04:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=44 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:17 - INFO - 成功解析接口：cashflow，标题：，输入参数数：9，输出参数数：9
+2026-03-01 21:04:18 - INFO - 进度：167/272
+2026-03-01 21:04:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=138
+2026-03-01 21:04:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=138 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:18 - INFO - 成功解析接口：fut_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:19 - INFO - 进度：168/272
+2026-03-01 21:04:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=417
+2026-03-01 21:04:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=417 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:19 - INFO - 成功解析接口：rt_sw_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:04:20 - INFO - 进度：169/272
+2026-03-01 21:04:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=104
+2026-03-01 21:04:20 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=104 提取接口名称，跳过。
+2026-03-01 21:04:21 - INFO - 进度：170/272
+2026-03-01 21:04:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=208
+2026-03-01 21:04:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=208 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:21 - INFO - 成功解析接口：fund_manager，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:22 - INFO - 进度：171/272
+2026-03-01 21:04:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=329
+2026-03-01 21:04:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=329 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:23 - INFO - 成功解析接口：stk_premarket，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:24 - INFO - 进度：172/272
+2026-03-01 21:04:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=364
+2026-03-01 21:04:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=364 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:24 - INFO - 成功解析接口：stk_nineturn，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:25 - INFO - 进度：173/272
+2026-03-01 21:04:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=233
+2026-03-01 21:04:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=233 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:25 - INFO - 成功解析接口：eco_cal，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:26 - INFO - 进度：174/272
+2026-03-01 21:04:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=423
+2026-03-01 21:04:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=423 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:26 - INFO - 成功解析接口：st，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:04:27 - INFO - 进度：175/272
+2026-03-01 21:04:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=215
+2026-03-01 21:04:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=215 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:27 - INFO - 成功解析接口：daily_info，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:28 - INFO - 进度：176/272
+2026-03-01 21:04:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=217
+2026-03-01 21:04:28 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=217 提取接口名称，跳过。
+2026-03-01 21:04:29 - INFO - 进度：177/272
+2026-03-01 21:04:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=341
+2026-03-01 21:04:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=341 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:29 - INFO - 成功解析接口：opt_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:30 - INFO - 进度：178/272
+2026-03-01 21:04:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=344
+2026-03-01 21:04:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=344 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:30 - INFO - 成功解析接口：moneyflow_ind_dc，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:31 - INFO - 进度：179/272
+2026-03-01 21:04:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=155
+2026-03-01 21:04:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=155 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:31 - INFO - 成功解析接口：index_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:32 - INFO - 进度：180/272
+2026-03-01 21:04:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=209
+2026-03-01 21:04:32 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=209 提取接口名称，跳过。
+2026-03-01 21:04:33 - INFO - 进度：181/272
+2026-03-01 21:04:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=225
+2026-03-01 21:04:33 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=225 提取接口名称，跳过。
+2026-03-01 21:04:34 - INFO - 进度：182/272
+2026-03-01 21:04:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=275
+2026-03-01 21:04:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=275 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:34 - INFO - 成功解析接口：stk_surv，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:35 - INFO - 进度：183/272
+2026-03-01 21:04:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=334
+2026-03-01 21:04:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=334 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:36 - INFO - 成功解析接口：slb_len_mm，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:37 - INFO - 进度：184/272
+2026-03-01 21:04:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=250
+2026-03-01 21:04:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=250 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:37 - INFO - 成功解析接口：hk_tradecal，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:04:38 - INFO - 进度：185/272
+2026-03-01 21:04:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=121
+2026-03-01 21:04:38 - WARNING - 页面 https://tushare.pro/document/2?doc_id=121 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:38 - INFO - 成功解析接口：fund_portfolio，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:39 - INFO - 进度：186/272
+2026-03-01 21:04:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=408
+2026-03-01 21:04:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=408 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:39 - INFO - 成功解析接口：etf_share_size，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:40 - INFO - 进度：187/272
+2026-03-01 21:04:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=398
+2026-03-01 21:04:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=398 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:40 - INFO - 成功解析接口：stock_hsgt，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:41 - INFO - 进度：188/272
+2026-03-01 21:04:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=322
+2026-03-01 21:04:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=322 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:41 - INFO - 成功解析接口：bc_otcqt，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:42 - INFO - 进度：189/272
+2026-03-01 21:04:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=375
+2026-03-01 21:04:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=375 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:42 - INFO - 成功解析接口：bse_mapping，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:04:43 - INFO - 进度：190/272
+2026-03-01 21:04:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=294
+2026-03-01 21:04:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=294 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:43 - INFO - 成功解析接口：cyq_chips，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:44 - INFO - 进度：191/272
+2026-03-01 21:04:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=348
+2026-03-01 21:04:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=348 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:44 - INFO - 成功解析接口：moneyflow_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:45 - INFO - 进度：192/272
+2026-03-01 21:04:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=207
+2026-03-01 21:04:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=207 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:45 - INFO - 成功解析接口：fund_share，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:46 - INFO - 进度：193/272
+2026-03-01 21:04:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=223
+2026-03-01 21:04:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=223 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:46 - INFO - 成功解析接口：us_trltr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:47 - INFO - 进度：194/272
+2026-03-01 21:04:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=419
+2026-03-01 21:04:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=419 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:48 - INFO - 成功解析接口：idx_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:49 - INFO - 进度：195/272
+2026-03-01 21:04:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=227
+2026-03-01 21:04:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=227 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:49 - INFO - 成功解析接口：cn_gdp，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:50 - INFO - 进度：196/272
+2026-03-01 21:04:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=19
+2026-03-01 21:04:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=19 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:50 - INFO - 成功解析接口：fund_basic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:04:51 - INFO - 进度：197/272
+2026-03-01 21:04:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=388
+2026-03-01 21:04:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=388 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:51 - INFO - 成功解析接口：hk_fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:52 - INFO - 进度：198/272
+2026-03-01 21:04:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=293
+2026-03-01 21:04:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=293 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:52 - INFO - 成功解析接口：cyq_perf，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:53 - INFO - 进度：199/272
+2026-03-01 21:04:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=263
+2026-03-01 21:04:53 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=263 提取接口名称，跳过。
+2026-03-01 21:04:54 - INFO - 进度：200/272
+2026-03-01 21:04:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=337
+2026-03-01 21:04:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=337 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:54 - INFO - 成功解析接口：fut_weekly_monthly，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:04:55 - INFO - 进度：201/272
+2026-03-01 21:04:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=251
+2026-03-01 21:04:55 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=251 提取接口名称，跳过。
+2026-03-01 21:04:56 - INFO - 进度：202/272
+2026-03-01 21:04:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=260
+2026-03-01 21:04:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=260 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:56 - INFO - 成功解析接口：ths_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:04:57 - INFO - 进度：203/272
+2026-03-01 21:04:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=261
+2026-03-01 21:04:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=261 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:57 - INFO - 成功解析接口：ths_member，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:04:58 - INFO - 进度：204/272
+2026-03-01 21:04:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=365
+2026-03-01 21:04:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=365 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:04:58 - INFO - 成功解析接口：stk_week_month_adj，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:04:59 - INFO - 进度：205/272
+2026-03-01 21:04:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=399
+2026-03-01 21:05:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=399 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:00 - INFO - 成功解析接口：stk_ah_comparison，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:01 - INFO - 进度：206/272
+2026-03-01 21:05:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=345
+2026-03-01 21:05:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=345 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:01 - INFO - 成功解析接口：moneyflow_mkt_dc，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:02 - INFO - 进度：207/272
+2026-03-01 21:05:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=18
+2026-03-01 21:05:02 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=18 提取接口名称，跳过。
+2026-03-01 21:05:03 - INFO - 进度：208/272
+2026-03-01 21:05:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=372
+2026-03-01 21:05:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=372 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:03 - INFO - 成功解析接口：rt_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:05:04 - INFO - 进度：209/272
+2026-03-01 21:05:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=308
+2026-03-01 21:05:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=308 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:04 - INFO - 成功解析接口：ci_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:05 - INFO - 进度：210/272
+2026-03-01 21:05:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=112
+2026-03-01 21:05:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=112 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:05 - INFO - 成功解析接口：stock_company，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:06 - INFO - 进度：211/272
+2026-03-01 21:05:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=128
+2026-03-01 21:05:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=128 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:06 - INFO - 成功解析接口：index_dailybasic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:07 - INFO - 进度：212/272
+2026-03-01 21:05:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=211
+2026-03-01 21:05:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=211 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:07 - INFO - 成功解析接口：index_global，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:08 - INFO - 进度：213/272
+2026-03-01 21:05:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=309
+2026-03-01 21:05:08 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=309 提取接口名称，跳过。
+2026-03-01 21:05:09 - INFO - 进度：214/272
+2026-03-01 21:05:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=368
+2026-03-01 21:05:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=368 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:09 - INFO - 成功解析接口：ft_limit，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:05:10 - INFO - 进度：215/272
+2026-03-01 21:05:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=110
+2026-03-01 21:05:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=110 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:10 - INFO - 成功解析接口：pledge_stat，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:11 - INFO - 进度：216/272
+2026-03-01 21:05:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=347
+2026-03-01 21:05:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=347 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:12 - INFO - 成功解析接口：kpl_list，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:13 - INFO - 进度：217/272
+2026-03-01 21:05:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=148
+2026-03-01 21:05:13 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=148 提取接口名称，跳过。
+2026-03-01 21:05:14 - INFO - 进度：218/272
+2026-03-01 21:05:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=385
+2026-03-01 21:05:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=385 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:14 - INFO - 成功解析接口：etf_basic，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:05:15 - INFO - 进度：219/272
+2026-03-01 21:05:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=256
+2026-03-01 21:05:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=256 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:15 - INFO - 成功解析接口：repo_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:16 - INFO - 进度：220/272
+2026-03-01 21:05:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=342
+2026-03-01 21:05:16 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=342 提取接口名称，跳过。
+2026-03-01 21:05:17 - INFO - 进度：221/272
+2026-03-01 21:05:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=362
+2026-03-01 21:05:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=362 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:17 - INFO - 成功解析接口：dc_index，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:18 - INFO - 进度：222/272
+2026-03-01 21:05:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=187
+2026-03-01 21:05:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=187 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:18 - INFO - 成功解析接口：cb_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:19 - INFO - 进度：223/272
+2026-03-01 21:05:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=324
+2026-03-01 21:05:19 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=324 提取接口名称，跳过。
+2026-03-01 21:05:20 - INFO - 进度：224/272
+2026-03-01 21:05:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=33
+2026-03-01 21:05:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=33 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:20 - INFO - 成功解析接口：income，标题：，输入参数数：8，输出参数数：8
+2026-03-01 21:05:21 - INFO - 进度：225/272
+2026-03-01 21:05:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=245
+2026-03-01 21:05:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=245 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:21 - INFO - 成功解析接口：cn_ppi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:22 - INFO - 进度：226/272
+2026-03-01 21:05:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=45
+2026-03-01 21:05:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=45 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:22 - INFO - 成功解析接口：forecast，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:05:23 - INFO - 进度：227/272
+2026-03-01 21:05:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=218
+2026-03-01 21:05:23 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=218 提取接口名称，跳过。
+2026-03-01 21:05:24 - INFO - 进度：228/272
+2026-03-01 21:05:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=343
+2026-03-01 21:05:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=343 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:25 - INFO - 成功解析接口：moneyflow_ind_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:26 - INFO - 进度：229/272
+2026-03-01 21:05:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=374
+2026-03-01 21:05:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=374 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:26 - INFO - 成功解析接口：rt_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:27 - INFO - 进度：230/272
+2026-03-01 21:05:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=24
+2026-03-01 21:05:27 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=24 提取接口名称，跳过。
+2026-03-01 21:05:28 - INFO - 进度：231/272
+2026-03-01 21:05:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=147
+2026-03-01 21:05:28 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=147 提取接口名称，跳过。
+2026-03-01 21:05:29 - INFO - 进度：232/272
+2026-03-01 21:05:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=292
+2026-03-01 21:05:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=292 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:29 - INFO - 成功解析接口：report_rc，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:30 - INFO - 进度：233/272
+2026-03-01 21:05:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=226
+2026-03-01 21:05:30 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=226 提取接口名称，跳过。
+2026-03-01 21:05:31 - INFO - 进度：234/272
+2026-03-01 21:05:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=160
+2026-03-01 21:05:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=160 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:31 - INFO - 成功解析接口：share_float，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:32 - INFO - 进度：235/272
+2026-03-01 21:05:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=62
+2026-03-01 21:05:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=62 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:32 - INFO - 成功解析接口：top10_floatholders，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:33 - INFO - 进度：236/272
+2026-03-01 21:05:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=114
+2026-03-01 21:05:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=114 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:33 - INFO - 成功解析接口：bo_weekly，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:05:34 - INFO - 进度：237/272
+2026-03-01 21:05:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=184
+2026-03-01 21:05:34 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=184 提取接口名称，跳过。
+2026-03-01 21:05:35 - INFO - 进度：238/272
+2026-03-01 21:05:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=305
+2026-03-01 21:05:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=305 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:35 - INFO - 成功解析接口：cb_rate，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:05:36 - INFO - 进度：239/272
+2026-03-01 21:05:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=354
+2026-03-01 21:05:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=354 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:36 - INFO - 成功解析接口：stk_auction_c，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:37 - INFO - 进度：240/272
+2026-03-01 21:05:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=340
+2026-03-01 21:05:38 - WARNING - 页面 https://tushare.pro/document/2?doc_id=340 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:38 - INFO - 成功解析接口：rt_fut_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:39 - INFO - 进度：241/272
+2026-03-01 21:05:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=151
+2026-03-01 21:05:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=151 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:39 - INFO - 成功解析接口：shibor_lpr，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:40 - INFO - 进度：242/272
+2026-03-01 21:05:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=194
+2026-03-01 21:05:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=194 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:40 - INFO - 成功解析接口：stk_rewards，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:41 - INFO - 进度：243/272
+2026-03-01 21:05:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=356
+2026-03-01 21:05:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=356 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:41 - INFO - 成功解析接口：limit_step，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:42 - INFO - 进度：244/272
+2026-03-01 21:05:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=59
+2026-03-01 21:05:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=59 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:42 - INFO - 成功解析接口：margin_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:43 - INFO - 进度：245/272
+2026-03-01 21:05:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=31
+2026-03-01 21:05:43 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=31 提取接口名称，跳过。
+2026-03-01 21:05:44 - INFO - 进度：246/272
+2026-03-01 21:05:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=149
+2026-03-01 21:05:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=149 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:44 - INFO - 成功解析接口：shibor，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:45 - INFO - 进度：247/272
+2026-03-01 21:05:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=315
+2026-03-01 21:05:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=315 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:45 - INFO - 成功解析接口：realtime_quote，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:05:46 - INFO - 进度：248/272
+2026-03-01 21:05:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=196
+2026-03-01 21:05:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=196 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:46 - INFO - 成功解析接口：ggt_daily，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:47 - INFO - 进度：249/272
+2026-03-01 21:05:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=172
+2026-03-01 21:05:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=172 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:47 - INFO - 成功解析接口：index_monthly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:48 - INFO - 进度：250/272
+2026-03-01 21:05:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=61
+2026-03-01 21:05:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=61 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:48 - INFO - 成功解析接口：top10_holders，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:49 - INFO - 进度：251/272
+2026-03-01 21:05:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=145
+2026-03-01 21:05:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=145 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:49 - INFO - 成功解析接口：monthly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:50 - INFO - 进度：252/272
+2026-03-01 21:05:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=134
+2026-03-01 21:05:51 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=134 提取接口名称，跳过。
+2026-03-01 21:05:52 - INFO - 进度：253/272
+2026-03-01 21:05:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=228
+2026-03-01 21:05:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=228 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:52 - INFO - 成功解析接口：cn_cpi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:53 - INFO - 进度：254/272
+2026-03-01 21:05:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=336
+2026-03-01 21:05:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=336 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:53 - INFO - 成功解析接口：stk_weekly_monthly，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:05:54 - INFO - 进度：255/272
+2026-03-01 21:05:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=192
+2026-03-01 21:05:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=192 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:54 - INFO - 成功解析接口：hk_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:55 - INFO - 进度：256/272
+2026-03-01 21:05:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=32
+2026-03-01 21:05:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=32 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:55 - INFO - 成功解析接口：daily_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:05:56 - INFO - 进度：257/272
+2026-03-01 21:05:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=264
+2026-03-01 21:05:56 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=264 提取接口名称，跳过。
+2026-03-01 21:05:57 - INFO - 进度：258/272
+2026-03-01 21:05:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=255
+2026-03-01 21:05:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=255 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:57 - INFO - 成功解析接口：bak_daily，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:05:58 - INFO - 进度：259/272
+2026-03-01 21:05:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=310
+2026-03-01 21:05:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=310 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:58 - INFO - 成功解析接口：sf_month，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:05:59 - INFO - 进度：260/272
+2026-03-01 21:05:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=313
+2026-03-01 21:05:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=313 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:05:59 - INFO - 成功解析接口：ft_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:06:00 - INFO - 进度：261/272
+2026-03-01 21:06:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=370
+2026-03-01 21:06:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=370 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:00 - INFO - 成功解析接口：stk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:06:01 - INFO - 进度：262/272
+2026-03-01 21:06:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=107
+2026-03-01 21:06:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=107 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:01 - INFO - 成功解析接口：top_inst，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:06:02 - INFO - 进度：263/272
+2026-03-01 21:06:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=393
+2026-03-01 21:06:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=393 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:03 - INFO - 成功解析接口：us_fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:06:04 - INFO - 进度：264/272
+2026-03-01 21:06:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=142
+2026-03-01 21:06:04 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=142 提取接口名称，跳过。
+2026-03-01 21:06:05 - INFO - 进度：265/272
+2026-03-01 21:06:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=171
+2026-03-01 21:06:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=171 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:05 - INFO - 成功解析接口：index_weekly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:06:06 - INFO - 进度：266/272
+2026-03-01 21:06:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=325
+2026-03-01 21:06:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=325 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:06 - INFO - 成功解析接口：cn_pmi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:06:07 - INFO - 进度：267/272
+2026-03-01 21:06:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=274
+2026-03-01 21:06:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=274 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:07 - INFO - 成功解析接口：ccass_hold_detail，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:06:08 - INFO - 进度：268/272
+2026-03-01 21:06:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=240
+2026-03-01 21:06:08 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=240 提取接口名称，跳过。
+2026-03-01 21:06:09 - INFO - 进度：269/272
+2026-03-01 21:06:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=378
+2026-03-01 21:06:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=378 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:09 - INFO - 成功解析接口：tdx_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:06:10 - INFO - 进度：270/272
+2026-03-01 21:06:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=265
+2026-03-01 21:06:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=265 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:10 - INFO - 成功解析接口：fund_sales_ratio，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:06:11 - INFO - 进度：271/272
+2026-03-01 21:06:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=186
+2026-03-01 21:06:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=186 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:06:11 - INFO - 成功解析接口：cb_issue，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:06:12 - INFO - 进度：272/272
+2026-03-01 21:06:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=14
+2026-03-01 21:06:12 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=14 提取接口名称，跳过。
+2026-03-01 21:06:13 - INFO - ==================================================
+2026-03-01 21:06:13 - INFO - 爬取完成，统计信息：
+2026-03-01 21:06:13 - INFO - 总页面数：272
+2026-03-01 21:06:13 - INFO - 成功解析：231
+2026-03-01 21:06:13 - INFO - 跳过页面：1
+2026-03-01 21:06:13 - INFO - 失败页面：40
+2026-03-01 21:06:13 - INFO - ==================================================
+2026-03-01 21:06:13 - INFO - 开始生成Excel文件...
+2026-03-01 21:06:13 - INFO - 输入参数表：231行，输出参数表：231行
+2026-03-01 21:06:14 - INFO - Excel文件已成功保存到：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare接口输入输出参数清单Ae1.xlsx
+2026-03-01 21:48:37 - INFO - ==================================================
+2026-03-01 21:48:37 - INFO - 爬虫程序开始运行
+2026-03-01 21:48:37 - INFO - 目标起始页：https://tushare.pro/document/2
+2026-03-01 21:48:37 - INFO - 输出文件：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare接口输入输出参数清单Ae1.xlsx
+2026-03-01 21:48:37 - INFO - 日志文件：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare爬虫日志.log
+2026-03-01 21:48:37 - INFO - ==================================================
+2026-03-01 21:48:37 - INFO - 正在从起始页 https://tushare.pro/document/2 提取所有文档链接...
+2026-03-01 21:48:37 - INFO - 共找到 272 个接口文档链接。
+2026-03-01 21:48:37 - INFO - 开始遍历 272 个接口页面...
+2026-03-01 21:48:37 - INFO - 进度：1/272
+2026-03-01 21:48:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=334
+2026-03-01 21:48:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=334 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:37 - INFO - 成功解析接口：slb_len_mm，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:38 - INFO - 进度：2/272
+2026-03-01 21:48:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=95
+2026-03-01 21:48:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=95 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:39 - INFO - 成功解析接口：index_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:40 - INFO - 进度：3/272
+2026-03-01 21:48:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=193
+2026-03-01 21:48:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=193 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:40 - INFO - 成功解析接口：stk_managers，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:41 - INFO - 进度：4/272
+2026-03-01 21:48:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=395
+2026-03-01 21:48:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=395 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:41 - INFO - 成功解析接口：us_balancesheet，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:48:42 - INFO - 进度：5/272
+2026-03-01 21:48:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=342
+2026-03-01 21:48:42 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=342 提取接口名称，跳过。
+2026-03-01 21:48:43 - INFO - 进度：6/272
+2026-03-01 21:48:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=109
+2026-03-01 21:48:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=109 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:43 - INFO - 成功解析接口：Tushare，标题：，输入参数数：9，输出参数数：0
+2026-03-01 21:48:44 - INFO - 进度：7/272
+2026-03-01 21:48:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=298
+2026-03-01 21:48:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=298 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:44 - INFO - 成功解析接口：limit_list_d，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:48:45 - INFO - 进度：8/272
+2026-03-01 21:48:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=151
+2026-03-01 21:48:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=151 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:45 - INFO - 成功解析接口：shibor_lpr，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:48:46 - INFO - 进度：9/272
+2026-03-01 21:48:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=176
+2026-03-01 21:48:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=176 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:46 - INFO - 成功解析接口：anns_d，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:47 - INFO - 进度：10/272
+2026-03-01 21:48:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=81
+2026-03-01 21:48:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=81 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:47 - INFO - 成功解析接口：fina_mainbz，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:48:48 - INFO - 进度：11/272
+2026-03-01 21:48:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=161
+2026-03-01 21:48:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=161 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:48 - INFO - 成功解析接口：block_trade，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:49 - INFO - 进度：12/272
+2026-03-01 21:48:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=140
+2026-03-01 21:48:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=140 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:49 - INFO - 成功解析接口：fut_wsr，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:48:50 - INFO - 进度：13/272
+2026-03-01 21:48:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=14
+2026-03-01 21:48:51 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=14 提取接口名称，跳过。
+2026-03-01 21:48:52 - INFO - 进度：14/272
+2026-03-01 21:48:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=341
+2026-03-01 21:48:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=341 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:52 - INFO - 成功解析接口：opt_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:53 - INFO - 进度：15/272
+2026-03-01 21:48:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=315
+2026-03-01 21:48:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=315 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:53 - INFO - 成功解析接口：realtime_quote，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:48:54 - INFO - 进度：16/272
+2026-03-01 21:48:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=172
+2026-03-01 21:48:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=172 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:54 - INFO - 成功解析接口：index_monthly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:55 - INFO - 进度：17/272
+2026-03-01 21:48:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=208
+2026-03-01 21:48:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=208 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:55 - INFO - 成功解析接口：fund_manager，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:48:56 - INFO - 进度：18/272
+2026-03-01 21:48:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=93
+2026-03-01 21:48:56 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=93 提取接口名称，跳过。
+2026-03-01 21:48:57 - INFO - 进度：19/272
+2026-03-01 21:48:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=149
+2026-03-01 21:48:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=149 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:57 - INFO - 成功解析接口：shibor，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:48:58 - INFO - 进度：20/272
+2026-03-01 21:48:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=328
+2026-03-01 21:48:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=328 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:58 - INFO - 成功解析接口：stk_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:48:59 - INFO - 进度：21/272
+2026-03-01 21:48:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=100
+2026-03-01 21:48:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=100 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:48:59 - INFO - 成功解析接口：namechange，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:49:00 - INFO - 进度：22/272
+2026-03-01 21:49:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=313
+2026-03-01 21:49:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=313 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:00 - INFO - 成功解析接口：ft_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:01 - INFO - 进度：23/272
+2026-03-01 21:49:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=190
+2026-03-01 21:49:01 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=190 提取接口名称，跳过。
+2026-03-01 21:49:02 - INFO - 进度：24/272
+2026-03-01 21:49:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=114
+2026-03-01 21:49:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=114 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:03 - INFO - 成功解析接口：bo_weekly，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:49:04 - INFO - 进度：25/272
+2026-03-01 21:49:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=309
+2026-03-01 21:49:04 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=309 提取接口名称，跳过。
+2026-03-01 21:49:05 - INFO - 进度：26/272
+2026-03-01 21:49:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=367
+2026-03-01 21:49:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=367 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:05 - INFO - 成功解析接口：irm_qa_sz，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:49:06 - INFO - 进度：27/272
+2026-03-01 21:49:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=241
+2026-03-01 21:49:06 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=241 提取接口名称，跳过。
+2026-03-01 21:49:07 - INFO - 进度：28/272
+2026-03-01 21:49:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=170
+2026-03-01 21:49:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=170 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:07 - INFO - 成功解析接口：moneyflow，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:08 - INFO - 进度：29/272
+2026-03-01 21:49:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=260
+2026-03-01 21:49:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=260 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:08 - INFO - 成功解析接口：ths_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:09 - INFO - 进度：30/272
+2026-03-01 21:49:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=370
+2026-03-01 21:49:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=370 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:09 - INFO - 成功解析接口：stk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:10 - INFO - 进度：31/272
+2026-03-01 21:49:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=148
+2026-03-01 21:49:10 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=148 提取接口名称，跳过。
+2026-03-01 21:49:11 - INFO - 进度：32/272
+2026-03-01 21:49:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=166
+2026-03-01 21:49:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=166 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:11 - INFO - 成功解析接口：stk_holdernumber，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:12 - INFO - 进度：33/272
+2026-03-01 21:49:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=383
+2026-03-01 21:49:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=383 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:12 - INFO - 成功解析接口：rt_hk_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:49:13 - INFO - 进度：34/272
+2026-03-01 21:49:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=415
+2026-03-01 21:49:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=415 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:13 - INFO - 成功解析接口：research_report，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:49:14 - INFO - 进度：35/272
+2026-03-01 21:49:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=194
+2026-03-01 21:49:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=194 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:14 - INFO - 成功解析接口：stk_rewards，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:49:15 - INFO - 进度：36/272
+2026-03-01 21:49:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=340
+2026-03-01 21:49:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=340 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:16 - INFO - 成功解析接口：rt_fut_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:49:17 - INFO - 进度：37/272
+2026-03-01 21:49:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=321
+2026-03-01 21:49:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=321 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:17 - INFO - 成功解析接口：dc_hot，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:18 - INFO - 进度：38/272
+2026-03-01 21:49:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=382
+2026-03-01 21:49:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=382 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:18 - INFO - 成功解析接口：dc_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:19 - INFO - 进度：39/272
+2026-03-01 21:49:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=16
+2026-03-01 21:49:19 - ERROR - 解析页面 https://tushare.pro/document/2?doc_id=16 时出错：list index out of range
+Traceback (most recent call last):
+  File "d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare参数爬虫_扩充字段 完善3 加log 改.py", line 133, in parse_api_page
+    candidate = parts[1].strip().split()[0]
+                ~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2026-03-01 21:49:20 - INFO - 进度：40/272
+2026-03-01 21:49:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=196
+2026-03-01 21:49:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=196 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:20 - INFO - 成功解析接口：ggt_daily，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:49:21 - INFO - 进度：41/272
+2026-03-01 21:49:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=386
+2026-03-01 21:49:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=386 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:21 - INFO - 成功解析接口：etf_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:49:22 - INFO - 进度：42/272
+2026-03-01 21:49:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=58
+2026-03-01 21:49:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=58 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:22 - INFO - 成功解析接口：margin，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:23 - INFO - 进度：43/272
+2026-03-01 21:49:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=368
+2026-03-01 21:49:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=368 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:23 - INFO - 成功解析接口：ft_limit，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:49:24 - INFO - 进度：44/272
+2026-03-01 21:49:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=103
+2026-03-01 21:49:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=103 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:24 - INFO - 成功解析接口：dividend，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:25 - INFO - 进度：45/272
+2026-03-01 21:49:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=373
+2026-03-01 21:49:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=373 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:25 - INFO - 成功解析接口：ci_index_member，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:26 - INFO - 进度：46/272
+2026-03-01 21:49:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=295
+2026-03-01 21:49:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=295 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:26 - INFO - 成功解析接口：ccass_hold，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:27 - INFO - 进度：47/272
+2026-03-01 21:49:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=227
+2026-03-01 21:49:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=227 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:28 - INFO - 成功解析接口：cn_gdp，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:29 - INFO - 进度：48/272
+2026-03-01 21:49:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=256
+2026-03-01 21:49:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=256 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:29 - INFO - 成功解析接口：repo_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:30 - INFO - 进度：49/272
+2026-03-01 21:49:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=80
+2026-03-01 21:49:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=80 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:30 - INFO - 成功解析接口：fina_audit，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:31 - INFO - 进度：50/272
+2026-03-01 21:49:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=371
+2026-03-01 21:49:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=371 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:31 - INFO - 成功解析接口：moneyflow_cnt_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:32 - INFO - 进度：51/272
+2026-03-01 21:49:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=417
+2026-03-01 21:49:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=417 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:32 - INFO - 成功解析接口：rt_sw_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:49:33 - INFO - 进度：52/272
+2026-03-01 21:49:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=137
+2026-03-01 21:49:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=137 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:33 - INFO - 成功解析接口：trade_cal，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:34 - INFO - 进度：53/272
+2026-03-01 21:49:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=224
+2026-03-01 21:49:34 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=224 提取接口名称，跳过。
+2026-03-01 21:49:35 - INFO - 进度：54/272
+2026-03-01 21:49:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=357
+2026-03-01 21:49:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=357 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:35 - INFO - 成功解析接口：limit_cpt_list，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:36 - INFO - 进度：55/272
+2026-03-01 21:49:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=188
+2026-03-01 21:49:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=188 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:36 - INFO - 成功解析接口：hk_hold，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:49:37 - INFO - 进度：56/272
+2026-03-01 21:49:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=275
+2026-03-01 21:49:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=275 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:37 - INFO - 成功解析接口：stk_surv，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:38 - INFO - 进度：57/272
+2026-03-01 21:49:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=251
+2026-03-01 21:49:38 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=251 提取接口名称，跳过。
+2026-03-01 21:49:39 - INFO - 进度：58/272
+2026-03-01 21:49:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=174
+2026-03-01 21:49:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=174 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:39 - INFO - 成功解析接口：gz_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:49:40 - INFO - 进度：59/272
+2026-03-01 21:49:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=146
+2026-03-01 21:49:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=146 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:41 - INFO - 成功解析接口：pro_bar，标题：，输入参数数：0，输出参数数：0
+2026-03-01 21:49:42 - INFO - 进度：60/272
+2026-03-01 21:49:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=113
+2026-03-01 21:49:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=113 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:42 - INFO - 成功解析接口：bo_monthly，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:49:43 - INFO - 进度：61/272
+2026-03-01 21:49:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=389
+2026-03-01 21:49:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=389 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:43 - INFO - 成功解析接口：hk_income，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:44 - INFO - 进度：62/272
+2026-03-01 21:49:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=219
+2026-03-01 21:49:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=219 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:44 - INFO - 成功解析接口：us_tycr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:45 - INFO - 进度：63/272
+2026-03-01 21:49:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=79
+2026-03-01 21:49:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=79 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:45 - INFO - 成功解析接口：fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:46 - INFO - 进度：64/272
+2026-03-01 21:49:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=175
+2026-03-01 21:49:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=175 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:46 - INFO - 成功解析接口：stk_holdertrade，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:49:47 - INFO - 进度：65/272
+2026-03-01 21:49:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=272
+2026-03-01 21:49:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=272 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:47 - INFO - 成功解析接口：bond_blk_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:48 - INFO - 进度：66/272
+2026-03-01 21:49:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=138
+2026-03-01 21:49:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=138 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:48 - INFO - 成功解析接口：fut_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:49 - INFO - 进度：67/272
+2026-03-01 21:49:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=335
+2026-03-01 21:49:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=335 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:49 - INFO - 成功解析接口：index_member_all，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:50 - INFO - 进度：68/272
+2026-03-01 21:49:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=160
+2026-03-01 21:49:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=160 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:50 - INFO - 成功解析接口：share_float，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:51 - INFO - 进度：69/272
+2026-03-01 21:49:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=259
+2026-03-01 21:49:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=259 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:51 - INFO - 成功解析接口：ths_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:49:52 - INFO - 进度：70/272
+2026-03-01 21:49:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=359
+2026-03-01 21:49:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=359 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:53 - INFO - 成功解析接口：fund_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:54 - INFO - 进度：71/272
+2026-03-01 21:49:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=141
+2026-03-01 21:49:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=141 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:54 - INFO - 成功解析接口：fut_settle，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:55 - INFO - 进度：72/272
+2026-03-01 21:49:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=372
+2026-03-01 21:49:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=372 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:55 - INFO - 成功解析接口：rt_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:49:56 - INFO - 进度：73/272
+2026-03-01 21:49:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=220
+2026-03-01 21:49:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=220 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:56 - INFO - 成功解析接口：us_trycr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:49:57 - INFO - 进度：74/272
+2026-03-01 21:49:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=106
+2026-03-01 21:49:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=106 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:57 - INFO - 成功解析接口：top_list，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:49:58 - INFO - 进度：75/272
+2026-03-01 21:49:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=391
+2026-03-01 21:49:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=391 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:58 - INFO - 成功解析接口：hk_cashflow，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:49:59 - INFO - 进度：76/272
+2026-03-01 21:49:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=124
+2026-03-01 21:49:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=124 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:49:59 - INFO - 成功解析接口：repurchase，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:50:00 - INFO - 进度：77/272
+2026-03-01 21:50:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=375
+2026-03-01 21:50:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=375 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:00 - INFO - 成功解析接口：bse_mapping，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:01 - INFO - 进度：78/272
+2026-03-01 21:50:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=15
+2026-03-01 21:50:01 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=15 提取接口名称，跳过。
+2026-03-01 21:50:02 - INFO - 进度：79/272
+2026-03-01 21:50:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=33
+2026-03-01 21:50:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=33 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:02 - INFO - 成功解析接口：income，标题：，输入参数数：8，输出参数数：8
+2026-03-01 21:50:03 - INFO - 进度：80/272
+2026-03-01 21:50:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=320
+2026-03-01 21:50:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=320 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:03 - INFO - 成功解析接口：ths_hot，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:04 - INFO - 进度：81/272
+2026-03-01 21:50:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=94
+2026-03-01 21:50:05 - WARNING - 页面 https://tushare.pro/document/2?doc_id=94 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:05 - INFO - 成功解析接口：index_basic，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:06 - INFO - 进度：82/272
+2026-03-01 21:50:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=118
+2026-03-01 21:50:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=118 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:06 - INFO - 成功解析接口：fund_company，标题：，输入参数数：18，输出参数数：18
+2026-03-01 21:50:07 - INFO - 进度：83/272
+2026-03-01 21:50:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=127
+2026-03-01 21:50:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=127 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:07 - INFO - 成功解析接口：fund_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:08 - INFO - 进度：84/272
+2026-03-01 21:50:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=346
+2026-03-01 21:50:08 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=346 提取接口名称，跳过。
+2026-03-01 21:50:09 - INFO - 进度：85/272
+2026-03-01 21:50:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=283
+2026-03-01 21:50:09 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=283 提取接口名称，跳过。
+2026-03-01 21:50:10 - INFO - 进度：86/272
+2026-03-01 21:50:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=308
+2026-03-01 21:50:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=308 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:10 - INFO - 成功解析接口：ci_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:11 - INFO - 进度：87/272
+2026-03-01 21:50:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=305
+2026-03-01 21:50:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=305 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:11 - INFO - 成功解析接口：cb_rate，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:50:12 - INFO - 进度：88/272
+2026-03-01 21:50:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=304
+2026-03-01 21:50:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=304 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:12 - INFO - 成功解析接口：hk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:13 - INFO - 进度：89/272
+2026-03-01 21:50:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=221
+2026-03-01 21:50:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=221 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:13 - INFO - 成功解析接口：us_tbr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:14 - INFO - 进度：90/272
+2026-03-01 21:50:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=209
+2026-03-01 21:50:14 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=209 提取接口名称，跳过。
+2026-03-01 21:50:15 - INFO - 进度：91/272
+2026-03-01 21:50:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=173
+2026-03-01 21:50:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=173 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:15 - INFO - 成功解析接口：wz_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:50:16 - INFO - 进度：92/272
+2026-03-01 21:50:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=420
+2026-03-01 21:50:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=420 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:16 - INFO - 成功解析接口：rt_idx_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:17 - INFO - 进度：93/272
+2026-03-01 21:50:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=327
+2026-03-01 21:50:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=327 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:18 - INFO - 成功解析接口：sw_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:19 - INFO - 进度：94/272
+2026-03-01 21:50:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=262
+2026-03-01 21:50:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=262 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:19 - INFO - 成功解析接口：bak_basic，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:20 - INFO - 进度：95/272
+2026-03-01 21:50:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=284
+2026-03-01 21:50:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=284 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:20 - INFO - 成功解析接口：sge_basic，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:50:21 - INFO - 进度：96/272
+2026-03-01 21:50:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=268
+2026-03-01 21:50:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=268 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:21 - INFO - 成功解析接口：sz_daily_info，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:22 - INFO - 进度：97/272
+2026-03-01 21:50:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=104
+2026-03-01 21:50:22 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=104 提取接口名称，跳过。
+2026-03-01 21:50:23 - INFO - 进度：98/272
+2026-03-01 21:50:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=332
+2026-03-01 21:50:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=332 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:23 - INFO - 成功解析接口：slb_sec，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:24 - INFO - 进度：99/272
+2026-03-01 21:50:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=107
+2026-03-01 21:50:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=107 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:24 - INFO - 成功解析接口：top_inst，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:25 - INFO - 进度：100/272
+2026-03-01 21:50:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=111
+2026-03-01 21:50:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=111 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:25 - INFO - 成功解析接口：pledge_detail，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:50:26 - INFO - 进度：101/272
+2026-03-01 21:50:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=374
+2026-03-01 21:50:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=374 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:26 - INFO - 成功解析接口：rt_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:27 - INFO - 进度：102/272
+2026-03-01 21:50:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=216
+2026-03-01 21:50:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=216 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:27 - INFO - 成功解析接口：fut_weekly_detail，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:50:28 - INFO - 进度：103/272
+2026-03-01 21:50:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=336
+2026-03-01 21:50:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=336 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:28 - INFO - 成功解析接口：stk_weekly_monthly，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:29 - INFO - 进度：104/272
+2026-03-01 21:50:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=269
+2026-03-01 21:50:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=269 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:29 - INFO - 成功解析接口：cb_call，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:30 - INFO - 进度：105/272
+2026-03-01 21:50:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=215
+2026-03-01 21:50:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=215 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:31 - INFO - 成功解析接口：daily_info，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:50:32 - INFO - 进度：106/272
+2026-03-01 21:50:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=390
+2026-03-01 21:50:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=390 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:32 - INFO - 成功解析接口：hk_balancesheet，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:33 - INFO - 进度：107/272
+2026-03-01 21:50:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=110
+2026-03-01 21:50:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=110 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:33 - INFO - 成功解析接口：pledge_stat，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:34 - INFO - 进度：108/272
+2026-03-01 21:50:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=120
+2026-03-01 21:50:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=120 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:34 - INFO - 成功解析接口：fund_div，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:35 - INFO - 进度：109/272
+2026-03-01 21:50:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=397
+2026-03-01 21:50:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=397 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:35 - INFO - 成功解析接口：stock_st，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:36 - INFO - 进度：110/272
+2026-03-01 21:50:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=364
+2026-03-01 21:50:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=364 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:36 - INFO - 成功解析接口：stk_nineturn，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:37 - INFO - 进度：111/272
+2026-03-01 21:50:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=47
+2026-03-01 21:50:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=47 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:37 - INFO - 成功解析接口：moneyflow_hsgt，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:50:38 - INFO - 进度：112/272
+2026-03-01 21:50:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=398
+2026-03-01 21:50:38 - WARNING - 页面 https://tushare.pro/document/2?doc_id=398 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:38 - INFO - 成功解析接口：stock_hsgt，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:39 - INFO - 进度：113/272
+2026-03-01 21:50:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=17
+2026-03-01 21:50:39 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=17 提取接口名称，跳过。
+2026-03-01 21:50:40 - INFO - 进度：114/272
+2026-03-01 21:50:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=185
+2026-03-01 21:50:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=185 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:40 - INFO - 成功解析接口：cb_basic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:50:41 - INFO - 进度：115/272
+2026-03-01 21:50:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=181
+2026-03-01 21:50:42 - INFO - 接口名称为 'index_classify'，根据要求跳过此页面。
+2026-03-01 21:50:43 - INFO - 进度：116/272
+2026-03-01 21:50:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=192
+2026-03-01 21:50:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=192 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:43 - INFO - 成功解析接口：hk_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:44 - INFO - 进度：117/272
+2026-03-01 21:50:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=225
+2026-03-01 21:50:44 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=225 提取接口名称，跳过。
+2026-03-01 21:50:45 - INFO - 进度：118/272
+2026-03-01 21:50:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=314
+2026-03-01 21:50:45 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=314 提取接口名称，跳过。
+2026-03-01 21:50:46 - INFO - 进度：119/272
+2026-03-01 21:50:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=408
+2026-03-01 21:50:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=408 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:46 - INFO - 成功解析接口：etf_share_size，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:47 - INFO - 进度：120/272
+2026-03-01 21:50:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=271
+2026-03-01 21:50:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=271 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:47 - INFO - 成功解析接口：bond_blk，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:48 - INFO - 进度：121/272
+2026-03-01 21:50:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=255
+2026-03-01 21:50:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=255 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:48 - INFO - 成功解析接口：bak_daily，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:50:49 - INFO - 进度：122/272
+2026-03-01 21:50:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=226
+2026-03-01 21:50:49 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=226 提取接口名称，跳过。
+2026-03-01 21:50:50 - INFO - 进度：123/272
+2026-03-01 21:50:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=293
+2026-03-01 21:50:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=293 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:50 - INFO - 成功解析接口：cyq_perf，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:51 - INFO - 进度：124/272
+2026-03-01 21:50:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=19
+2026-03-01 21:50:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=19 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:51 - INFO - 成功解析接口：fund_basic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:50:52 - INFO - 进度：125/272
+2026-03-01 21:50:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=291
+2026-03-01 21:50:52 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=291 提取接口名称，跳过。
+2026-03-01 21:50:53 - INFO - 进度：126/272
+2026-03-01 21:50:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=191
+2026-03-01 21:50:54 - WARNING - 页面 https://tushare.pro/document/2?doc_id=191 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:54 - INFO - 成功解析接口：hk_basic，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:50:55 - INFO - 进度：127/272
+2026-03-01 21:50:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=265
+2026-03-01 21:50:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=265 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:55 - INFO - 成功解析接口：fund_sales_ratio，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:50:56 - INFO - 进度：128/272
+2026-03-01 21:50:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=274
+2026-03-01 21:50:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=274 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:56 - INFO - 成功解析接口：ccass_hold_detail，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:50:57 - INFO - 进度：129/272
+2026-03-01 21:50:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=183
+2026-03-01 21:50:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=183 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:57 - INFO - 成功解析接口：stk_limit，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:58 - INFO - 进度：130/272
+2026-03-01 21:50:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=402
+2026-03-01 21:50:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=402 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:58 - INFO - 成功解析接口：us_adjfactor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:50:59 - INFO - 进度：131/272
+2026-03-01 21:50:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=123
+2026-03-01 21:50:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=123 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:50:59 - INFO - 成功解析接口：new_share，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:51:00 - INFO - 进度：132/272
+2026-03-01 21:51:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=354
+2026-03-01 21:51:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=354 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:00 - INFO - 成功解析接口：stk_auction_c，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:01 - INFO - 进度：133/272
+2026-03-01 21:51:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=388
+2026-03-01 21:51:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=388 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:01 - INFO - 成功解析接口：hk_fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:02 - INFO - 进度：134/272
+2026-03-01 21:51:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=147
+2026-03-01 21:51:02 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=147 提取接口名称，跳过。
+2026-03-01 21:51:03 - INFO - 进度：135/272
+2026-03-01 21:51:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=143
+2026-03-01 21:51:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=143 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:03 - INFO - 成功解析接口：news，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:04 - INFO - 进度：136/272
+2026-03-01 21:51:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=96
+2026-03-01 21:51:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=96 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:04 - INFO - 成功解析接口：index_weight，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:05 - INFO - 进度：137/272
+2026-03-01 21:51:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=187
+2026-03-01 21:51:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=187 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:06 - INFO - 成功解析接口：cb_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:07 - INFO - 进度：138/272
+2026-03-01 21:51:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=228
+2026-03-01 21:51:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=228 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:07 - INFO - 成功解析接口：cn_cpi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:08 - INFO - 进度：139/272
+2026-03-01 21:51:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=28
+2026-03-01 21:51:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=28 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:08 - INFO - 成功解析接口：adj_factor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:09 - INFO - 进度：140/272
+2026-03-01 21:51:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=396
+2026-03-01 21:51:09 - WARNING - 页面 https://tushare.pro/document/2?doc_id=396 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:09 - INFO - 成功解析接口：us_cashflow，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:10 - INFO - 进度：141/272
+2026-03-01 21:51:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=186
+2026-03-01 21:51:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=186 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:10 - INFO - 成功解析接口：cb_issue，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:11 - INFO - 进度：142/272
+2026-03-01 21:51:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=112
+2026-03-01 21:51:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=112 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:11 - INFO - 成功解析接口：stock_company，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:51:12 - INFO - 进度：143/272
+2026-03-01 21:51:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=155
+2026-03-01 21:51:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=155 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:12 - INFO - 成功解析接口：index_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:13 - INFO - 进度：144/272
+2026-03-01 21:51:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=253
+2026-03-01 21:51:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=253 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:13 - INFO - 成功解析接口：us_tradecal，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:14 - INFO - 进度：145/272
+2026-03-01 21:51:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=214
+2026-03-01 21:51:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=214 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:14 - INFO - 成功解析接口：suspend_d，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:15 - INFO - 进度：146/272
+2026-03-01 21:51:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=165
+2026-03-01 21:51:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=165 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:15 - INFO - 成功解析接口：stk_account_old，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:51:16 - INFO - 进度：147/272
+2026-03-01 21:51:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=294
+2026-03-01 21:51:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=294 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:16 - INFO - 成功解析接口：cyq_chips，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:17 - INFO - 进度：148/272
+2026-03-01 21:51:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=197
+2026-03-01 21:51:17 - WARNING - 页面 https://tushare.pro/document/2?doc_id=197 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:17 - INFO - 成功解析接口：ggt_monthly，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:18 - INFO - 进度：149/272
+2026-03-01 21:51:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=62
+2026-03-01 21:51:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=62 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:19 - INFO - 成功解析接口：top10_floatholders，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:20 - INFO - 进度：150/272
+2026-03-01 21:51:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=378
+2026-03-01 21:51:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=378 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:20 - INFO - 成功解析接口：tdx_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:21 - INFO - 进度：151/272
+2026-03-01 21:51:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=158
+2026-03-01 21:51:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=158 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:21 - INFO - 成功解析接口：opt_basic，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:22 - INFO - 进度：152/272
+2026-03-01 21:51:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=401
+2026-03-01 21:51:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=401 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:22 - INFO - 成功解析接口：hk_adjfactor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:23 - INFO - 进度：153/272
+2026-03-01 21:51:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=292
+2026-03-01 21:51:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=292 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:23 - INFO - 成功解析接口：report_rc，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:24 - INFO - 进度：154/272
+2026-03-01 21:51:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=32
+2026-03-01 21:51:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=32 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:24 - INFO - 成功解析接口：daily_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:25 - INFO - 进度：155/272
+2026-03-01 21:51:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=233
+2026-03-01 21:51:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=233 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:25 - INFO - 成功解析接口：eco_cal，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:26 - INFO - 进度：156/272
+2026-03-01 21:51:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=312
+2026-03-01 21:51:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=312 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:26 - INFO - 成功解析接口：hm_detail，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:27 - INFO - 进度：157/272
+2026-03-01 21:51:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=189
+2026-03-01 21:51:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=189 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:27 - INFO - 成功解析接口：fut_mapping，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:28 - INFO - 进度：158/272
+2026-03-01 21:51:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=153
+2026-03-01 21:51:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=153 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:28 - INFO - 成功解析接口：hibor，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:29 - INFO - 进度：159/272
+2026-03-01 21:51:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=87
+2026-03-01 21:51:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=87 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:30 - INFO - 成功解析接口：tmt_twincomedetail，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:31 - INFO - 进度：160/272
+2026-03-01 21:51:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=355
+2026-03-01 21:51:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=355 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:31 - INFO - 成功解析接口：limit_list_ths，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:32 - INFO - 进度：161/272
+2026-03-01 21:51:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=135
+2026-03-01 21:51:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=135 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:32 - INFO - 成功解析接口：fut_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:33 - INFO - 进度：162/272
+2026-03-01 21:51:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=26
+2026-03-01 21:51:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=26 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:33 - INFO - 成功解析接口：trade_cal，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:34 - INFO - 进度：163/272
+2026-03-01 21:51:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=156
+2026-03-01 21:51:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=156 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:34 - INFO - 成功解析接口：film_record，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:35 - INFO - 进度：164/272
+2026-03-01 21:51:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=250
+2026-03-01 21:51:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=250 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:35 - INFO - 成功解析接口：hk_tradecal，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:36 - INFO - 进度：165/272
+2026-03-01 21:51:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=88
+2026-03-01 21:51:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=88 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:36 - INFO - 成功解析接口：tmt_twincome，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:37 - INFO - 进度：166/272
+2026-03-01 21:51:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=348
+2026-03-01 21:51:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=348 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:37 - INFO - 成功解析接口：moneyflow_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:38 - INFO - 进度：167/272
+2026-03-01 21:51:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=142
+2026-03-01 21:51:38 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=142 提取接口名称，跳过。
+2026-03-01 21:51:39 - INFO - 进度：168/272
+2026-03-01 21:51:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=345
+2026-03-01 21:51:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=345 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:39 - INFO - 成功解析接口：moneyflow_mkt_dc，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:40 - INFO - 进度：169/272
+2026-03-01 21:51:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=164
+2026-03-01 21:51:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=164 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:40 - INFO - 成功解析接口：stk_account，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:41 - INFO - 进度：170/272
+2026-03-01 21:51:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=310
+2026-03-01 21:51:42 - WARNING - 页面 https://tushare.pro/document/2?doc_id=310 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:42 - INFO - 成功解析接口：sf_month，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:43 - INFO - 进度：171/272
+2026-03-01 21:51:43 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=180
+2026-03-01 21:51:43 - WARNING - 页面 https://tushare.pro/document/2?doc_id=180 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:43 - INFO - 成功解析接口：teleplay_record，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:44 - INFO - 进度：172/272
+2026-03-01 21:51:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=326
+2026-03-01 21:51:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=326 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:44 - INFO - 成功解析接口：margin_secs，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:45 - INFO - 进度：173/272
+2026-03-01 21:51:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=247
+2026-03-01 21:51:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=247 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:45 - INFO - 成功解析接口：cb_share，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:46 - INFO - 进度：174/272
+2026-03-01 21:51:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=46
+2026-03-01 21:51:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=46 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:46 - INFO - 成功解析接口：express，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:47 - INFO - 进度：175/272
+2026-03-01 21:51:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=59
+2026-03-01 21:51:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=59 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:47 - INFO - 成功解析接口：margin_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:48 - INFO - 进度：176/272
+2026-03-01 21:51:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=179
+2026-03-01 21:51:48 - WARNING - 页面 https://tushare.pro/document/2?doc_id=179 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:48 - INFO - 成功解析接口：fx_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:49 - INFO - 进度：177/272
+2026-03-01 21:51:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=419
+2026-03-01 21:51:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=419 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:49 - INFO - 成功解析接口：idx_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:50 - INFO - 进度：178/272
+2026-03-01 21:51:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=61
+2026-03-01 21:51:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=61 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:50 - INFO - 成功解析接口：top10_holders，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:51 - INFO - 进度：179/272
+2026-03-01 21:51:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=45
+2026-03-01 21:51:51 - WARNING - 页面 https://tushare.pro/document/2?doc_id=45 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:51 - INFO - 成功解析接口：forecast，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:52 - INFO - 进度：180/272
+2026-03-01 21:51:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=159
+2026-03-01 21:51:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=159 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:52 - INFO - 成功解析接口：opt_daily，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:51:53 - INFO - 进度：181/272
+2026-03-01 21:51:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=324
+2026-03-01 21:51:54 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=324 提取接口名称，跳过。
+2026-03-01 21:51:55 - INFO - 进度：182/272
+2026-03-01 21:51:55 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=317
+2026-03-01 21:51:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=317 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:55 - INFO - 成功解析接口：realtime_list，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:51:56 - INFO - 进度：183/272
+2026-03-01 21:51:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=385
+2026-03-01 21:51:56 - WARNING - 页面 https://tushare.pro/document/2?doc_id=385 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:56 - INFO - 成功解析接口：etf_basic，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:51:57 - INFO - 进度：184/272
+2026-03-01 21:51:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=343
+2026-03-01 21:51:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=343 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:57 - INFO - 成功解析接口：moneyflow_ind_ths，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:51:58 - INFO - 进度：185/272
+2026-03-01 21:51:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=376
+2026-03-01 21:51:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=376 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:58 - INFO - 成功解析接口：tdx_index，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:51:59 - INFO - 进度：186/272
+2026-03-01 21:51:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=266
+2026-03-01 21:51:59 - WARNING - 页面 https://tushare.pro/document/2?doc_id=266 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:51:59 - INFO - 成功解析接口：fund_sales_vol，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:00 - INFO - 进度：187/272
+2026-03-01 21:52:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=316
+2026-03-01 21:52:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=316 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:00 - INFO - 成功解析接口：realtime_tick，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:52:01 - INFO - 进度：188/272
+2026-03-01 21:52:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=223
+2026-03-01 21:52:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=223 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:01 - INFO - 成功解析接口：us_trltr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:02 - INFO - 进度：189/272
+2026-03-01 21:52:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=199
+2026-03-01 21:52:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=199 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:02 - INFO - 成功解析接口：fund_adj，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:03 - INFO - 进度：190/272
+2026-03-01 21:52:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=178
+2026-03-01 21:52:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=178 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:03 - INFO - 成功解析接口：fx_obasic，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:04 - INFO - 进度：191/272
+2026-03-01 21:52:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=365
+2026-03-01 21:52:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=365 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:04 - INFO - 成功解析接口：stk_week_month_adj，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:05 - INFO - 进度：192/272
+2026-03-01 21:52:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=339
+2026-03-01 21:52:06 - WARNING - 页面 https://tushare.pro/document/2?doc_id=339 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:06 - INFO - 成功解析接口：hk_daily_adj，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:07 - INFO - 进度：193/272
+2026-03-01 21:52:07 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=242
+2026-03-01 21:52:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=242 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:07 - INFO - 成功解析接口：cn_m，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:08 - INFO - 进度：194/272
+2026-03-01 21:52:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=245
+2026-03-01 21:52:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=245 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:08 - INFO - 成功解析接口：cn_ppi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:09 - INFO - 进度：195/272
+2026-03-01 21:52:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=218
+2026-03-01 21:52:09 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=218 提取接口名称，跳过。
+2026-03-01 21:52:10 - INFO - 进度：196/272
+2026-03-01 21:52:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=119
+2026-03-01 21:52:10 - WARNING - 页面 https://tushare.pro/document/2?doc_id=119 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:10 - INFO - 成功解析接口：fund_nav，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:11 - INFO - 进度：197/272
+2026-03-01 21:52:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=18
+2026-03-01 21:52:11 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=18 提取接口名称，跳过。
+2026-03-01 21:52:12 - INFO - 进度：198/272
+2026-03-01 21:52:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=145
+2026-03-01 21:52:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=145 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:12 - INFO - 成功解析接口：monthly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:13 - INFO - 进度：199/272
+2026-03-01 21:52:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=246
+2026-03-01 21:52:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=246 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:13 - INFO - 成功解析接口：cb_price_chg，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:52:14 - INFO - 进度：200/272
+2026-03-01 21:52:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=49
+2026-03-01 21:52:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=49 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:14 - INFO - 成功解析接口：ggt_top10，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:15 - INFO - 进度：201/272
+2026-03-01 21:52:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=116
+2026-03-01 21:52:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=116 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:15 - INFO - 成功解析接口：bo_cinema，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:52:16 - INFO - 进度：202/272
+2026-03-01 21:52:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=333
+2026-03-01 21:52:16 - WARNING - 页面 https://tushare.pro/document/2?doc_id=333 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:16 - INFO - 成功解析接口：slb_sec_detail，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:17 - INFO - 进度：203/272
+2026-03-01 21:52:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=157
+2026-03-01 21:52:17 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=157 提取接口名称，跳过。
+2026-03-01 21:52:18 - INFO - 进度：204/272
+2026-03-01 21:52:18 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=121
+2026-03-01 21:52:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=121 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:19 - INFO - 成功解析接口：fund_portfolio，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:20 - INFO - 进度：205/272
+2026-03-01 21:52:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=134
+2026-03-01 21:52:20 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=134 提取接口名称，跳过。
+2026-03-01 21:52:21 - INFO - 进度：206/272
+2026-03-01 21:52:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=150
+2026-03-01 21:52:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=150 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:21 - INFO - 成功解析接口：shibor_quote，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:22 - INFO - 进度：207/272
+2026-03-01 21:52:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=362
+2026-03-01 21:52:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=362 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:22 - INFO - 成功解析接口：dc_index，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:23 - INFO - 进度：208/272
+2026-03-01 21:52:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=83
+2026-03-01 21:52:23 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=83 提取接口名称，跳过。
+2026-03-01 21:52:24 - INFO - 进度：209/272
+2026-03-01 21:52:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=201
+2026-03-01 21:52:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=201 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:24 - INFO - 成功解析接口：yc_cb，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:25 - INFO - 进度：210/272
+2026-03-01 21:52:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=363
+2026-03-01 21:52:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=363 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:25 - INFO - 成功解析接口：dc_member，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:26 - INFO - 进度：211/272
+2026-03-01 21:52:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=152
+2026-03-01 21:52:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=152 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:26 - INFO - 成功解析接口：libor，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:27 - INFO - 进度：212/272
+2026-03-01 21:52:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=423
+2026-03-01 21:52:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=423 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:27 - INFO - 成功解析接口：st，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:28 - INFO - 进度：213/272
+2026-03-01 21:52:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=416
+2026-03-01 21:52:28 - WARNING - 页面 https://tushare.pro/document/2?doc_id=416 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:28 - INFO - 成功解析接口：rt_min，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:52:29 - INFO - 进度：214/272
+2026-03-01 21:52:29 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=322
+2026-03-01 21:52:29 - WARNING - 页面 https://tushare.pro/document/2?doc_id=322 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:29 - INFO - 成功解析接口：bc_otcqt，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:30 - INFO - 进度：215/272
+2026-03-01 21:52:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=393
+2026-03-01 21:52:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=393 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:31 - INFO - 成功解析接口：us_fina_indicator，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:32 - INFO - 进度：216/272
+2026-03-01 21:52:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=263
+2026-03-01 21:52:32 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=263 提取接口名称，跳过。
+2026-03-01 21:52:33 - INFO - 进度：217/272
+2026-03-01 21:52:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=177
+2026-03-01 21:52:33 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=177 提取接口名称，跳过。
+2026-03-01 21:52:34 - INFO - 进度：218/272
+2026-03-01 21:52:34 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=222
+2026-03-01 21:52:34 - WARNING - 页面 https://tushare.pro/document/2?doc_id=222 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:34 - INFO - 成功解析接口：us_tltr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:35 - INFO - 进度：219/272
+2026-03-01 21:52:35 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=154
+2026-03-01 21:52:35 - WARNING - 页面 https://tushare.pro/document/2?doc_id=154 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:35 - INFO - 成功解析接口：cctv_news，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:52:36 - INFO - 进度：220/272
+2026-03-01 21:52:36 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=27
+2026-03-01 21:52:36 - WARNING - 页面 https://tushare.pro/document/2?doc_id=27 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:36 - INFO - 成功解析接口：daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:37 - INFO - 进度：221/272
+2026-03-01 21:52:37 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=211
+2026-03-01 21:52:37 - WARNING - 页面 https://tushare.pro/document/2?doc_id=211 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:37 - INFO - 成功解析接口：index_global，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:38 - INFO - 进度：222/272
+2026-03-01 21:52:38 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=366
+2026-03-01 21:52:38 - WARNING - 页面 https://tushare.pro/document/2?doc_id=366 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:38 - INFO - 成功解析接口：irm_qa_sh，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:39 - INFO - 进度：223/272
+2026-03-01 21:52:39 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=337
+2026-03-01 21:52:39 - WARNING - 页面 https://tushare.pro/document/2?doc_id=337 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:39 - INFO - 成功解析接口：fut_weekly_monthly，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:40 - INFO - 进度：224/272
+2026-03-01 21:52:40 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=394
+2026-03-01 21:52:40 - WARNING - 页面 https://tushare.pro/document/2?doc_id=394 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:40 - INFO - 成功解析接口：us_income，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:41 - INFO - 进度：225/272
+2026-03-01 21:52:41 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=358
+2026-03-01 21:52:41 - WARNING - 页面 https://tushare.pro/document/2?doc_id=358 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:41 - INFO - 成功解析接口：idx_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:42 - INFO - 进度：226/272
+2026-03-01 21:52:42 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=264
+2026-03-01 21:52:43 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=264 提取接口名称，跳过。
+2026-03-01 21:52:44 - INFO - 进度：227/272
+2026-03-01 21:52:44 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=139
+2026-03-01 21:52:44 - WARNING - 页面 https://tushare.pro/document/2?doc_id=139 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:44 - INFO - 成功解析接口：fut_holding，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:45 - INFO - 进度：228/272
+2026-03-01 21:52:45 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=171
+2026-03-01 21:52:45 - WARNING - 页面 https://tushare.pro/document/2?doc_id=171 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:45 - INFO - 成功解析接口：index_weekly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:46 - INFO - 进度：229/272
+2026-03-01 21:52:46 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=36
+2026-03-01 21:52:46 - WARNING - 页面 https://tushare.pro/document/2?doc_id=36 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:46 - INFO - 成功解析接口：balancesheet，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:52:47 - INFO - 进度：230/272
+2026-03-01 21:52:47 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=392
+2026-03-01 21:52:47 - WARNING - 页面 https://tushare.pro/document/2?doc_id=392 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:47 - INFO - 成功解析接口：cb_factor_pro，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:48 - INFO - 进度：231/272
+2026-03-01 21:52:48 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=217
+2026-03-01 21:52:48 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=217 提取接口名称，跳过。
+2026-03-01 21:52:49 - INFO - 进度：232/272
+2026-03-01 21:52:49 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=347
+2026-03-01 21:52:49 - WARNING - 页面 https://tushare.pro/document/2?doc_id=347 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:49 - INFO - 成功解析接口：kpl_list，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:52:50 - INFO - 进度：233/272
+2026-03-01 21:52:50 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=311
+2026-03-01 21:52:50 - WARNING - 页面 https://tushare.pro/document/2?doc_id=311 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:50 - INFO - 成功解析接口：hm_list，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:52:51 - INFO - 进度：234/272
+2026-03-01 21:52:51 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=184
+2026-03-01 21:52:51 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=184 提取接口名称，跳过。
+2026-03-01 21:52:52 - INFO - 进度：235/272
+2026-03-01 21:52:52 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=406
+2026-03-01 21:52:52 - WARNING - 页面 https://tushare.pro/document/2?doc_id=406 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:52 - INFO - 成功解析接口：npr，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:53 - INFO - 进度：236/272
+2026-03-01 21:52:53 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=195
+2026-03-01 21:52:53 - WARNING - 页面 https://tushare.pro/document/2?doc_id=195 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:53 - INFO - 成功解析接口：major_news，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:52:54 - INFO - 进度：237/272
+2026-03-01 21:52:54 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=25
+2026-03-01 21:52:55 - WARNING - 页面 https://tushare.pro/document/2?doc_id=25 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:55 - INFO - 成功解析接口：stock_basic，标题：，输入参数数：6，输出参数数：6
+2026-03-01 21:52:56 - INFO - 进度：238/272
+2026-03-01 21:52:56 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=330
+2026-03-01 21:52:56 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=330 提取接口名称，跳过。
+2026-03-01 21:52:57 - INFO - 进度：239/272
+2026-03-01 21:52:57 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=377
+2026-03-01 21:52:57 - WARNING - 页面 https://tushare.pro/document/2?doc_id=377 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:57 - INFO - 成功解析接口：tdx_member，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:52:58 - INFO - 进度：240/272
+2026-03-01 21:52:58 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=369
+2026-03-01 21:52:58 - WARNING - 页面 https://tushare.pro/document/2?doc_id=369 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:52:58 - INFO - 成功解析接口：stk_auction，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:52:59 - INFO - 进度：241/272
+2026-03-01 21:52:59 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=24
+2026-03-01 21:52:59 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=24 提取接口名称，跳过。
+2026-03-01 21:53:00 - INFO - 进度：242/272
+2026-03-01 21:53:00 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=252
+2026-03-01 21:53:00 - WARNING - 页面 https://tushare.pro/document/2?doc_id=252 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:00 - INFO - 成功解析接口：us_basic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:01 - INFO - 进度：243/272
+2026-03-01 21:53:01 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=128
+2026-03-01 21:53:01 - WARNING - 页面 https://tushare.pro/document/2?doc_id=128 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:01 - INFO - 成功解析接口：index_dailybasic，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:02 - INFO - 进度：244/272
+2026-03-01 21:53:02 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=115
+2026-03-01 21:53:02 - WARNING - 页面 https://tushare.pro/document/2?doc_id=115 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:02 - INFO - 成功解析接口：bo_daily，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:53:03 - INFO - 进度：245/272
+2026-03-01 21:53:03 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=162
+2026-03-01 21:53:03 - WARNING - 页面 https://tushare.pro/document/2?doc_id=162 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:03 - INFO - 成功解析接口：disclosure_date，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:04 - INFO - 进度：246/272
+2026-03-01 21:53:04 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=331
+2026-03-01 21:53:04 - WARNING - 页面 https://tushare.pro/document/2?doc_id=331 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:04 - INFO - 成功解析接口：slb_len，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:53:05 - INFO - 进度：247/272
+2026-03-01 21:53:05 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=82
+2026-03-01 21:53:05 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=82 提取接口名称，跳过。
+2026-03-01 21:53:06 - INFO - 进度：248/272
+2026-03-01 21:53:06 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=387
+2026-03-01 21:53:07 - WARNING - 页面 https://tushare.pro/document/2?doc_id=387 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:07 - INFO - 成功解析接口：stk_mins，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:08 - INFO - 进度：249/272
+2026-03-01 21:53:08 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=356
+2026-03-01 21:53:08 - WARNING - 页面 https://tushare.pro/document/2?doc_id=356 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:08 - INFO - 成功解析接口：limit_step，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:09 - INFO - 进度：250/272
+2026-03-01 21:53:09 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=244
+2026-03-01 21:53:09 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=244 提取接口名称，跳过。
+2026-03-01 21:53:10 - INFO - 进度：251/272
+2026-03-01 21:53:10 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=31
+2026-03-01 21:53:10 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=31 提取接口名称，跳过。
+2026-03-01 21:53:11 - INFO - 进度：252/272
+2026-03-01 21:53:11 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=144
+2026-03-01 21:53:11 - WARNING - 页面 https://tushare.pro/document/2?doc_id=144 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:11 - INFO - 成功解析接口：weekly，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:12 - INFO - 进度：253/272
+2026-03-01 21:53:12 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=267
+2026-03-01 21:53:12 - WARNING - 页面 https://tushare.pro/document/2?doc_id=267 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:12 - INFO - 成功解析接口：broker_recommend，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:53:13 - INFO - 进度：254/272
+2026-03-01 21:53:13 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=325
+2026-03-01 21:53:13 - WARNING - 页面 https://tushare.pro/document/2?doc_id=325 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:13 - INFO - 成功解析接口：cn_pmi，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:53:14 - INFO - 进度：255/272
+2026-03-01 21:53:14 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=207
+2026-03-01 21:53:14 - WARNING - 页面 https://tushare.pro/document/2?doc_id=207 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:14 - INFO - 成功解析接口：fund_share，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:15 - INFO - 进度：256/272
+2026-03-01 21:53:15 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=351
+2026-03-01 21:53:15 - WARNING - 页面 https://tushare.pro/document/2?doc_id=351 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:15 - INFO - 成功解析接口：kpl_concept_cons，标题：，输入参数数：3，输出参数数：3
+2026-03-01 21:53:16 - INFO - 进度：257/272
+2026-03-01 21:53:16 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=384
+2026-03-01 21:53:16 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=384 提取接口名称，跳过。
+2026-03-01 21:53:17 - INFO - 进度：258/272
+2026-03-01 21:53:17 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=400
+2026-03-01 21:53:18 - WARNING - 页面 https://tushare.pro/document/2?doc_id=400 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:18 - INFO - 成功解析接口：rt_etf_k，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:53:19 - INFO - 进度：259/272
+2026-03-01 21:53:19 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=261
+2026-03-01 21:53:19 - WARNING - 页面 https://tushare.pro/document/2?doc_id=261 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:19 - INFO - 成功解析接口：ths_member，标题：，输入参数数：2，输出参数数：2
+2026-03-01 21:53:20 - INFO - 进度：260/272
+2026-03-01 21:53:20 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=338
+2026-03-01 21:53:20 - WARNING - 页面 https://tushare.pro/document/2?doc_id=338 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:20 - INFO - 成功解析接口：us_daily_adj，标题：，输入参数数：7，输出参数数：7
+2026-03-01 21:53:21 - INFO - 进度：261/272
+2026-03-01 21:53:21 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=403
+2026-03-01 21:53:21 - WARNING - 页面 https://tushare.pro/document/2?doc_id=403 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:21 - INFO - 成功解析接口：rt_idx_k，标题：，输入参数数：1，输出参数数：1
+2026-03-01 21:53:22 - INFO - 进度：262/272
+2026-03-01 21:53:22 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=254
+2026-03-01 21:53:22 - WARNING - 页面 https://tushare.pro/document/2?doc_id=254 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:22 - INFO - 成功解析接口：us_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:23 - INFO - 进度：263/272
+2026-03-01 21:53:23 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=353
+2026-03-01 21:53:23 - WARNING - 页面 https://tushare.pro/document/2?doc_id=353 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:23 - INFO - 成功解析接口：stk_auction_o，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:24 - INFO - 进度：264/272
+2026-03-01 21:53:24 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=48
+2026-03-01 21:53:24 - WARNING - 页面 https://tushare.pro/document/2?doc_id=48 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:24 - INFO - 成功解析接口：hsgt_top10，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:25 - INFO - 进度：265/272
+2026-03-01 21:53:25 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=323
+2026-03-01 21:53:25 - WARNING - 页面 https://tushare.pro/document/2?doc_id=323 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:25 - INFO - 成功解析接口：bc_bestotcqt，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:26 - INFO - 进度：266/272
+2026-03-01 21:53:26 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=329
+2026-03-01 21:53:26 - WARNING - 页面 https://tushare.pro/document/2?doc_id=329 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:26 - INFO - 成功解析接口：stk_premarket，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:27 - INFO - 进度：267/272
+2026-03-01 21:53:27 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=344
+2026-03-01 21:53:27 - WARNING - 页面 https://tushare.pro/document/2?doc_id=344 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:27 - INFO - 成功解析接口：moneyflow_ind_dc，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:28 - INFO - 进度：268/272
+2026-03-01 21:53:28 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=240
+2026-03-01 21:53:29 - WARNING - 无法从 https://tushare.pro/document/2?doc_id=240 提取接口名称，跳过。
+2026-03-01 21:53:30 - INFO - 进度：269/272
+2026-03-01 21:53:30 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=285
+2026-03-01 21:53:30 - WARNING - 页面 https://tushare.pro/document/2?doc_id=285 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:30 - INFO - 成功解析接口：sge_daily，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:31 - INFO - 进度：270/272
+2026-03-01 21:53:31 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=399
+2026-03-01 21:53:31 - WARNING - 页面 https://tushare.pro/document/2?doc_id=399 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:31 - INFO - 成功解析接口：stk_ah_comparison，标题：，输入参数数：5，输出参数数：5
+2026-03-01 21:53:32 - INFO - 进度：271/272
+2026-03-01 21:53:32 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=44
+2026-03-01 21:53:32 - WARNING - 页面 https://tushare.pro/document/2?doc_id=44 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:32 - INFO - 成功解析接口：cashflow，标题：，输入参数数：9，输出参数数：9
+2026-03-01 21:53:33 - INFO - 进度：272/272
+2026-03-01 21:53:33 - INFO - 正在解析：https://tushare.pro/document/2?doc_id=349
+2026-03-01 21:53:33 - WARNING - 页面 https://tushare.pro/document/2?doc_id=349 未找到接口上方的标题，将使用空字符串。
+2026-03-01 21:53:33 - INFO - 成功解析接口：moneyflow_dc，标题：，输入参数数：4，输出参数数：4
+2026-03-01 21:53:34 - INFO - ==================================================
+2026-03-01 21:53:34 - INFO - 爬取完成，统计信息：
+2026-03-01 21:53:34 - INFO - 总页面数：272
+2026-03-01 21:53:34 - INFO - 成功解析：231
+2026-03-01 21:53:34 - INFO - 跳过页面：1
+2026-03-01 21:53:34 - INFO - 失败页面：40
+2026-03-01 21:53:34 - INFO - ==================================================
+2026-03-01 21:53:34 - INFO - 开始生成Excel文件...
+2026-03-01 21:53:34 - INFO - 输入参数表：231行，输出参数表：231行
+2026-03-01 21:53:34 - INFO - Excel文件已成功保存到：D:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\004_tuShare参数爬虫\tuShare接口输入输出参数清单Ae1.xlsx

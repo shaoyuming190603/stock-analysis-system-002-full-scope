@@ -1,0 +1,446 @@
+需要python写一个爬虫程序。
+作用：从链接 “https://tushare.pro/document/2” 的所有下级网页，提取格式化数据。
+
+待提取数据特征示例：
+例如来自网页“https://tushare.pro/document/2?doc_id=25”
+1，关键词“接口：”后面的参数名称“stock_basic”
+2，标题，位于关键词接口上方，页面源代码特征字符串示例“基础信息": <h2 id="_1">基础信息</h2>
+    补充说明：标题的字体显著大于“接口”的字体，可以据此为补充识别特征。
+3，同一页面中的输入参数段落。例如：
+输入参数
+
+名称	类型	必选	描述
+ts_code	str	N	股票代码
+trade_date	str	N	交易日期(YYYYMMDD格式，下同)
+start_date	str	N	开始日期
+end_date	str	N	结束日期
+
+
+4，同一页面中的输出参数段落。例如：
+
+输出参数
+
+名称	类型	默认显示	描述
+trade_date	str	Y	交易日期
+ts_code	str	Y	TS股票代码
+total_share	float	Y	总股本（万股）
+float_share	float	Y	流通股本（万股）
+pre_close	float	Y	昨日收盘价
+up_limit	float	Y	今日涨停价
+down_limit	float	Y	今日跌停价
+
+程序开发需求描述：
+
+一、主要任务：提取出来的数据存放在EXCEL文件中，建立六个页面。
+    EXCEL文件名来自plainText文本框控件“txtTuShareAPI_list”。
+
+第一、二、三个页面，存放输入参数
+页面的标题栏逐列示例“接口	标题	输入参数数  参数1	参数2	参数3	参数4	参数5	参数6	参数7	参数8	参数9	参数10	参数11	参数12	参数13	参数14	参数15	参数16	参数17	参数18	参数19	参数20”
+
+第一个页面的名称“输入参数_名称”，列定义：
+    第1列，接口
+    第2列，标题
+        补充：在第二列单元格中，添加当前爬虫页面的url，作为单元格链接。
+    第3列，输入参数数
+    第4列，输入参数1
+    第5列，输入参数2
+    ...
+    第n列，扩展直至最大输入参数数
+第二个页面的名称“输入参数_类型”，列定义：
+    第1列，接口
+    第2列，标题
+    第3列，类型数
+    第4列，类型1
+    第5列，类型2
+    ...
+    第n列，扩展直至最大类型数
+第三个页面的名称“输入参数_默认显示”，列定义：
+    第1列，接口
+    第2列，标题
+    第3列，默认显示数
+    第4列，默认显示1
+    第5列，默认显示2
+    ...
+    第n列，扩展直至最大默认显示数
+
+第四、五、六个页面，存放输出参数
+页面的标题栏逐列示例“接口	标题	输出参数数  参数1	参数2	参数3	参数4	参数5	参数6	参数7	参数8	参数9	参数10	参数11	参数12	参数13	参数14	参数15	参数16	参数17	参数18	参数19	参数20”
+
+第四个页面的名称“输出参数_名称”，列定义：
+    第1列，接口
+    第2列，标题
+    补充：在第二列单元格中，添加当前爬虫页面的url，作为单元格链接。
+    第3列，输出参数数
+    第4列，输出参数1
+    第5列，输出参数2
+    ...
+    第n列，扩展直至最大输出参数数
+第四个页面的名称“输出参数_类型”，列定义：
+    第1列，接口
+    第2列，标题
+    第3列，类型数
+    第4列，类型1
+    第5列，类型2
+    ...
+    第n列，扩展直至最大类型数
+第四个页面的名称“输出参数_默认显示”，列定义：
+    第1列，接口
+    第2列，标题
+    第3列，默认显示数
+    第4列，默认显示1
+    第5列，默认显示2
+    ...
+    第n列，扩展直至最大默认显示数
+
+二、需忽略的数据：如果关键词“接口" 后面的参数名称是“index_classify”，就略过，忽略这一页，不要提取数据。
+
+三、指定数据保存EXCEL的保存路径：
+    保存路径字符串来自GUI上的PlainText控件“txtTuShareIniPath”的值。
+    示例值：“C:\01_My_documents\01_pythonLearn\我的PNP_MCSD大项目\Tab01_数据设置\API_path”
+    如果“C:\01_My_documents\01_pythonLearn\我的PNP_MCSD大项目\Tab01_数据设置”下面不存在子文件夹“API_path”, 就创建子文件夹“API_path”，
+    即输出文件必须存放在文件夹“API_path”中。
+
+    补充需求：在加载GUI上的PlainText控件“txtTuShareIniPath”的时候，控件“txtTuShareIniPath”的初始预设值是“TuShareAPI_full_list.xlsx”。这个预设值允许用户编辑修改，例如改成“TuShareAPI_full_list_Ae1.xlsx”。
+    用户修改之后，在退出程序"main.py"的时候，要保存这个值。下一次运行"main.py"的时候，控件“txtTuShareIniPath”显示值是“TuShareAPI_full_list_Ae1.xlsx”。
+
+
+
+
+
+四、生成一个程序运行的log文件，记录程序运行每一步操作结果
+    文件保存路径字符串来自GUI上的PlainText控件“txtTuShareIniPath”的值。
+
+
+
+另外，再介绍一下爬虫程序的结构组成，实现原理。特别是，程序如何展开网址，遍历其所有子网页。
+
+按照高内聚低耦合的编程规范，提供完整程序，并加注代码注释。每一个模块生成一个独立的.py文件。
+代码全部生成后，在末尾生成完整的软件架构说明，生成思维导图，说明个模块之间的执行顺序和依存关系。
+
+
+AI输出内容：
+
+你的需求非常详细，下面我将分为两部分回答：
+1. **爬虫程序结构与实现原理说明**
+2. **完整Python代码实现（带详细注释，结构清晰，便于集成GUI）** --- ##
+一、爬虫程序结构与实现原理 ###
+1. 主要模块划分
+- **配置管理模块**：负责读取/保存GUI控件的配置（如EXCEL文件名、保存路径）。
+- **网页爬取模块**：递归遍历主页面下所有接口文档子页面，获取目标数据。
+- **数据解析模块**：解析每个接口页面的HTML，提取接口名、标题、输入/输出参数表格。
+- **数据存储模块**：将结构化数据写入Excel（多Sheet），并处理超链接。
+- **日志模块**：记录程序运行的每一步，便于调试和追踪。
+- **GUI集成接口**：与PyQt等GUI控件交互，获取/设置控件值。 ###
+
+
+python
+import sys
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPlainTextEdit, QPushButton, QFileDialog
+from config_manager import ConfigManager
+from crawler import Crawler
+from excel_writer import ExcelWriter
+from logger import Logger
+
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("TuShare API 爬虫")
+        self.setGeometry(100, 100, 800, 300)
+        self.initUI()
+        self.config = ConfigManager()
+        self.logger = Logger(self.config.get_log_path())
+        self.load_config()
+
+    def initUI(self):
+        self.txtTuShareAPI_list = QPlainTextEdit(self)
+        self.txtTuShareAPI_list.setGeometry(20, 20, 400, 40)
+        self.txtTuShareIniPath = QPlainTextEdit(self)
+        self.txtTuShareIniPath.setGeometry(20, 80, 400, 40)
+        self.btnStart = QPushButton("开始爬取", self)
+        self.btnStart.setGeometry(20, 140, 100, 40)
+        self.btnStart.clicked.connect(self.start_crawl)
+
+    def load_config(self):
+        excel_name = self.config.get_excel_name()
+        self.txtTuShareAPI_list.setPlainText("https://tushare.pro/document/2")
+        self.txtTuShareIniPath.setPlainText(excel_name)
+
+    def closeEvent(self, event):
+        self.config.set_excel_name(self.txtTuShareIniPath.toPlainText())
+        self.config.save_config()
+        event.accept()
+
+    def start_crawl(self):
+        url = self.txtTuShareAPI_list.toPlainText().strip()
+        excel_name = self.txtTuShareIniPath.toPlainText().strip()
+        save_dir = self.config.get_save_dir()
+        self.logger.log(f"开始爬取：{url}")
+        crawler = Crawler(self.logger)
+        all_data = crawler.crawl_all(url)
+        self.logger.log(f"数据爬取完成，开始写入Excel：{excel_name}")
+        writer = ExcelWriter(save_dir, excel_name, self.logger)
+        writer.write(all_data)
+        self.logger.log("Excel写入完成")
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.show()
+    sys.exit(app.exec_())
+```
+
+---
+
+### 2. config_manager.py
+
+```python
+import os
+import json
+
+class ConfigManager:
+    def __init__(self, config_file="config.json"):
+        self.config_file = config_file
+        self.config = {
+            "excel_name": "TuShareAPI_full_list.xlsx",
+            "save_dir": "API_path",
+            "log_file": "TuShareAPI_crawler.log"
+        }
+        self.load_config()
+
+    def load_config(self):
+        if os.path.exists(self.config_file):
+            with open(self.config_file, "r", encoding="utf-8") as f:
+                self.config.update(json.load(f))
+
+    def save_config(self):
+        with open(self.config_file, "w", encoding="utf-8") as f:
+            json.dump(self.config, f, ensure_ascii=False, indent=2)
+
+    def get_excel_name(self):
+        return self.config.get("excel_name", "TuShareAPI_full_list.xlsx")
+
+    def set_excel_name(self, name):
+        self.config["excel_name"] = name
+
+    def get_save_dir(self):
+        return self.config.get("save_dir", "API_path")
+
+    def get_log_path(self):
+        return os.path.join(self.get_save_dir(), self.config.get("log_file", "TuShareAPI_crawler.log"))
+```
+
+---
+
+### 3. logger.py
+
+```python
+import os
+import datetime
+
+class Logger:
+    def __init__(self, log_path):
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        self.log_path = log_path
+
+    def log(self, msg):
+        now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(self.log_path, "a", encoding="utf-8") as f:
+            f.write(f"[{now}] {msg}\n")
+        print(f"[{now}] {msg}")
+```
+
+---
+
+### 4. utils.py
+
+```python
+import os
+
+def ensure_dir(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+```
+
+---
+
+### 5. crawler.py
+
+```python
+import requests
+from bs4 import BeautifulSoup
+from parser import parse_api_page
+from utils import ensure_dir
+
+class Crawler:
+    def __init__(self, logger):
+        self.logger = logger
+        self.visited = set()
+
+    def crawl_all(self, root_url):
+        self.visited = set()
+        all_data = []
+        self.logger.log(f"开始递归爬取：{root_url}")
+        self._crawl_recursive(root_url, all_data)
+        return all_data
+
+    def _crawl_recursive(self, url, all_data):
+        if url in self.visited:
+            return
+        self.visited.add(url)
+        self.logger.log(f"访问页面：{url}")
+        try:
+            resp = requests.get(url)
+            resp.raise_for_status()
+            soup = BeautifulSoup(resp.text, "html.parser")
+            page_data = parse_api_page(soup, url)
+            if page_data:
+                if page_data["api_name"] == "index_classify":
+                    self.logger.log(f"忽略接口：{url}")
+                else:
+                    all_data.append(page_data)
+            # 查找所有子页面链接
+            for a in soup.find_all("a", href=True):
+                href = a["href"]
+                if href.startswith("/document/2?doc_id="):
+                    full_url = "https://tushare.pro" + href
+                    self._crawl_recursive(full_url, all_data)
+        except Exception as e:
+            self.logger.log(f"爬取失败：{url}，原因：{e}")
+```
+
+---
+
+### 6. parser.py
+
+```python
+def parse_api_page(soup, url):
+    # 1. 提取接口名
+    api_name = None
+    for tag in soup.find_all(text=lambda t: "接口：" in t):
+        api_name = tag.split("接口：")[-1].strip()
+        break
+    if not api_name:
+        return None
+
+    # 2. 提取标题
+    title = None
+    for h2 in soup.find_all("h2"):
+        if h2.get_text(strip=True):
+            title = h2.get_text(strip=True)
+            break
+
+    # 3. 输入参数表
+    input_params, input_types, input_defaults = [], [], []
+    input_table = None
+    for tag in soup.find_all(text=lambda t: "输入参数" in t):
+        input_table = tag.find_parent("table")
+        break
+    if input_table:
+        for row in input_table.find_all("tr")[1:]:
+            cols = [td.get_text(strip=True) for td in row.find_all("td")]
+            if len(cols) &gt;= 4:
+                input_params.append(cols[0])
+                input_types.append(cols[1])
+                input_defaults.append(cols[2])
+
+    # 4. 输出参数表
+    output_params, output_types, output_defaults = [], [], []
+    output_table = None
+    for tag in soup.find_all(text=lambda t: "输出参数" in t):
+        output_table = tag.find_parent("table")
+        break
+    if output_table:
+        for row in output_table.find_all("tr")[1:]:
+            cols = [td.get_text(strip=True) for td in row.find_all("td")]
+            if len(cols) &gt;= 4:
+                output_params.append(cols[0])
+                output_types.append(cols[1])
+                output_defaults.append(cols[2])
+
+    return {
+        "api_name": api_name,
+        "title": title,
+        "url": url,
+        "input_params": input_params,
+        "input_types": input_types,
+        "input_defaults": input_defaults,
+        "output_params": output_params,
+        "output_types": output_types,
+        "output_defaults": output_defaults,
+    }
+```
+
+---
+
+### 7. excel_writer.py
+
+```python
+import os
+from openpyxl import Workbook
+from openpyxl.utils import get_column_letter
+from openpyxl.styles import Font
+from utils import ensure_dir
+
+class ExcelWriter:
+    def __init__(self, save_dir, excel_name, logger):
+        ensure_dir(save_dir)
+        self.file_path = os.path.join(save_dir, excel_name)
+        self.logger = logger
+
+    def write(self, all_data):
+        wb = Workbook()
+        # 六个sheet
+        sheets = [
+            ("输入参数_名称", "input_params"),
+            ("输入参数_类型", "input_types"),
+            ("输入参数_默认显示", "input_defaults"),
+            ("输出参数_名称", "output_params"),
+            ("输出参数_类型", "output_types"),
+            ("输出参数_默认显示", "output_defaults"),
+        ]
+        for idx, (sheet_name, key) in enumerate(sheets):
+            ws = wb.create_sheet(title=sheet_name, index=idx)
+            max_len = max((len(d[key]) for d in all_data), default=0)
+            header = ["接口", "标题", f"{'输入' if idx &lt; 3 else '输出'}参数数"] + [f"参数{i+1}" for i in range(max_len)]
+            ws.append(header)
+            for d in all_data:
+                row = [d["api_name"], d["title"], len(d[key])] + d[key] + [""] * (max_len - len(d[key]))
+                ws.append(row)
+                # 标题加超链接
+                if ws.max_row == 2:
+                    ws.cell(row=2, column=2).hyperlink = d["url"]
+                    ws.cell(row=2, column=2).font = Font(color="0000FF", underline="single")
+        # 删除默认sheet
+        if "Sheet" in wb.sheetnames:
+            del wb["Sheet"]
+        wb.save(self.file_path)
+        self.logger.log(f"Excel已保存：{self.file_path}")
+```
+
+---
+
+## 三、架构说明与思维导图
+
+### 1. 软件架构说明
+
+- **main.py**：负责GUI界面、参数读取与保存、调度各功能模块。
+- **config_manager.py**：负责配置文件的读写，保存用户的Excel文件名等设置。
+- **logger.py**：负责日志记录，所有操作和异常均写入日志文件。
+- **crawler.py**：递归爬取所有子页面，调用parser.py解析页面内容。
+- **parser.py**：负责解析每个页面的接口名、标题、输入/输出参数等。
+- **excel_writer.py**：负责将所有数据写入Excel文件，生成六个sheet。
+- **utils.py**：提供通用工具函数，如文件夹创建等。
+
+### 2. 模块依赖与执行顺序
+
+```mermaid
+graph TD
+    A[main.py] --&gt; B[config_manager.py]
+    A --&gt; C[logger.py]
+    A --&gt; D[crawler.py]
+    D --&gt; E[parser.py]
+    A --&gt; F[excel_writer.py]
+    B --&gt; G[utils.py]
+    D --&gt; G
+    F --&gt; G
+
