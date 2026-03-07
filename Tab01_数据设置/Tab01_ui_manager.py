@@ -55,27 +55,27 @@ class Tab01UIManager:
             label_text1 = "TuShare API接口列表"
             label_text2 = "TuShare API日志文件"
             label_text3 = "TuShare API保存路径"
-            plain_text1 = f"TuShare API接口列表_{today_str}"
-            plain_text2 = f"TuShare API日志文件_{today_str}"
+            plain_text1 = f"TuShare API接口列表_{today_str}.xlsx"
+            plain_text2 = f"TuShare API日志文件_{today_str}.log"
 
         elif checked_id == 2: # AST
             label_text1 = "AST API接口列表"
             label_text2 = "AST API日志文件"
             label_text3 = "AST API保存路径"
-            plain_text1 = f"AST API接口列表_{today_str}"
-            plain_text2 = f"AST API日志文件_{today_str}"
+            plain_text1 = f"AST API接口列表_{today_str}.xlsx"
+            plain_text2 = f"AST API日志文件_{today_str}.log"
         elif checked_id == 3: # Choice
             label_text1 = "东财CHOICE API接口列表"
             label_text2 = "东财CHOICE API日志文件"
             label_text3 = "东财CHOICE API保存路径"
-            plain_text1 = f"东财CHOICE API接口列表_{today_str}"
-            plain_text2 = f"东财CHOICE API接口列表_{today_str}"
+            plain_text1 = f"东财CHOICE API接口列表_{today_str}.xlsx"
+            plain_text2 = f"东财CHOICE API日志文件_{today_str}.log"
         else:
             label_text1 = "其他 API接口列表"
             label_text2 = "其他 API日志文件"
             label_text3 = "其他 API保存路径"
-            plain_text1 = f"其他 API接口列表_{today_str}"
-            plain_text2 = f"其他 API日志文件_{today_str}"
+            plain_text1 = f"其他 API接口列表_{today_str}.xlsx"
+            plain_text2 = f"其他 API日志文件_{today_str}.log"
 
         # 更新界面控件
         self.ui.lab_Specify_API_list_Name.setText(label_text1)
@@ -83,5 +83,5 @@ class Tab01UIManager:
         self.ui.lab_Specify_Initial_Path.setText(label_text3)
         self.ui.txt_Specify_API_list_Name.setPlainText(plain_text1)
         self.ui.txt_Specify_API_log_Name.setPlainText(plain_text2)
-        # self.ui.txt_Specify_API_list_Name.setPlainText(plain_text3)
+    
 

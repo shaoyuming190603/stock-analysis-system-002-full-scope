@@ -1,3 +1,64 @@
+TuShare 数据下载爬虫。
+需扩展功能。
+编程采用高内聚低耦合方法。
+保持内部class与函数的独立性和可扩展性。
+保持运行性能和安全性。
+保持爬虫程序对网站友好，避免过度高频冲击网站。
+
+现有程序功能已自成体系，并经过多次测试，运行稳定可靠。
+现在，需要现有输出EXCEL文件中的8个sheets页面基础上，新增第9个sheet页面，用于存放网页上的其他数据。
+
+新增数据页面字段描述：
+第一列存放当前页面所属页面分类的大类。
+第二列存放当前页面所属页面分类的小类。
+
+	具体示例 当前页面标题是"交易日历"， 对应网址是"https://tushare.pro/document/2?doc_id=26"
+当前页面html源码局部代码结构示例如下”<section id="document" class="whole">
+<div class="container">
+<div class="document">
+<nav class="sidebar col-md-3 col-sm-4 col-xs-12">
+
+            <div id="jstree">
+                <ul class="list-unstyled components">
+                    
+                    <li class=" jstree-open  in"><a href="/document/2?doc_id=14">股票数据</a>
+                        <ul class="list-unstyled">
+                            
+                    <li class=" jstree-open  in"><a href="/document/2?doc_id=24">基础数据</a>
+                        <ul class="list-unstyled">
+                            <li ><a href="/document/2?doc_id=25">股票列表</a></li> <li ><a href="/document/2?doc_id=329">每日股本（盘前）</a></li> <li class="active jstree-clicked "  ><a href="/document/2?doc_id=26">交易日历</a></li> <li ><a href="/document/2?doc_id=397">ST股票列表</a></li> <li ><a href="/document/2?doc_id=423">ST风险警示板股票</a></li> <li ><a href="/document/2?doc_id=398">沪深港通股票列表</a></li> <li ><a href="/document/2?doc_id=100">股票曾用名</a></li> <li ><a href="/document/2?doc_id=112">上市公司基本信息</a></li> <li ><a href="/document/2?doc_id=193">上市公司管理层</a></li> <li ><a href="/document/2?doc_id=194">管理层薪酬和持股</a></li> <li ><a href="/document/2?doc_id=375">北交所新旧代码对照</a></li> <li ><a href="/document/2?doc_id=123">IPO新股上市</a></li> <li ><a href="/document/2?doc_id=262">股票历史列表</a></li>
+                        </ul>
+                    </li>
+"
+	第一列，列标题"大类"，填写结构特征中"股票数据"段落中的可变内容
+	第二列，列标题"小类"，填写结构特征中"基础数据"段落中的可变内容
+	第三列，列标题"接口"，填写结构特征中"交易日历"段落中的可变内容，段落接口示例如下：
+<div class="content col-md-9 col-sm-8 col-xs-12">
+<div class="search-panel">
+<div class="search-container">
+<span class="fa fa-search search-icon"></span>
+<input type="text" class="search-input" placeholder="Search">
+</div>
+</div>
+<h2 id="a">A股日线行情</h2>
+<hr>
+<p>接口：daily，可以通过<a href="https://tushare.pro/webclient/"><strong>数据工具</strong></a>调试和查看数据<br>
+数据说明：交易日每天15点～16点之间入库。本接口是未复权行情，停牌期间不提供数据<br>
+调取说明：基础积分每分钟内可调取500次，每次6000条数据，一次请求相当于提取一个股票23年历史<br>
+描述：获取股票行情数据，或通过<a href="https://tushare.pro/document/2?doc_id=109"><strong>通用行情接口</strong></a>获取数据，包含了前后复权数据</p>
+<p><strong>输入参数</strong></p>
+	
+	第四列，列标题"积分/权限"，按上述示例中的关键词搜索"积分", 填写与"积分"相邻的数值。
+	第五列，列标题"频率限制/分钟"，按上述示例中的关键词搜索"每分钟" 、"调取“、"次", 填写与"每分钟"相邻的数值。
+	第六列填写"限量/次"，按上述示例中的关键词搜索"条数据" 、"行数据“, 填写与"条数据"、"行数据"相邻的数值。
+	第七列填写"接口”下方第一个段落全文
+	第八列填写"接口”下方第二个段落全文
+	第九列填写"接口”下方第三个段落全文
+	第十列填写"接口”下方第四个段落全文
+	第十一列填写"接口”下方第五个段落全文
+
+当前完整代码如下。需在当前代码基础上，增加上述功能，并提供完整代码。
+
 import os
 import requests
 from bs4 import BeautifulSoup
@@ -15,49 +76,62 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class TushareDocSpider:
     """
-    // class 版本：1.2.2 (大类缺失时用小类填充)
+    // class 版本：1.0.0
 
     所属文件名：Tab01_API_tuShare_接口参数爬虫.py
+    
+    // 自定义的baseUrl：https://tushare.pro/document/2
+    // apikey: 通过windows环境变量获取，确保安全性
 
-    Tushare Pro 文档爬虫（多线程增强版）：提取接口名称、页面大标题、输入/输出参数的详细信息，
-    并生成包含八个原始工作表及新增第九个“附加信息”工作表的 Excel 文件。
-    附加信息包含：大类、小类、接口名称(链接)、接口、积分/权限、频率限制/分钟、限量/次、以及接口下方前五个段落全文。
+    Tushare Pro 文档爬虫（多线程增强版）：提取接口名称、页面大标题、输入/输出参数的详细信息
+    （名称、类型、显示、描述），并生成包含八个工作表的 Excel 文件。
+
     """
     def __init__(self, start_url, output_file='tushare_api_docs.xlsx', log_file='spider.log', delay=1, max_workers=5):
         self.start_url = start_url
         self.output_file = output_file
-        self.delay = delay
-        self.max_workers = max_workers
+        self.delay = delay          # 基础延迟，用于随机延迟的上限
+        self.max_workers = max_workers  # 线程池大小
         self.log_file = log_file
 
+        # 配置日志记录器
         self._setup_logging()
 
+        # 用于获取所有链接的 Session（线程安全，只在单线程中使用）
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
 
-        self.input_data = []
-        self.output_data = []
-        self.extra_data = []   # 附加信息列表
+        # 存储结构将在 run 方法中被填充
+        self.input_data = []   # 输入参数详细信息
+        self.output_data = []  # 输出参数详细信息
+
+        # 统计信息（将在 run 方法中局部统计，不再作为实例变量）
 
     def _setup_logging(self):
+        """配置日志记录器，同时输出到控制台和文件"""
         self.logger = logging.getLogger('TushareSpider')
         self.logger.setLevel(logging.INFO)
+
         if self.logger.handlers:
             self.logger.handlers.clear()
+
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+
         log_dir = os.path.dirname(self.log_file)
         if log_dir and not os.path.exists(log_dir):
             os.makedirs(log_dir)
         file_handler = logging.FileHandler(self.log_file, encoding='utf-8')
         file_handler.setFormatter(formatter)
         self.logger.addHandler(file_handler)
+
         console_handler = logging.StreamHandler()
         console_handler.setFormatter(formatter)
         self.logger.addHandler(console_handler)
 
     def get_all_doc_links(self):
+        """从起始页面提取所有接口文档的链接（包含 doc_id 的）"""
         self.logger.info(f"正在从起始页 {self.start_url} 提取所有文档链接...")
         try:
             resp = self.session.get(self.start_url)
@@ -76,31 +150,38 @@ class TushareDocSpider:
             return []
 
     def extract_title_above_interface(self, soup):
+        """提取页面的大标题（与原始方法相同）"""
         section_keywords = ['输入参数', '输出参数', '返回数据', '错误码', '参数说明', '注意事项', '更新记录']
+
         h1 = soup.find('h1')
         if h1:
             title = h1.get_text().strip()
             if title and not any(keyword in title for keyword in section_keywords):
                 return title
+
         h2 = soup.find('h2')
         if h2:
             title = h2.get_text().strip()
             if title and not any(keyword in title for keyword in section_keywords):
                 return title
+
         interface_str = soup.find(string=re.compile(r'接口[：:]'))
         if not interface_str:
             interface_str = soup.find(string=re.compile(r'接口名称[：:]'))
         if not interface_str:
             return ""
+
         tag = interface_str.parent
         title_tag = tag.find_previous(['h1', 'h2', 'h3'])
         if not title_tag:
             title_tag = tag.find_previous(class_=lambda x: x and 'title' in x.lower())
+
         if title_tag:
             return title_tag.get_text().strip()
         return ""
 
     def _extract_params_details(self, soup, table_title):
+        """从页面中提取指定标题的表格中的参数详细信息（与原始方法相同）"""
         details = []
         header = soup.find(lambda tag: tag.name in ['h3', 'h4', 'div', 'p'] and table_title in tag.get_text())
         if not header:
@@ -108,9 +189,11 @@ class TushareDocSpider:
         table = header.find_next('table')
         if not table:
             return details
+
         rows = table.find_all('tr')
         if len(rows) < 2:
             return details
+
         header_row = rows[0]
         header_cells = header_row.find_all(['th', 'td'])
         header_texts = [cell.get_text().strip().lower() for cell in header_cells]
@@ -153,72 +236,20 @@ class TushareDocSpider:
                 details.append(param)
         return details
 
-    def _extract_category_info(self, soup):
-        """
-        从左侧导航树中提取当前页面所属的大类和小类
-        通过定位激活的 li，然后向上查找两级 li 中的 <a> 标签获取准确文本
-        """
-        main_cat = ''
-        sub_cat = ''
-        nav = soup.select_one('#jstree')
-        if not nav:
-            return main_cat, sub_cat
-
-        active_li = nav.select_one('li.active, li.jstree-clicked')
-        if not active_li:
-            return main_cat, sub_cat
-
-        # 当前 li 的父 ul（第三级菜单的容器）
-        ul_level3 = active_li.find_parent('ul')
-        if not ul_level3:
-            return main_cat, sub_cat
-
-        # 该 ul 的父 li（第二级，小类）
-        li_level2 = ul_level3.find_parent('li')
-        if li_level2:
-            a_level2 = li_level2.find('a')
-            if a_level2:
-                sub_cat = a_level2.get_text(strip=True)
-            # 再向上获取大类
-            ul_level2 = li_level2.find_parent('ul')
-            if ul_level2:
-                li_level1 = ul_level2.find_parent('li')
-                if li_level1:
-                    a_level1 = li_level1.find('a')
-                    if a_level1:
-                        main_cat = a_level1.get_text(strip=True)
-        return main_cat, sub_cat
-
-    def _extract_integral_and_limit(self, soup):
-        text = soup.get_text()
-        integral_match = re.search(r'积分[^\d]*(\d+)', text)
-        integral = integral_match.group(1) if integral_match else ''
-        freq_match = re.search(r'(?:每分钟|调取)[^\d]*(\d+)\s*次', text)
-        frequency = freq_match.group(1) if freq_match else ''
-        limit_match = re.search(r'(?:每次|单次)[^\d]*(\d+)\s*(?:条|行)', text)
-        if not limit_match:
-            limit_match = re.search(r'(\d+)\s*(?:条|行)', text)
-        limit = limit_match.group(1) if limit_match else ''
-        return integral, frequency, limit
-
-    def _extract_first_five_paragraphs(self, soup, title_above):
-        paragraphs = [''] * 5
-        title_tag = None
-        if title_above:
-            title_tag = soup.find(['h1', 'h2'], string=re.compile(re.escape(title_above)))
-        if not title_tag:
-            title_tag = soup.find('h2')
-        if not title_tag:
-            return paragraphs
-        p_tags = title_tag.find_next_siblings('p')
-        for i, p in enumerate(p_tags[:5]):
-            paragraphs[i] = p.get_text(strip=True)
-        return paragraphs
-
     def parse_api_page(self, url):
+        """
+        解析单个接口页面（多线程版本）
+        返回格式: (status, data)
+        status: 'success', 'skipped', 'failed'
+        data: 当 status 为 'success' 时，返回 (api_name, title_above, url, input_details, output_details)
+              否则返回 None
+        """
+        # 随机延迟，避免请求过于集中
         time.sleep(random.uniform(0.5, self.delay))
+
         self.logger.info(f"正在解析：{url}")
 
+        # 每个线程创建独立的 Session
         session = requests.Session()
         session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
@@ -249,55 +280,31 @@ class TushareDocSpider:
 
             if not api_name:
                 self.logger.warning(f"无法从 {url} 提取接口名称，标记为失败。")
-                return ('failed', None, None)
+                return ('failed', None)
 
+            # 检查是否需要跳过
             if api_name == 'index_classify':
                 self.logger.info(f"接口名称为 '{api_name}'，根据要求跳过此页面。")
-                return ('skipped', None, None)
+                return ('skipped', None)
 
+            # 提取页面大标题
             title_above = self.extract_title_above_interface(soup)
             if not title_above:
                 self.logger.warning(f"页面 {url} 未找到合适的标题，将使用空字符串。")
-                title_above = ""  # 确保有值
 
+            # 提取参数
             input_details = self._extract_params_details(soup, '输入参数')
             output_details = self._extract_params_details(soup, '输出参数')
 
-            # 附加信息
-            main_cat, sub_cat = self._extract_category_info(soup)
-            # 确保大类小类不为空：先确保小类非空，大类缺失时用小类填充
-            if not sub_cat:
-                sub_cat = "未知小类"
-            if not main_cat:
-                main_cat = sub_cat   # 大类缺失时使用小类内容填充
-
-            integral, frequency, limit = self._extract_integral_and_limit(soup)
-            paras = self._extract_first_five_paragraphs(soup, title_above)
-
-            extra_info = {
-                'main_category': main_cat,
-                'sub_category': sub_cat,
-                'api_name': api_name,
-                'title_above': title_above,          # 页面大标题（用于第三列）
-                'url': url,                           # 保存URL用于超链接
-                'integral': integral,
-                'frequency': frequency,
-                'limit': limit,
-                'para1': paras[0],
-                'para2': paras[1],
-                'para3': paras[2],
-                'para4': paras[3],
-                'para5': paras[4]
-            }
-
             self.logger.info(f"成功解析接口：{api_name}，标题：{title_above}，输入参数数：{len(input_details)}，输出参数数：{len(output_details)}")
-            return ('success', (api_name, title_above, url, input_details, output_details), extra_info)
+            return ('success', (api_name, title_above, url, input_details, output_details))
 
         except Exception as e:
             self.logger.error(f"解析页面 {url} 时出错：{e}", exc_info=True)
-            return ('failed', None, None)
+            return ('failed', None)
 
     def run(self):
+        """执行爬虫主流程（多线程版本）"""
         self.logger.info("="*50)
         self.logger.info("爬虫程序开始运行（多线程模式）")
         self.logger.info(f"目标起始页：{self.start_url}")
@@ -306,6 +313,7 @@ class TushareDocSpider:
         self.logger.info(f"线程池大小：{self.max_workers}")
         self.logger.info("="*50)
 
+        # 1. 获取所有链接（单线程）
         doc_links = self.get_all_doc_links()
         if not doc_links:
             self.logger.error("未找到任何文档链接，程序退出。")
@@ -314,33 +322,40 @@ class TushareDocSpider:
         total_pages = len(doc_links)
         self.logger.info(f"开始遍历 {total_pages} 个接口页面...")
 
-        input_local, output_local, extra_local = [], [], []
-        success_count = skipped_count = failed_count = 0
+        # 2. 使用线程池并发解析页面
+        input_data_local = []   # 临时存储成功页面的输入数据
+        output_data_local = []  # 临时存储成功页面的输出数据
+        success_count = 0
+        skipped_count = 0
+        failed_count = 0
 
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+            # 提交所有任务
             future_to_url = {executor.submit(self.parse_api_page, link): link for link in doc_links}
+
+            # 处理完成的任务
             for future in as_completed(future_to_url):
                 url = future_to_url[future]
                 try:
-                    status, data, extra = future.result()
+                    status, data = future.result()
                     if status == 'success':
-                        api, title, url, inp, outp = data
-                        input_local.append((api, title, url, inp))
-                        output_local.append((api, title, url, outp))
-                        extra_local.append(extra)
+                        api_name, title_above, url, input_details, output_details = data
+                        input_data_local.append((api_name, title_above, url, input_details))
+                        output_data_local.append((api_name, title_above, url, output_details))
                         success_count += 1
                     elif status == 'skipped':
                         skipped_count += 1
-                    else:
+                    else:  # failed
                         failed_count += 1
                 except Exception as e:
                     self.logger.error(f"处理任务结果时发生异常（URL: {url}）：{e}", exc_info=True)
                     failed_count += 1
 
-        self.input_data = input_local
-        self.output_data = output_local
-        self.extra_data = extra_local
+        # 3. 将临时数据赋值给实例变量，供 Excel 生成使用
+        self.input_data = input_data_local
+        self.output_data = output_data_local
 
+        # 4. 输出统计信息
         self.logger.info("="*50)
         self.logger.info("爬取完成，统计信息：")
         self.logger.info(f"总页面数：{total_pages}")
@@ -349,26 +364,32 @@ class TushareDocSpider:
         self.logger.info(f"失败页面：{failed_count}")
         self.logger.info("="*50)
 
+        # 5. 输出到Excel
         if self.input_data or self.output_data:
             self._save_to_excel()
         else:
             self.logger.warning("没有成功解析任何数据，Excel 文件未生成。")
 
     def _apply_styles(self, worksheet):
+        """为工作表的整个数据区应用点线边框和 Arial 11 号字体（与原始方法相同）"""
         max_row = worksheet.max_row
         max_col = worksheet.max_column
         if max_row < 1 or max_col < 1:
             return
+
         dotted_side = Side(style='dotted')
+
         for r in range(1, max_row + 1):
             for c in range(1, max_col + 1):
                 cell = worksheet.cell(row=r, column=c)
+
                 left = dotted_side if c == 1 else None
                 top = dotted_side if r == 1 else None
                 right = dotted_side
                 bottom = dotted_side
                 border = Border(left=left, right=right, top=top, bottom=bottom)
                 cell.border = border
+
                 if cell.hyperlink:
                     font = Font(name='Arial', size=11, color="0000FF", underline="single")
                 else:
@@ -376,6 +397,7 @@ class TushareDocSpider:
                 cell.font = font
 
     def _save_to_excel(self):
+        """将数据保存为Excel文件，包含八个工作表（与原始方法相同）"""
         self.logger.info("开始生成Excel文件...")
 
         output_dir = os.path.dirname(self.output_file)
@@ -398,8 +420,14 @@ class TushareDocSpider:
         ]
 
         tab_colors = {
-            '输入参数': 'FF0000', '输入类型': '9933FF', '输入显示': '9933FF', '输入描述': '9933FF',
-            '输出参数': '0000FF', '输出类型': '00FF00', '输出显示': '00FF00', '输出描述': '00FF00'
+            '输入参数': 'FF0000',
+            '输入类型': '9933FF',
+            '输入显示': '9933FF',
+            '输入描述': '9933FF',
+            '输出参数': '0000FF',
+            '输出类型': '00FF00',
+            '输出显示': '00FF00',
+            '输出描述': '00FF00'
         }
 
         wb = Workbook()
@@ -419,10 +447,10 @@ class TushareDocSpider:
                 rows.append(row)
             return rows
 
-        # 创建原始八个工作表
         for title, data_source, attr_key, hyperlink in sheets_config:
             ws = wb.create_sheet(title=title)
             ws.append(columns)
+
             rows = prepare_rows(data_source, attr_key, hyperlink)
             for row_data in rows:
                 row_to_write = []
@@ -432,59 +460,20 @@ class TushareDocSpider:
                     else:
                         row_to_write.append(cell)
                 ws.append(row_to_write)
+
                 if hyperlink:
                     last_row = ws.max_row
                     cell = ws.cell(row=last_row, column=2)
                     cell.hyperlink = row_data[1][1]
+
             ws.column_dimensions['A'].width = 20
             ws.column_dimensions['B'].width = 40
             ws.column_dimensions['C'].width = 15
             for i in range(4, 4 + max_params):
                 ws.column_dimensions[get_column_letter(i)].width = 15
+
             self._apply_styles(ws)
             ws.sheet_properties.tabColor = tab_colors[title]
-
-        # 创建第九个工作表：附加信息（第三列使用页面大标题，带超链接）
-        if self.extra_data:
-            ws = wb.create_sheet(title="附加信息")
-            headers = ['大类', '小类', '接口名称（链接）', '接口', '积分/权限', '频率限制/分钟', '限量/次',
-                       '段落1', '段落2', '段落3', '段落4', '段落5']
-            ws.append(headers)
-
-            for item in self.extra_data:
-                row = [
-                    item.get('main_category', ''),
-                    item.get('sub_category', ''),
-                    item.get('title_above', ''),       # 第三列：页面大标题（如“A股日线行情”）
-                    item.get('api_name', ''),           # 第四列：纯文本接口名称
-                    item.get('integral', ''),
-                    item.get('frequency', ''),
-                    item.get('limit', ''),
-                    item.get('para1', ''),
-                    item.get('para2', ''),
-                    item.get('para3', ''),
-                    item.get('para4', ''),
-                    item.get('para5', '')
-                ]
-                ws.append(row)
-                # 为第三列设置超链接
-                last_row = ws.max_row
-                cell = ws.cell(row=last_row, column=3)
-                cell.hyperlink = item.get('url', '')
-
-            # 设置列宽
-            ws.column_dimensions['A'].width = 15
-            ws.column_dimensions['B'].width = 15
-            ws.column_dimensions['C'].width = 30   # 带链接的接口名称列加宽
-            ws.column_dimensions['D'].width = 15
-            ws.column_dimensions['E'].width = 15
-            ws.column_dimensions['F'].width = 15
-            ws.column_dimensions['G'].width = 15
-            for i in range(8, 13):  # H到L列
-                ws.column_dimensions[get_column_letter(i)].width = 40
-
-            self._apply_styles(ws)
-            ws.sheet_properties.tabColor = "FFA500"  # 橙色
 
         wb.save(self.output_file)
         self.logger.info(f"Excel文件已成功保存到：{self.output_file}")
@@ -507,6 +496,7 @@ if __name__ == "__main__":
         output_file=full_excel_path,
         log_file=full_log_path,
         delay=1,
-        max_workers=5
+        max_workers=5   # 可根据网络状况调整
     )
     spider.run()
+

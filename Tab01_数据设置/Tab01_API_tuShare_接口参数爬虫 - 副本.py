@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 class TushareDocSpider:
     """
-    // class 版本：1.2.2 (大类缺失时用小类填充)
+    // class 版本：1.2.1 (第九工作表“接口名称(链接)”使用页面大标题)
 
     所属文件名：Tab01_API_tuShare_接口参数爬虫.py
 
@@ -195,9 +195,9 @@ class TushareDocSpider:
         integral = integral_match.group(1) if integral_match else ''
         freq_match = re.search(r'(?:每分钟|调取)[^\d]*(\d+)\s*次', text)
         frequency = freq_match.group(1) if freq_match else ''
-        limit_match = re.search(r'(?:每次|单次)[^\d]*(\d+)\s*(?:条|行)', text)
+        limit_match = re.search(r'每次[^\d]*(\d+)\s*(?:条数据|行数据)', text)
         if not limit_match:
-            limit_match = re.search(r'(\d+)\s*(?:条|行)', text)
+            limit_match = re.search(r'(\d+)\s*(?:条数据|行数据)', text)
         limit = limit_match.group(1) if limit_match else ''
         return integral, frequency, limit
 
@@ -265,11 +265,11 @@ class TushareDocSpider:
 
             # 附加信息
             main_cat, sub_cat = self._extract_category_info(soup)
-            # 确保大类小类不为空：先确保小类非空，大类缺失时用小类填充
+            # 确保大类小类不为空
+            if not main_cat:
+                main_cat = "未知大类"
             if not sub_cat:
                 sub_cat = "未知小类"
-            if not main_cat:
-                main_cat = sub_cat   # 大类缺失时使用小类内容填充
 
             integral, frequency, limit = self._extract_integral_and_limit(soup)
             paras = self._extract_first_five_paragraphs(soup, title_above)
@@ -278,7 +278,7 @@ class TushareDocSpider:
                 'main_category': main_cat,
                 'sub_category': sub_cat,
                 'api_name': api_name,
-                'title_above': title_above,          # 页面大标题（用于第三列）
+                'title_above': title_above,          # 新增：页面大标题（用于第三列）
                 'url': url,                           # 保存URL用于超链接
                 'integral': integral,
                 'frequency': frequency,
