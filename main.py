@@ -14,6 +14,7 @@ from ui_mainwindow import Ui_MainWindow # 导入生成的 UI 文件
 
 # ---------- 新增：后台工作线程类 ----------
 class SpiderWorker(QObject):
+    """后台工作线程类"""
     finished = Signal() # 完成信号
     error = Signal(str) # 错误信号（带错误信息）
 
@@ -31,6 +32,13 @@ class SpiderWorker(QObject):
 # -----------------------------------------
 
 class MainWindow(QMainWindow):
+    """主窗口类
+    // class 版本：1.0.0
+    描述：主窗口类，负责处理用户交互。
+    描述：继承自 QMainWindow，负责初始化 UI 和处理用户交互。
+    
+    
+    """
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()

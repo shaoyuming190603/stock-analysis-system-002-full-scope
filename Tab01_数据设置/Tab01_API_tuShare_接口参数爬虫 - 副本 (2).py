@@ -314,10 +314,6 @@ class TushareDocSpider:
         total_pages = len(doc_links)
         self.logger.info(f"开始遍历 {total_pages} 个接口页面...")
 
-        # ========== 新增进度显示相关变量 ==========
-        start_time = time.time()          # 记录开始时间
-        processed = 0                     # 已处理页面计数器（包括成功/跳过/失败）
-
         input_local, output_local, extra_local = [], [], []
         success_count = skipped_count = failed_count = 0
 
@@ -325,25 +321,6 @@ class TushareDocSpider:
             future_to_url = {executor.submit(self.parse_api_page, link): link for link in doc_links}
             for future in as_completed(future_to_url):
                 url = future_to_url[future]
-                processed += 1             # 只要任务完成就计数，无论成功/失败/跳过
-
-                # 计算进度信息
-                elapsed = time.time() - start_time
-                # 避免除零错误（processed >= 1 时成立）
-                avg_per_page = elapsed / processed
-                total_estimated = avg_per_page * total_pages
-                # 格式化时间
-                # 已用时：MM:SS（分钟:秒，小时折算为分钟）
-                elapsed_mmss = f"{int(elapsed // 60):02d}:{int(elapsed % 60):02d}"
-                # 预计总用时：HH:MM:SS
-                total_hms = time.strftime("%H:%M:%S", time.gmtime(total_estimated))
-                progress = processed / total_pages * 100
-
-                # 输出进度行（每次任务完成时打印一行）
-                print(f"当前解析第{processed}页，共{total_pages}页，"
-                      f"当前已用时{elapsed_mmss}，预计总用时{total_hms}，当前进度{progress:.2f}%")
-
-                # 处理任务结果（与原逻辑相同）
                 try:
                     status, data, extra = future.result()
                     if status == 'success':
