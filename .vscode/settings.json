@@ -1,2 +1,6 @@
 {
+    "qt-qml.qmlls.customArgs": [
+        "-I",
+        "D:\\0001_VScodePython股票分析系统\\0002_股票分析_悟空001\\我的PNP_MCSD大项目20260304"
+    ]
 }

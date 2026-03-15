@@ -1,0 +1,2 @@
+2026-03-09 20:59:39,002 - WARNING - 缺少依赖包: uiautomation, numpy
+2026-03-09 20:59:39,002 - INFO - 请使用以下命令安装: pip install uiautomation numpy

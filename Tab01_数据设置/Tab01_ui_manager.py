@@ -1,6 +1,6 @@
 # Tab01_数据设置\Tab01_ui_manager.py
 # This Python file uses the following encoding: utf-8
-
+import os
 import sys
 import logging
 import time
@@ -229,13 +229,26 @@ class Tab01UIManager(QObject):   # 修改：继承 QObject 以便使用信号
         # 生成当前日期字符串，格式为YYYY_MM_DD
         today_str = QDate.currentDate().toString("yyyy_MM_dd")
 
+        # from deepseek:
+        # https://chat.deepseek.com/a/chat/s/420fb3f9-0cd2-4bf3-a043-14cb0bbf74dc
+        # 获取当前脚本的绝对路径
+        current_file = os.path.abspath(__file__)
+        # 当前脚本所在目录
+        current_dir = os.path.dirname(current_file)
+        # 项目根目录：当前目录的上一级（根据实际情况可能需要向上多级）
+        project_root = os.path.dirname(current_dir)
+
+
         # 根据选中ID设置对应文本
         if checked_id == 1:  # TuShare
             label_text1 = "TuShare API接口列表"
             label_text2 = "TuShare API日志文件"
             label_text3 = "TuShare API保存路径"
+            label_text4 = "TuShare 网站 URL"
             plain_text1 = f"TuShare API接口列表_{today_str}.xlsx"
             plain_text2 = f"TuShare API日志文件_{today_str}.log"
+            # plain_text3 = f"{current_dir}\Tab0101_TuShareAPI接口参数下载"
+            plain_text3 = os.path.join(current_dir, "Tab0101_TuShareAPI接口参数下载")
 
         elif checked_id == 2:  # AST
             label_text1 = "AST API接口列表"
@@ -243,6 +256,7 @@ class Tab01UIManager(QObject):   # 修改：继承 QObject 以便使用信号
             label_text3 = "AST API保存路径"
             plain_text1 = f"AST API接口列表_{today_str}.xlsx"
             plain_text2 = f"AST API日志文件_{today_str}.log"
+
         elif checked_id == 3:  # Choice
             label_text1 = "东财CHOICE API接口列表"
             label_text2 = "东财CHOICE API日志文件"
@@ -262,3 +276,4 @@ class Tab01UIManager(QObject):   # 修改：继承 QObject 以便使用信号
         self.ui.lab_Specify_Initial_Path.setText(label_text3)
         self.ui.txt_Specify_API_list_Name.setPlainText(plain_text1)
         self.ui.txt_Specify_API_log_Name.setPlainText(plain_text2)
+        self.ui.txt_Specify_Initial_Path.setPlainText(plain_text3)

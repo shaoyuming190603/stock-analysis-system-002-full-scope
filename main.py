@@ -6,7 +6,7 @@ from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialo
 from PySide6.QtCore import Qt, QThread, Signal, QObject # 新增导入
 
 # 导入自定义模块
-from Tab01_数据设置 import Tab01_Specify_API_FileNamePath
+# from Tab01_数据设置 import Tab01_Specify_API_FileNamePath
 from Tab01_数据设置.Tab01_settings_manager import Tab01SettingsManager
 from Tab01_数据设置.Tab01_API_tuShare_接口参数爬虫 import TushareDocSpider
 from Tab01_数据设置.Tab01_ui_manager import Tab01UIManager
