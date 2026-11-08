@@ -1,70 +1,263 @@
+# -*- coding: utf-8 -*-
 import sys
 import os
-import time
-from datetime import datetime # 新增导入
-from PySide6.QtWidgets import QApplication, QMainWindow, QMessageBox, QFileDialog
-from PySide6.QtCore import Qt, QThread, Signal, QObject # 新增导入
+import json
+from datetime import datetime, date as date_cls
+
+from PySide6.QtWidgets import (
+    QApplication, QMainWindow, QMessageBox, QFileDialog,
+    QVBoxLayout,
+)
+from PySide6.QtCore import Qt, QThread, Signal, QObject, QDate
 
 # 导入自定义模块
-# from Tab01_数据设置 import Tab01_Specify_API_FileNamePath
-from Tab01_数据设置.Tab01_settings_manager import Tab01SettingsManager
+from Tab01_数据设置 import Tab01_Specify_API_FileNamePath
+from ui_mainwindow import Ui_MainWindow
 from Tab01_数据设置.Tab01_API_tuShare_接口参数爬虫 import TushareDocSpider
+from Tab01_数据设置.Tab01_settings_manager import Tab01SettingsManager
 from Tab01_数据设置.Tab01_ui_manager import Tab01UIManager
-from ui_mainwindow import Ui_MainWindow # 导入生成的 UI 文件
 
-# ---------- 新增：后台工作线程类 ----------
+# Tab02 分钟数据下载器
+from Tab02_数据下载.Tab02_minute_data_downloader import Tab02MinuteDataDownloader
+
+# Tab03 分时图组件（位于子目录 Tab03_分析设置 内）
+from Tab03_分析设置.Tab03_Minute_Data_Display_Qt import Tab03MinuteDataDisplay
+
+
+# ============================================================
+# 持久化临时文件配置
+# ============================================================
+PERSIST_FILE_NAME = "app_persist.json"
+PERSIST_KEYS = [
+    "txt_Specify_Initial_Path",
+    "txt_file_path",
+    "txt_file_name",
+    "txt_ts_code",
+]
+
+
+# ---------- 后台爬虫线程 ----------
 class SpiderWorker(QObject):
-    """后台工作线程类"""
-    finished = Signal() # 完成信号
-    error = Signal(str) # 错误信号（带错误信息）
+    finished = Signal()
+    error    = Signal(str)
 
     def __init__(self, spider):
         super().__init__()
         self.spider = spider
 
     def run(self):
-        """在线程中执行爬虫"""
         try:
             self.spider.run()
             self.finished.emit()
         except Exception as e:
             self.error.emit(str(e))
-# -----------------------------------------
+
 
 class MainWindow(QMainWindow):
-    """主窗口类
-    // class 版本：1.0.0
-    描述：主窗口类，负责处理用户交互。
-    描述：继承自 QMainWindow，负责初始化 UI 和处理用户交互。
-    
-    
-    """
+    """主窗口类"""
+
     def __init__(self):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self._persist_file = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)),
+            PERSIST_FILE_NAME,
+        )
+
+        self._load_persist()
+        self._init_date_edit_today()
+
+        # Tab01 设置 / UI 管理
         self.settings_manager = Tab01SettingsManager()
         self.ui_manager = Tab01UIManager(self.ui, self.settings_manager)
-        # self.resize(2640, 480) # 动态调整窗口大小
 
-        # 绑定tab切换信号
+        # Tab02 下载器
+        self.tab02_downloader = Tab02MinuteDataDownloader(self.ui, self)
+        try:
+            self.tab02_downloader.finished_signal.connect(self.on_tab02_finished)
+            self.tab02_downloader.error_signal.connect(self.on_tab02_error)
+            self.tab02_downloader.log_signal.connect(self.on_tab02_progress)
+        except Exception as e:
+            print(f"[Main] 连接下载器信号失败: {e}")
+
+        # Tab03 分时图组件
+        self.tab03_display = None
+        try:
+            tab2 = self.ui.tab_2
+            if tab2.layout() is None:
+                tab2_layout = QVBoxLayout(tab2)
+                tab2_layout.setContentsMargins(2, 2, 2, 2)
+                tab2.setLayout(tab2_layout)
+
+            self.tab03_display = Tab03MinuteDataDisplay(
+                self.ui, self, persist_callback=self._save_persist
+            )
+            tab2.layout().addWidget(self.tab03_display)
+            print("[Main] Tab03 分时图组件已加载至 T302_实时行情历史匹配")
+        except Exception as e:
+            print(f"[Main] Tab03 分时图组件加载失败: {e}")
+            self.tab03_display = None
+
+        # ChangeDate 按钮
+        if hasattr(self.ui, 'pushBttn_ChangeDate'):
+            try:
+                self.ui.pushBttn_ChangeDate.clicked.connect(
+                    self.on_pushBttn_ChangeDate_clicked
+                )
+                print("[Main] 已连接 pushBttn_ChangeDate")
+            except Exception as e:
+                print(f"[Main] 连接 pushBttn_ChangeDate 失败: {e}")
+        else:
+            print("[Main] 未找到 pushBttn_ChangeDate 控件")
+
+        # Tab 颜色切换
         self.ui.tabWidget_mainWindow.currentChanged.connect(self.on_tab_changed)
-        self.on_tab_changed(self.ui.tabWidget_mainWindow.currentIndex()) # 初始化时设置一次
+        self.on_tab_changed(self.ui.tabWidget_mainWindow.currentIndex())
 
-        # 绑定菜单动作
+        # 菜单动作
         self.ui.actionDataSub01_01.triggered.connect(self.show_hello_world)
-        self.ui.menu02_Sub01_DataFolderSelect.triggered.connect(self.open_folder_dialog) # 关联菜单项“Data_Sub02”
+        self.ui.menu02_Sub01_DataFolderSelect.triggered.connect(self.open_folder_dialog)
 
-        # 关联菜单项“pushButton”, 此处 “pushBttn_API_InitialPath”， 是UI设计界面控件object name。
+        # Tab01 按钮
         self.ui.pushBttn_API_InitialPath.pressed.connect(self.Tab01_API_InitialPath_dialog)
-
-        # ***** 修改点：将原来两个连接合并为一个统一的槽函数 *****
         self.ui.pushBttn_API_GeneratList.pressed.connect(self.on_generate_list_clicked)
 
-        # 设置控件初始值（原有注释保留）
-        # self.ui.txt_Specify_API_list_Name.setPlainText("123")
+    # ---------------- 持久化 ----------------
+    def _load_persist(self):
+        try:
+            if not os.path.exists(self._persist_file):
+                return
+            with open(self._persist_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+            for key in PERSIST_KEYS:
+                if key in data and hasattr(self.ui, key):
+                    self._set_text(getattr(self.ui, key), data[key])
+            print(f"[Main] 已加载持久化数据: {self._persist_file}")
+        except Exception as e:
+            print(f"[Main] 加载持久化数据失败: {e}")
 
-    # 保存日志的按钮事件处理（保持不变）
+    def _save_persist(self, *args, **kwargs):
+        try:
+            data = {}
+            for key in PERSIST_KEYS:
+                if hasattr(self.ui, key):
+                    data[key] = self._get_text(getattr(self.ui, key))
+            with open(self._persist_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print(f"[Main] 持久化数据已保存: {self._persist_file}")
+        except Exception as e:
+            print(f"[Main] 保存持久化数据失败: {e}")
+
+    # ---------------- dateEdit 控件接口 ----------------
+    def _init_date_edit_today(self):
+        """程序启动时，自动在 dateEdit 中填写当天日期"""
+        if not hasattr(self.ui, 'dateEdit'):
+            print("[Main] 未找到 dateEdit 控件")
+            return
+        try:
+            today = QDate.currentDate()
+            self.ui.dateEdit.setDate(today)
+            print(f"[Main] dateEdit 已设置为当天日期: {today.toString('yyyy-MM-dd')}")
+        except Exception as e:
+            print(f"[Main] 设置 dateEdit 日期失败: {e}")
+
+    def get_date_edit_date(self):
+        """对外接口：返回 dateEdit 当前日期 (datetime.date)；无法读取返回 None"""
+        if not hasattr(self.ui, 'dateEdit'):
+            print("[Main] get_date_edit_date: 未找到 dateEdit 控件")
+            return None
+        try:
+            qd = self.ui.dateEdit.date()
+            d = date_cls(qd.year(), qd.month(), qd.day())
+            print(f"[Main] get_date_edit_date 返回: {d}")
+            return d
+        except Exception as e:
+            print(f"[Main] 读取 dateEdit 失败: {e}")
+            return None
+
+    def set_date_edit_date(self, d):
+        """对外接口：设置 dateEdit 日期，d 为 datetime.date"""
+        if not hasattr(self.ui, 'dateEdit') or d is None:
+            return
+        try:
+            self.ui.dateEdit.setDate(QDate(d.year, d.month, d.day))
+            print(f"[Main] set_date_edit_date 已设置为: {d.strftime('%Y-%m-%d')}")
+        except Exception as e:
+            print(f"[Main] 设置 dateEdit 失败: {e}")
+
+    # ---------------- pushBttn_ChangeDate 按钮接口 ----------------
+    def on_pushBttn_ChangeDate_clicked(self):
+        """终止 Tab03 当前提取；按 dateEdit 日期重新提取。"""
+        if getattr(self, 'tab03_display', None) is None:
+            QMessageBox.warning(self, "提示", "Tab03 分时图组件尚未加载，无法按日期提取数据。")
+            return
+
+        d = self.get_date_edit_date()
+        date_str = d.strftime('%Y-%m-%d') if d else ''
+
+        try:
+            self.tab03_display.change_date_reload()
+            if date_str:
+                self.statusBar().showMessage(
+                    f"Tab03: 已按日期 {date_str} 重新提取 1min 分时数据"
+                )
+            else:
+                self.statusBar().showMessage("Tab03: 已按 dateEdit 日期重新提取 1min 分时数据")
+            print(f"[Main] ChangeDate 触发，目标日期: {date_str or '(dateEdit)'}")
+        except Exception as e:
+            print(f"[Main] ChangeDate 执行失败: {e}")
+            QMessageBox.warning(self, "错误", f"按日期重新提取失败：{e}")
+
+    def closeEvent(self, event):
+        try:
+            if getattr(self, "tab03_display", None) is not None:
+                self.tab03_display.shutdown()
+        except Exception as e:
+            print(f"[Main] 关闭 Tab03 组件失败: {e}")
+
+        self._save_persist()
+        super().closeEvent(event)
+
+    # ---------------- 通用控件读写 ----------------
+    @staticmethod
+    def _get_text(widget):
+        if widget is None:
+            return ""
+        if hasattr(widget, "toPlainText"):
+            return widget.toPlainText().strip()
+        if hasattr(widget, "text"):
+            return widget.text().strip()
+        return ""
+
+    @staticmethod
+    def _set_text(widget, text):
+        if widget is None:
+            return
+        if hasattr(widget, "setPlainText"):
+            widget.setPlainText(text)
+        elif hasattr(widget, "setText"):
+            widget.setText(text)
+
+    # ---------------- Tab02 状态回调 ----------------
+    def on_tab02_progress(self, msg):
+        self.statusBar().showMessage(msg)
+        print("[Tab02]", msg)
+
+    def on_tab02_finished(self, *args):
+        if hasattr(self.ui, "pushBttn_Generat_minute_List"):
+            self.ui.pushBttn_Generat_minute_List.setEnabled(True)
+        self.statusBar().showMessage("Tab02 分钟数据下载完成")
+        self._save_persist()
+
+    def on_tab02_error(self, msg):
+        if hasattr(self.ui, "pushBttn_Generat_minute_List"):
+            self.ui.pushBttn_Generat_minute_List.setEnabled(True)
+        self.statusBar().showMessage("Tab02 分钟数据下载失败")
+        print(f"[Tab02] 错误: {msg}")
+
+    # ---------------- Tab01 原有逻辑 ----------------
     def handle_save_log(self):
         Tab01_Specify_API_FileNamePath.save_log(
             self.ui.txt_Specify_Initial_Path,
@@ -72,51 +265,30 @@ class MainWindow(QMainWindow):
             self.ui.pushBttn_API_GeneratList
         )
 
-    # ***** 新增：按钮点击后的统一处理 *****
     def on_generate_list_clicked(self):
-        # 先保存日志（同步操作，很快）
         self.handle_save_log()
-        # 然后启动爬虫（后台运行）
         self.start_spider()
 
-    # ***** 新增：启动后台爬虫 *****
     def start_spider(self):
-        # 获取输出路径
         path = self.ui.txt_Specify_Initial_Path.toPlainText().strip()
         if not path:
             QMessageBox.warning(self, "警告", "请先选择输出路径！")
             return
 
-        # 构造文件名（可根据需要修改）
-        # 从控件获取文件名（假设控件为 QPlainTextEdit 或 QLineEdit）
         save_filename = self.ui.txt_Specify_API_list_Name.toPlainText().strip()
         if not save_filename:
-            # 如果用户未输入，使用默认名称
-            # save_filename = "tuShare接口输入输出参数清单.xlsx"
-            # 或者您也可以弹出警告，要求用户输入
             QMessageBox.warning(self, "警告", "请输入API接口文件名！")
             return
 
-        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        timestamp = datetime.now().strftime("%H%M%S")
-
-        # log_filename = f"tuShare爬虫日志_{timestamp}.log"
-        log_filename= self.ui.txt_Specify_API_log_Name.toPlainText().strip()
+        log_filename = self.ui.txt_Specify_API_log_Name.toPlainText().strip()
         if not log_filename:
-            # 如果用户未输入，使用默认名称
-            # log_filename = "tuShare接口日志文件.log"
-            # 或者您也可以弹出警告，要求用户输入
             QMessageBox.warning(self, "警告", "请输入日志文件名！")
             return
 
-
         output_file = os.path.join(path, save_filename)
-        log_file = os.path.join(path, log_filename)
-
-        # 确保目录存在
+        log_file    = os.path.join(path, log_filename)
         os.makedirs(path, exist_ok=True)
 
-        # 创建爬虫实例
         spider = TushareDocSpider(
             start_url='https://tushare.pro/document/2',
             output_file=output_file,
@@ -124,12 +296,10 @@ class MainWindow(QMainWindow):
             delay=1
         )
 
-        # 创建线程和工作对象
         self.thread = QThread()
         self.worker = SpiderWorker(spider)
         self.worker.moveToThread(self.thread)
 
-        # 连接信号
         self.thread.started.connect(self.worker.run)
         self.worker.finished.connect(self.thread.quit)
         self.worker.finished.connect(self.worker.deleteLater)
@@ -137,30 +307,22 @@ class MainWindow(QMainWindow):
         self.worker.finished.connect(self.on_spider_finished)
         self.worker.error.connect(self.on_spider_error)
 
-        # 禁用按钮，防止重复点击
         self.ui.pushBttn_API_GeneratList.setEnabled(False)
-        # 启动线程
         self.thread.start()
 
-    # ***** 新增：爬虫完成后的处理 *****
     def on_spider_finished(self):
         self.ui.pushBttn_API_GeneratList.setEnabled(True)
         QMessageBox.information(self, "完成", "爬虫任务已完成！")
 
-    # ***** 新增：爬虫出错处理 *****
     def on_spider_error(self, msg):
         self.ui.pushBttn_API_GeneratList.setEnabled(True)
         QMessageBox.critical(self, "错误", f"爬虫运行出错：{msg}")
 
-    # 以下方法保持不变 ------------------------------------
+    # ---------------- 其他原有方法 ----------------
     def on_tab_changed(self, index):
         tab_bar = self.ui.tabWidget_mainWindow.tabBar()
-        tab_count = self.ui.tabWidget_mainWindow.count()
-        for i in range(tab_count):
-            if i == index:
-                tab_bar.setTabTextColor(i, Qt.red) # 当前tab红色
-            else:
-                tab_bar.setTabTextColor(i, Qt.green) # 其他tab绿色
+        for i in range(self.ui.tabWidget_mainWindow.count()):
+            tab_bar.setTabTextColor(i, Qt.red if i == index else Qt.green)
 
     def show_hello_world(self):
         QMessageBox.information(self, "信息", "hello world")
@@ -171,9 +333,13 @@ class MainWindow(QMainWindow):
             self.ui.label_1.setText(folder_path)
 
     def Tab01_API_InitialPath_dialog(self):
-        folder_path = QFileDialog.getExistingDirectory(self, "选择文件夹，作为输出文件的保存位置", "")
+        folder_path = QFileDialog.getExistingDirectory(
+            self, "选择文件夹，作为输出文件的保存位置", ""
+        )
         if folder_path:
             self.ui.txt_Specify_Initial_Path.setPlainText(folder_path)
+            self._save_persist()
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

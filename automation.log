@@ -24,3 +24,15 @@
 2026-03-09 22:12:42,621 - INFO - 检测到鼠标双击，切换控制权。
 2026-03-09 22:12:42,623 - INFO - 自动化状态已切换为：暂停
 2026-03-09 22:12:42,816 - INFO - 检测到鼠标三击，程序终止。
+2026-11-04 09:19:08,493 - ERROR - Tesseract OCR 未找到！请执行以下操作：
+2026-11-04 09:19:08,494 - ERROR - 1. 从 https://github.com/UB-Mannheim/tesseract/wiki 下载安装
+2026-11-04 09:19:08,494 - ERROR - 2. 安装时勾选中文语言包
+2026-11-04 09:19:08,494 - ERROR - 3. 安装后，将 Tesseract 路径添加到系统 PATH，
+2026-11-04 09:19:08,494 - ERROR -    或在代码顶部取消注释并设置 pytesseract.pytesseract.tesseract_cmd
+2026-11-04 09:19:08,495 - ERROR - 详细错误: C:\Program Files\Tesseract-OCR\tesseract.exe is not installed or it's not in your PATH. See README file for more information.
+2026-11-04 09:27:04,970 - ERROR - Tesseract OCR 未找到！请执行以下操作：
+2026-11-04 09:27:04,970 - ERROR - 1. 从 https://github.com/UB-Mannheim/tesseract/wiki 下载安装
+2026-11-04 09:27:04,971 - ERROR - 2. 安装时勾选中文语言包
+2026-11-04 09:27:04,971 - ERROR - 3. 安装后，将 Tesseract 路径添加到系统 PATH，
+2026-11-04 09:27:04,971 - ERROR -    或在代码顶部取消注释并设置 pytesseract.pytesseract.tesseract_cmd
+2026-11-04 09:27:04,971 - ERROR - 详细错误: C:\Program Files\Tesseract-OCR\tesseract.exe is not installed or it's not in your PATH. See README file for more information.

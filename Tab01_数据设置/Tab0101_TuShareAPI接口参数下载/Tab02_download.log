@@ -1,0 +1,556 @@
+2026-11-04 19:53:17 [INFO] ============================================================
+2026-11-04 19:53:17 [INFO] log 文件位置: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载\Tab02_download.log
+2026-11-04 19:53:17 [INFO] ============================================================
+2026-11-04 19:53:17 [INFO] 开始下载分钟数据
+2026-11-04 19:53:17 [INFO]   ts_code      = 300274.SZ
+2026-11-04 19:53:17 [INFO]   freq         = 15min
+2026-11-04 19:53:17 [INFO]   factor       = 17
+2026-11-04 19:53:17 [INFO]   start_date   = 2026-01-01
+2026-11-04 19:53:17 [INFO]   end_date     = 2026-11-03
+2026-11-04 19:53:17 [INFO]   offset       = ''
+2026-11-04 19:53:17 [INFO]   输出文件夹   = d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-04 19:53:17 [INFO]   CSV  文件    = TuShare 15分钟数据_2026-11-04.csv
+2026-11-04 19:53:17 [INFO]   Excel 文件   = TuShare 15分钟数据_2026-11-04.xlsx
+2026-11-04 19:53:17 [INFO] 日期跨度 307 天 > 31 天 -> 拆分为 11 个月度任务
+2026-11-04 19:53:17 [INFO] [1/11] 2026-01-01 ~ 2026-01-31  limit=527
+2026-11-04 19:53:18 [INFO]     返回 340 行
+2026-11-04 19:53:18 [INFO] [2/11] 2026-02-01 ~ 2026-02-28  limit=476
+2026-11-04 19:53:18 [INFO]     返回 238 行
+2026-11-04 19:53:18 [INFO] [3/11] 2026-03-01 ~ 2026-03-31  limit=527
+2026-11-04 19:53:18 [INFO]     返回 357 行
+2026-11-04 19:53:18 [INFO] [4/11] 2026-04-01 ~ 2026-04-30  limit=510
+2026-11-04 19:53:18 [INFO]     返回 340 行
+2026-11-04 19:53:19 [INFO] [5/11] 2026-05-01 ~ 2026-05-31  limit=527
+2026-11-04 19:53:19 [INFO]     返回 306 行
+2026-11-04 19:53:19 [INFO] [6/11] 2026-06-01 ~ 2026-06-30  limit=510
+2026-11-04 19:53:19 [INFO]     返回 340 行
+2026-11-04 19:53:19 [INFO] [7/11] 2026-07-01 ~ 2026-07-31  limit=527
+2026-11-04 19:53:20 [INFO]     返回 374 行
+2026-11-04 19:53:20 [INFO] [8/11] 2026-08-01 ~ 2026-08-31  limit=527
+2026-11-04 19:53:20 [INFO]     返回 340 行
+2026-11-04 19:53:20 [INFO] [9/11] 2026-09-01 ~ 2026-09-30  limit=510
+2026-11-04 19:53:21 [INFO]     返回 340 行
+2026-11-04 19:53:21 [INFO] [10/11] 2026-10-01 ~ 2026-10-31  limit=527
+2026-11-04 19:53:21 [INFO]     返回 289 行
+2026-11-04 19:53:22 [INFO] [11/11] 2026-11-01 ~ 2026-11-03  limit=51
+2026-11-04 19:53:22 [INFO]     返回 17 行
+2026-11-04 19:53:22 [INFO] 所有任务完成，累计 3281 行
+2026-11-04 19:53:22 [INFO] 排序/去重：第 2 列 = trade_time
+2026-11-04 19:53:22 [INFO] 去重：3281 -> 3281（移除 0 行冗余）
+2026-11-04 19:53:23 [INFO] 已重新写出 CSV 与 Excel：3281 行
+2026-11-04 19:53:23 [INFO] ============================================================
+2026-11-04 19:53:23 [INFO] 全部完成
+2026-11-04 19:54:25 [INFO] ============================================================
+2026-11-04 19:54:25 [INFO] log 文件位置: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载\Tab02_download.log
+2026-11-04 19:54:25 [INFO] ============================================================
+2026-11-04 19:54:25 [INFO] 开始下载分钟数据
+2026-11-04 19:54:25 [INFO]   ts_code      = 300274.SZ
+2026-11-04 19:54:25 [INFO]   freq         = 1min
+2026-11-04 19:54:25 [INFO]   factor       = 241
+2026-11-04 19:54:25 [INFO]   start_date   = 2026-01-01
+2026-11-04 19:54:25 [INFO]   end_date     = 2026-11-03
+2026-11-04 19:54:25 [INFO]   offset       = ''
+2026-11-04 19:54:25 [INFO]   输出文件夹   = d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-04 19:54:25 [INFO]   CSV  文件    = TuShare 1分钟数据_2026-11-04.csv
+2026-11-04 19:54:25 [INFO]   Excel 文件   = TuShare 1分钟数据_2026-11-04.xlsx
+2026-11-04 19:54:25 [INFO] 日期跨度 307 天 > 31 天 -> 拆分为 11 个月度任务
+2026-11-04 19:54:25 [INFO] [1/11] 2026-01-01 ~ 2026-01-31  limit=7471
+2026-11-04 19:54:25 [INFO]     返回 4820 行
+2026-11-04 19:54:30 [INFO] [2/11] 2026-02-01 ~ 2026-02-28  limit=6748
+2026-11-04 19:54:30 [INFO]     返回 3374 行
+2026-11-04 19:54:39 [INFO] [3/11] 2026-03-01 ~ 2026-03-31  limit=7471
+2026-11-04 19:54:39 [INFO]     返回 5061 行
+2026-11-04 19:54:49 [INFO] [4/11] 2026-04-01 ~ 2026-04-30  limit=7230
+2026-11-04 19:54:50 [INFO]     返回 4820 行
+2026-11-04 19:55:00 [INFO] [5/11] 2026-05-01 ~ 2026-05-31  limit=7471
+2026-11-04 19:55:00 [INFO]     返回 4338 行
+2026-11-04 19:55:11 [INFO] [6/11] 2026-06-01 ~ 2026-06-30  limit=7230
+2026-11-04 19:55:11 [INFO]     返回 4820 行
+2026-11-04 19:55:24 [INFO] [7/11] 2026-07-01 ~ 2026-07-31  limit=7471
+2026-11-04 19:55:25 [INFO]     返回 5302 行
+2026-11-04 19:55:38 [INFO] [8/11] 2026-08-01 ~ 2026-08-31  limit=7471
+2026-11-04 19:55:38 [INFO]     返回 4820 行
+2026-11-04 19:55:54 [INFO] [9/11] 2026-09-01 ~ 2026-09-30  limit=7230
+2026-11-04 19:55:54 [INFO]     返回 4820 行
+2026-11-04 19:56:11 [INFO] [10/11] 2026-10-01 ~ 2026-10-31  limit=7471
+2026-11-04 19:56:11 [INFO]     返回 4097 行
+2026-11-04 19:56:27 [INFO] [11/11] 2026-11-01 ~ 2026-11-03  limit=723
+2026-11-04 19:56:27 [INFO]     返回 241 行
+2026-11-04 19:56:44 [INFO] 所有任务完成，累计 46513 行
+2026-11-04 19:56:44 [INFO] 排序/去重失败: Error tokenizing data. C error: Expected 8 fields in line 47961, saw 11
+
+2026-11-04 19:56:44 [INFO] ============================================================
+2026-11-04 19:56:44 [INFO] 全部完成
+2026-11-05 10:15:44 [INFO] ============================================================
+2026-11-05 10:15:44 [INFO] log 文件位置: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载\Tab02_download.log
+2026-11-05 10:15:44 [INFO] ============================================================
+2026-11-05 10:15:44 [INFO] 开始下载分钟数据
+2026-11-05 10:15:44 [INFO]   ts_code      = 300274.SZ
+2026-11-05 10:15:44 [INFO]   freq         = 30min
+2026-11-05 10:15:44 [INFO]   factor       = 9
+2026-11-05 10:15:44 [INFO]   start_date   = 2024-01-01
+2026-11-05 10:15:44 [INFO]   end_date     = 2026-11-03
+2026-11-05 10:15:44 [INFO]   offset       = ''
+2026-11-05 10:15:44 [INFO]   输出文件夹   = d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-05 10:15:44 [INFO]   CSV  文件    = TuShare 30分钟数据_2026-11-05.csv
+2026-11-05 10:15:44 [INFO]   Excel 文件   = TuShare 30分钟数据_2026-11-05.xlsx
+2026-11-05 10:15:44 [INFO] 日期跨度 1038 天 > 31 天 -> 拆分为 35 个月度任务
+2026-11-05 10:15:44 [INFO] [1/35] 2024-01-01 ~ 2024-01-31  limit=279
+2026-11-05 10:15:44 [INFO]     返回 189 行
+2026-11-05 10:15:44 [INFO] [2/35] 2024-02-01 ~ 2024-02-29  limit=261
+2026-11-05 10:15:44 [INFO]     返回 126 行
+2026-11-05 10:15:44 [INFO] [3/35] 2024-03-01 ~ 2024-03-31  limit=279
+2026-11-05 10:15:45 [INFO]     返回 189 行
+2026-11-05 10:15:45 [INFO] [4/35] 2024-04-01 ~ 2024-04-30  limit=270
+2026-11-05 10:15:45 [INFO]     返回 171 行
+2026-11-05 10:15:45 [INFO] [5/35] 2024-05-01 ~ 2024-05-31  limit=279
+2026-11-05 10:15:45 [INFO]     返回 171 行
+2026-11-05 10:15:45 [INFO] [6/35] 2024-06-01 ~ 2024-06-30  limit=270
+2026-11-05 10:15:45 [INFO]     返回 171 行
+2026-11-05 10:15:46 [INFO] [7/35] 2024-07-01 ~ 2024-07-31  limit=279
+2026-11-05 10:15:46 [INFO]     返回 198 行
+2026-11-05 10:15:46 [INFO] [8/35] 2024-08-01 ~ 2024-08-31  limit=279
+2026-11-05 10:15:46 [INFO]     返回 198 行
+2026-11-05 10:15:46 [INFO] [9/35] 2024-09-01 ~ 2024-09-30  limit=270
+2026-11-05 10:15:46 [INFO]     返回 162 行
+2026-11-05 10:15:47 [INFO] [10/35] 2024-10-01 ~ 2024-10-31  limit=279
+2026-11-05 10:15:47 [INFO]     返回 153 行
+2026-11-05 10:15:47 [INFO] [11/35] 2024-11-01 ~ 2024-11-30  limit=270
+2026-11-05 10:15:47 [INFO]     返回 189 行
+2026-11-05 10:15:47 [INFO] [12/35] 2024-12-01 ~ 2024-12-31  limit=279
+2026-11-05 10:15:47 [INFO]     返回 189 行
+2026-11-05 10:15:48 [INFO] [13/35] 2025-01-01 ~ 2025-01-31  limit=279
+2026-11-05 10:15:48 [INFO]     返回 162 行
+2026-11-05 10:15:48 [INFO] [14/35] 2025-02-01 ~ 2025-02-28  limit=252
+2026-11-05 10:15:48 [INFO]     返回 153 行
+2026-11-05 10:15:49 [INFO] [15/35] 2025-03-01 ~ 2025-03-31  limit=279
+2026-11-05 10:15:49 [INFO]     返回 180 行
+2026-11-05 10:15:49 [INFO] [16/35] 2025-04-01 ~ 2025-04-30  limit=270
+2026-11-05 10:15:49 [INFO]     返回 180 行
+2026-11-05 10:15:50 [INFO] [17/35] 2025-05-01 ~ 2025-05-31  limit=279
+2026-11-05 10:15:50 [INFO]     返回 171 行
+2026-11-05 10:15:50 [INFO] [18/35] 2025-06-01 ~ 2025-06-30  limit=270
+2026-11-05 10:15:50 [INFO]     返回 171 行
+2026-11-05 10:15:51 [INFO] [19/35] 2025-07-01 ~ 2025-07-31  limit=279
+2026-11-05 10:15:51 [INFO]     返回 198 行
+2026-11-05 10:15:51 [INFO] [20/35] 2025-08-01 ~ 2025-08-31  limit=279
+2026-11-05 10:15:51 [INFO]     返回 189 行
+2026-11-05 10:15:52 [INFO] [21/35] 2025-09-01 ~ 2025-09-30  limit=270
+2026-11-05 10:15:52 [INFO]     返回 189 行
+2026-11-05 10:15:53 [INFO] [22/35] 2025-10-01 ~ 2025-10-31  limit=279
+2026-11-05 10:15:53 [INFO]     返回 144 行
+2026-11-05 10:15:53 [INFO] [23/35] 2025-11-01 ~ 2025-11-30  limit=270
+2026-11-05 10:15:54 [INFO]     返回 180 行
+2026-11-05 10:15:54 [INFO] [24/35] 2025-12-01 ~ 2025-12-31  limit=279
+2026-11-05 10:15:54 [INFO]     返回 198 行
+2026-11-05 10:15:55 [INFO] [25/35] 2026-01-01 ~ 2026-01-31  limit=279
+2026-11-05 10:15:55 [INFO]     返回 180 行
+2026-11-05 10:15:56 [INFO] [26/35] 2026-02-01 ~ 2026-02-28  limit=252
+2026-11-05 10:15:56 [INFO]     返回 126 行
+2026-11-05 10:15:57 [INFO] [27/35] 2026-03-01 ~ 2026-03-31  limit=279
+2026-11-05 10:15:57 [INFO]     返回 189 行
+2026-11-05 10:15:58 [INFO] [28/35] 2026-04-01 ~ 2026-04-30  limit=270
+2026-11-05 10:15:58 [INFO]     返回 180 行
+2026-11-05 10:15:58 [INFO] [29/35] 2026-05-01 ~ 2026-05-31  limit=279
+2026-11-05 10:15:59 [INFO]     返回 162 行
+2026-11-05 10:15:59 [INFO] [30/35] 2026-06-01 ~ 2026-06-30  limit=270
+2026-11-05 10:15:59 [INFO]     返回 180 行
+2026-11-05 10:16:00 [INFO] [31/35] 2026-07-01 ~ 2026-07-31  limit=279
+2026-11-05 10:16:00 [INFO]     返回 198 行
+2026-11-05 10:16:01 [INFO] [32/35] 2026-08-01 ~ 2026-08-31  limit=279
+2026-11-05 10:16:01 [INFO]     返回 180 行
+2026-11-05 10:16:02 [INFO] [33/35] 2026-09-01 ~ 2026-09-30  limit=270
+2026-11-05 10:16:03 [INFO]     返回 180 行
+2026-11-05 10:16:04 [INFO] [34/35] 2026-10-01 ~ 2026-10-31  limit=279
+2026-11-05 10:16:04 [INFO]     返回 153 行
+2026-11-05 10:16:05 [INFO] [35/35] 2026-11-01 ~ 2026-11-03  limit=27
+2026-11-05 10:16:05 [INFO]     返回 9 行
+2026-11-05 10:16:06 [INFO] 所有任务完成，累计 5958 行
+2026-11-05 10:16:06 [INFO] 排序/去重：第 2 列 = trade_time
+2026-11-05 10:16:06 [INFO] 去重：5958 -> 5958（移除 0 行冗余）
+2026-11-05 10:16:06 [INFO] 已重新写出 CSV 与 Excel：5958 行
+2026-11-05 10:16:06 [INFO] 已打开文件夹: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-05 10:16:07 [INFO] 已打开 Excel 文件: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载\TuShare 30分钟数据_2026-11-05.xlsx
+2026-11-05 10:16:07 [INFO] ============================================================
+2026-11-05 10:16:07 [INFO] 全部完成
+2026-11-08 08:18:06 [INFO] ============================================================
+2026-11-08 08:18:06 [INFO] log 文件位置: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载\Tab02_download.log
+2026-11-08 08:18:06 [INFO] ============================================================
+2026-11-08 08:18:06 [INFO] 开始下载分钟数据
+2026-11-08 08:18:06 [INFO]   ts_code      = 300274.SZ
+2026-11-08 08:18:06 [INFO]   freq         = 1min
+2026-11-08 08:18:06 [INFO]   factor       = 241
+2026-11-08 08:18:06 [INFO]   start_date   = 2011-11-01
+2026-11-08 08:18:06 [INFO]   end_date     = 2026-11-03
+2026-11-08 08:18:06 [INFO]   offset       = ''
+2026-11-08 08:18:06 [INFO]   输出文件夹   = d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-08 08:18:06 [INFO]   CSV  文件    = TuShare 1分钟数据_2026-11-08.csv
+2026-11-08 08:18:06 [INFO]   Excel 文件   = TuShare 1分钟数据_2026-11-08.xlsx
+2026-11-08 08:18:06 [INFO] 日期跨度 5482 天 > 31 天 -> 拆分为 181 个月度任务
+2026-11-08 08:18:06 [INFO] [1/181] 2011-11-01 ~ 2011-11-30  limit=7230
+2026-11-08 08:18:08 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:08 [INFO] [2/181] 2011-12-01 ~ 2011-12-31  limit=7471
+2026-11-08 08:18:10 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:10 [INFO] [3/181] 2012-01-01 ~ 2012-01-31  limit=7471
+2026-11-08 08:18:12 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:12 [INFO] [4/181] 2012-02-01 ~ 2012-02-29  limit=6989
+2026-11-08 08:18:14 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:14 [INFO] [5/181] 2012-03-01 ~ 2012-03-31  limit=7471
+2026-11-08 08:18:16 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:16 [INFO] [6/181] 2012-04-01 ~ 2012-04-30  limit=7230
+2026-11-08 08:18:18 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:18 [INFO] [7/181] 2012-05-01 ~ 2012-05-31  limit=7471
+2026-11-08 08:18:20 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:20 [INFO] [8/181] 2012-06-01 ~ 2012-06-30  limit=7230
+2026-11-08 08:18:22 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:22 [INFO] [9/181] 2012-07-01 ~ 2012-07-31  limit=7471
+2026-11-08 08:18:24 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:24 [INFO] [10/181] 2012-08-01 ~ 2012-08-31  limit=7471
+2026-11-08 08:18:26 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:26 [INFO] [11/181] 2012-09-01 ~ 2012-09-30  limit=7230
+2026-11-08 08:18:28 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:28 [INFO] [12/181] 2012-10-01 ~ 2012-10-31  limit=7471
+2026-11-08 08:18:30 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:30 [INFO] [13/181] 2012-11-01 ~ 2012-11-30  limit=7230
+2026-11-08 08:18:33 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:33 [INFO] [14/181] 2012-12-01 ~ 2012-12-31  limit=7471
+2026-11-08 08:18:35 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:35 [INFO] [15/181] 2013-01-01 ~ 2013-01-31  limit=7471
+2026-11-08 08:18:37 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:37 [INFO] [16/181] 2013-02-01 ~ 2013-02-28  limit=6748
+2026-11-08 08:18:39 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:39 [INFO] [17/181] 2013-03-01 ~ 2013-03-31  limit=7471
+2026-11-08 08:18:41 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:41 [INFO] [18/181] 2013-04-01 ~ 2013-04-30  limit=7230
+2026-11-08 08:18:43 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:43 [INFO] [19/181] 2013-05-01 ~ 2013-05-31  limit=7471
+2026-11-08 08:18:45 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:45 [INFO] [20/181] 2013-06-01 ~ 2013-06-30  limit=7230
+2026-11-08 08:18:47 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:47 [INFO] [21/181] 2013-07-01 ~ 2013-07-31  limit=7471
+2026-11-08 08:18:49 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:49 [INFO] [22/181] 2013-08-01 ~ 2013-08-31  limit=7471
+2026-11-08 08:18:51 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:51 [INFO] [23/181] 2013-09-01 ~ 2013-09-30  limit=7230
+2026-11-08 08:18:53 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:53 [INFO] [24/181] 2013-10-01 ~ 2013-10-31  limit=7471
+2026-11-08 08:18:55 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:55 [INFO] [25/181] 2013-11-01 ~ 2013-11-30  limit=7230
+2026-11-08 08:18:57 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:57 [INFO] [26/181] 2013-12-01 ~ 2013-12-31  limit=7471
+2026-11-08 08:18:59 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:18:59 [INFO] [27/181] 2014-01-01 ~ 2014-01-31  limit=7471
+2026-11-08 08:19:01 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:01 [INFO] [28/181] 2014-02-01 ~ 2014-02-28  limit=6748
+2026-11-08 08:19:03 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:03 [INFO] [29/181] 2014-03-01 ~ 2014-03-31  limit=7471
+2026-11-08 08:19:05 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:05 [INFO] [30/181] 2014-04-01 ~ 2014-04-30  limit=7230
+2026-11-08 08:19:07 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:07 [INFO] [31/181] 2014-05-01 ~ 2014-05-31  limit=7471
+2026-11-08 08:19:09 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:09 [INFO] [32/181] 2014-06-01 ~ 2014-06-30  limit=7230
+2026-11-08 08:19:11 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:11 [INFO] [33/181] 2014-07-01 ~ 2014-07-31  limit=7471
+2026-11-08 08:19:13 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:13 [INFO] [34/181] 2014-08-01 ~ 2014-08-31  limit=7471
+2026-11-08 08:19:15 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:15 [INFO] [35/181] 2014-09-01 ~ 2014-09-30  limit=7230
+2026-11-08 08:19:18 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:18 [INFO] [36/181] 2014-10-01 ~ 2014-10-31  limit=7471
+2026-11-08 08:19:20 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:20 [INFO] [37/181] 2014-11-01 ~ 2014-11-30  limit=7230
+2026-11-08 08:19:22 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:22 [INFO] [38/181] 2014-12-01 ~ 2014-12-31  limit=7471
+2026-11-08 08:19:24 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:24 [INFO] [39/181] 2015-01-01 ~ 2015-01-31  limit=7471
+2026-11-08 08:19:26 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:26 [INFO] [40/181] 2015-02-01 ~ 2015-02-28  limit=6748
+2026-11-08 08:19:28 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:28 [INFO] [41/181] 2015-03-01 ~ 2015-03-31  limit=7471
+2026-11-08 08:19:30 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:30 [INFO] [42/181] 2015-04-01 ~ 2015-04-30  limit=7230
+2026-11-08 08:19:32 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:32 [INFO] [43/181] 2015-05-01 ~ 2015-05-31  limit=7471
+2026-11-08 08:19:34 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:34 [INFO] [44/181] 2015-06-01 ~ 2015-06-30  limit=7230
+2026-11-08 08:19:36 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:36 [INFO] [45/181] 2015-07-01 ~ 2015-07-31  limit=7471
+2026-11-08 08:19:38 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:38 [INFO] [46/181] 2015-08-01 ~ 2015-08-31  limit=7471
+2026-11-08 08:19:40 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:40 [INFO] [47/181] 2015-09-01 ~ 2015-09-30  limit=7230
+2026-11-08 08:19:42 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:42 [INFO] [48/181] 2015-10-01 ~ 2015-10-31  limit=7471
+2026-11-08 08:19:44 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:44 [INFO] [49/181] 2015-11-01 ~ 2015-11-30  limit=7230
+2026-11-08 08:19:46 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:46 [INFO] [50/181] 2015-12-01 ~ 2015-12-31  limit=7471
+2026-11-08 08:19:48 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:48 [INFO] [51/181] 2016-01-01 ~ 2016-01-31  limit=7471
+2026-11-08 08:19:50 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:50 [INFO] [52/181] 2016-02-01 ~ 2016-02-29  limit=6989
+2026-11-08 08:19:52 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:52 [INFO] [53/181] 2016-03-01 ~ 2016-03-31  limit=7471
+2026-11-08 08:19:54 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:54 [INFO] [54/181] 2016-04-01 ~ 2016-04-30  limit=7230
+2026-11-08 08:19:56 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:56 [INFO] [55/181] 2016-05-01 ~ 2016-05-31  limit=7471
+2026-11-08 08:19:58 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:19:58 [INFO] [56/181] 2016-06-01 ~ 2016-06-30  limit=7230
+2026-11-08 08:20:01 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:01 [INFO] [57/181] 2016-07-01 ~ 2016-07-31  limit=7471
+2026-11-08 08:20:03 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:03 [INFO] [58/181] 2016-08-01 ~ 2016-08-31  limit=7471
+2026-11-08 08:20:05 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:05 [INFO] [59/181] 2016-09-01 ~ 2016-09-30  limit=7230
+2026-11-08 08:20:07 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:07 [INFO] [60/181] 2016-10-01 ~ 2016-10-31  limit=7471
+2026-11-08 08:20:09 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:09 [INFO] [61/181] 2016-11-01 ~ 2016-11-30  limit=7230
+2026-11-08 08:20:11 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:11 [INFO] [62/181] 2016-12-01 ~ 2016-12-31  limit=7471
+2026-11-08 08:20:13 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:13 [INFO] [63/181] 2017-01-01 ~ 2017-01-31  limit=7471
+2026-11-08 08:20:15 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:15 [INFO] [64/181] 2017-02-01 ~ 2017-02-28  limit=6748
+2026-11-08 08:20:17 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:17 [INFO] [65/181] 2017-03-01 ~ 2017-03-31  limit=7471
+2026-11-08 08:20:19 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:19 [INFO] [66/181] 2017-04-01 ~ 2017-04-30  limit=7230
+2026-11-08 08:20:21 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:21 [INFO] [67/181] 2017-05-01 ~ 2017-05-31  limit=7471
+2026-11-08 08:20:23 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:23 [INFO] [68/181] 2017-06-01 ~ 2017-06-30  limit=7230
+2026-11-08 08:20:25 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:25 [INFO] [69/181] 2017-07-01 ~ 2017-07-31  limit=7471
+2026-11-08 08:20:27 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:27 [INFO] [70/181] 2017-08-01 ~ 2017-08-31  limit=7471
+2026-11-08 08:20:29 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:29 [INFO] [71/181] 2017-09-01 ~ 2017-09-30  limit=7230
+2026-11-08 08:20:31 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:31 [INFO] [72/181] 2017-10-01 ~ 2017-10-31  limit=7471
+2026-11-08 08:20:33 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:33 [INFO] [73/181] 2017-11-01 ~ 2017-11-30  limit=7230
+2026-11-08 08:20:35 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:35 [INFO] [74/181] 2017-12-01 ~ 2017-12-31  limit=7471
+2026-11-08 08:20:37 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:37 [INFO] [75/181] 2018-01-01 ~ 2018-01-31  limit=7471
+2026-11-08 08:20:39 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:39 [INFO] [76/181] 2018-02-01 ~ 2018-02-28  limit=6748
+2026-11-08 08:20:41 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:41 [INFO] [77/181] 2018-03-01 ~ 2018-03-31  limit=7471
+2026-11-08 08:20:43 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:43 [INFO] [78/181] 2018-04-01 ~ 2018-04-30  limit=7230
+2026-11-08 08:20:46 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:46 [INFO] [79/181] 2018-05-01 ~ 2018-05-31  limit=7471
+2026-11-08 08:20:48 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:48 [INFO] [80/181] 2018-06-01 ~ 2018-06-30  limit=7230
+2026-11-08 08:20:50 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:50 [INFO] [81/181] 2018-07-01 ~ 2018-07-31  limit=7471
+2026-11-08 08:20:52 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:52 [INFO] [82/181] 2018-08-01 ~ 2018-08-31  limit=7471
+2026-11-08 08:20:54 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:54 [INFO] [83/181] 2018-09-01 ~ 2018-09-30  limit=7230
+2026-11-08 08:20:56 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:56 [INFO] [84/181] 2018-10-01 ~ 2018-10-31  limit=7471
+2026-11-08 08:20:58 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:20:58 [INFO] [85/181] 2018-11-01 ~ 2018-11-30  limit=7230
+2026-11-08 08:21:00 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:00 [INFO] [86/181] 2018-12-01 ~ 2018-12-31  limit=7471
+2026-11-08 08:21:02 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:02 [INFO] [87/181] 2019-01-01 ~ 2019-01-31  limit=7471
+2026-11-08 08:21:04 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:04 [INFO] [88/181] 2019-02-01 ~ 2019-02-28  limit=6748
+2026-11-08 08:21:06 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:06 [INFO] [89/181] 2019-03-01 ~ 2019-03-31  limit=7471
+2026-11-08 08:21:08 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:08 [INFO] [90/181] 2019-04-01 ~ 2019-04-30  limit=7230
+2026-11-08 08:21:10 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:10 [INFO] [91/181] 2019-05-01 ~ 2019-05-31  limit=7471
+2026-11-08 08:21:12 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:12 [INFO] [92/181] 2019-06-01 ~ 2019-06-30  limit=7230
+2026-11-08 08:21:14 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:14 [INFO] [93/181] 2019-07-01 ~ 2019-07-31  limit=7471
+2026-11-08 08:21:16 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:16 [INFO] [94/181] 2019-08-01 ~ 2019-08-31  limit=7471
+2026-11-08 08:21:18 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:18 [INFO] [95/181] 2019-09-01 ~ 2019-09-30  limit=7230
+2026-11-08 08:21:20 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:20 [INFO] [96/181] 2019-10-01 ~ 2019-10-31  limit=7471
+2026-11-08 08:21:22 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:22 [INFO] [97/181] 2019-11-01 ~ 2019-11-30  limit=7230
+2026-11-08 08:21:24 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:24 [INFO] [98/181] 2019-12-01 ~ 2019-12-31  limit=7471
+2026-11-08 08:21:26 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:26 [INFO] [99/181] 2020-01-01 ~ 2020-01-31  limit=7471
+2026-11-08 08:21:28 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:28 [INFO] [100/181] 2020-02-01 ~ 2020-02-29  limit=6989
+2026-11-08 08:21:31 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:31 [INFO] [101/181] 2020-03-01 ~ 2020-03-31  limit=7471
+2026-11-08 08:21:33 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:33 [INFO] [102/181] 2020-04-01 ~ 2020-04-30  limit=7230
+2026-11-08 08:21:35 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:35 [INFO] [103/181] 2020-05-01 ~ 2020-05-31  limit=7471
+2026-11-08 08:21:37 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:37 [INFO] [104/181] 2020-06-01 ~ 2020-06-30  limit=7230
+2026-11-08 08:21:39 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:39 [INFO] [105/181] 2020-07-01 ~ 2020-07-31  limit=7471
+2026-11-08 08:21:41 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:41 [INFO] [106/181] 2020-08-01 ~ 2020-08-31  limit=7471
+2026-11-08 08:21:43 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:43 [INFO] [107/181] 2020-09-01 ~ 2020-09-30  limit=7230
+2026-11-08 08:21:45 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:45 [INFO] [108/181] 2020-10-01 ~ 2020-10-31  limit=7471
+2026-11-08 08:21:47 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:47 [INFO] [109/181] 2020-11-01 ~ 2020-11-30  limit=7230
+2026-11-08 08:21:49 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:49 [INFO] [110/181] 2020-12-01 ~ 2020-12-31  limit=7471
+2026-11-08 08:21:51 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:51 [INFO] [111/181] 2021-01-01 ~ 2021-01-31  limit=7471
+2026-11-08 08:21:53 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:53 [INFO] [112/181] 2021-02-01 ~ 2021-02-28  limit=6748
+2026-11-08 08:21:55 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:55 [INFO] [113/181] 2021-03-01 ~ 2021-03-31  limit=7471
+2026-11-08 08:21:57 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:57 [INFO] [114/181] 2021-04-01 ~ 2021-04-30  limit=7230
+2026-11-08 08:21:59 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:21:59 [INFO] [115/181] 2021-05-01 ~ 2021-05-31  limit=7471
+2026-11-08 08:22:01 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:01 [INFO] [116/181] 2021-06-01 ~ 2021-06-30  limit=7230
+2026-11-08 08:22:03 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:03 [INFO] [117/181] 2021-07-01 ~ 2021-07-31  limit=7471
+2026-11-08 08:22:05 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:05 [INFO] [118/181] 2021-08-01 ~ 2021-08-31  limit=7471
+2026-11-08 08:22:07 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:07 [INFO] [119/181] 2021-09-01 ~ 2021-09-30  limit=7230
+2026-11-08 08:22:09 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:09 [INFO] [120/181] 2021-10-01 ~ 2021-10-31  limit=7471
+2026-11-08 08:22:11 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:11 [INFO] [121/181] 2021-11-01 ~ 2021-11-30  limit=7230
+2026-11-08 08:22:13 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:13 [INFO] [122/181] 2021-12-01 ~ 2021-12-31  limit=7471
+2026-11-08 08:22:16 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:16 [INFO] [123/181] 2022-01-01 ~ 2022-01-31  limit=7471
+2026-11-08 08:22:18 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:18 [INFO] [124/181] 2022-02-01 ~ 2022-02-28  limit=6748
+2026-11-08 08:22:20 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:20 [INFO] [125/181] 2022-03-01 ~ 2022-03-31  limit=7471
+2026-11-08 08:22:22 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:22 [INFO] [126/181] 2022-04-01 ~ 2022-04-30  limit=7230
+2026-11-08 08:22:24 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:24 [INFO] [127/181] 2022-05-01 ~ 2022-05-31  limit=7471
+2026-11-08 08:22:26 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:26 [INFO] [128/181] 2022-06-01 ~ 2022-06-30  limit=7230
+2026-11-08 08:22:28 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:28 [INFO] [129/181] 2022-07-01 ~ 2022-07-31  limit=7471
+2026-11-08 08:22:30 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:30 [INFO] [130/181] 2022-08-01 ~ 2022-08-31  limit=7471
+2026-11-08 08:22:32 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:32 [INFO] [131/181] 2022-09-01 ~ 2022-09-30  limit=7230
+2026-11-08 08:22:34 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:34 [INFO] [132/181] 2022-10-01 ~ 2022-10-31  limit=7471
+2026-11-08 08:22:36 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:36 [INFO] [133/181] 2022-11-01 ~ 2022-11-30  limit=7230
+2026-11-08 08:22:38 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:38 [INFO] [134/181] 2022-12-01 ~ 2022-12-31  limit=7471
+2026-11-08 08:22:40 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:40 [INFO] [135/181] 2023-01-01 ~ 2023-01-31  limit=7471
+2026-11-08 08:22:42 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:42 [INFO] [136/181] 2023-02-01 ~ 2023-02-28  limit=6748
+2026-11-08 08:22:44 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:44 [INFO] [137/181] 2023-03-01 ~ 2023-03-31  limit=7471
+2026-11-08 08:22:46 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:46 [INFO] [138/181] 2023-04-01 ~ 2023-04-30  limit=7230
+2026-11-08 08:22:48 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:48 [INFO] [139/181] 2023-05-01 ~ 2023-05-31  limit=7471
+2026-11-08 08:22:50 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:50 [INFO] [140/181] 2023-06-01 ~ 2023-06-30  limit=7230
+2026-11-08 08:22:52 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:52 [INFO] [141/181] 2023-07-01 ~ 2023-07-31  limit=7471
+2026-11-08 08:22:54 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:54 [INFO] [142/181] 2023-08-01 ~ 2023-08-31  limit=7471
+2026-11-08 08:22:56 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:56 [INFO] [143/181] 2023-09-01 ~ 2023-09-30  limit=7230
+2026-11-08 08:22:58 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:22:58 [INFO] [144/181] 2023-10-01 ~ 2023-10-31  limit=7471
+2026-11-08 08:23:00 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:00 [INFO] [145/181] 2023-11-01 ~ 2023-11-30  limit=7230
+2026-11-08 08:23:03 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:03 [INFO] [146/181] 2023-12-01 ~ 2023-12-31  limit=7471
+2026-11-08 08:23:05 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:05 [INFO] [147/181] 2024-01-01 ~ 2024-01-31  limit=7471
+2026-11-08 08:23:07 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:07 [INFO] [148/181] 2024-02-01 ~ 2024-02-29  limit=6989
+2026-11-08 08:23:09 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:09 [INFO] [149/181] 2024-03-01 ~ 2024-03-31  limit=7471
+2026-11-08 08:23:11 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:11 [INFO] [150/181] 2024-04-01 ~ 2024-04-30  limit=7230
+2026-11-08 08:23:13 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:13 [INFO] [151/181] 2024-05-01 ~ 2024-05-31  limit=7471
+2026-11-08 08:23:15 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:15 [INFO] [152/181] 2024-06-01 ~ 2024-06-30  limit=7230
+2026-11-08 08:23:17 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:17 [INFO] [153/181] 2024-07-01 ~ 2024-07-31  limit=7471
+2026-11-08 08:23:19 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:19 [INFO] [154/181] 2024-08-01 ~ 2024-08-31  limit=7471
+2026-11-08 08:23:21 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:21 [INFO] [155/181] 2024-09-01 ~ 2024-09-30  limit=7230
+2026-11-08 08:23:23 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:23 [INFO] [156/181] 2024-10-01 ~ 2024-10-31  limit=7471
+2026-11-08 08:23:25 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:25 [INFO] [157/181] 2024-11-01 ~ 2024-11-30  limit=7230
+2026-11-08 08:23:27 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:27 [INFO] [158/181] 2024-12-01 ~ 2024-12-31  limit=7471
+2026-11-08 08:23:29 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:29 [INFO] [159/181] 2025-01-01 ~ 2025-01-31  limit=7471
+2026-11-08 08:23:31 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:31 [INFO] [160/181] 2025-02-01 ~ 2025-02-28  limit=6748
+2026-11-08 08:23:33 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:33 [INFO] [161/181] 2025-03-01 ~ 2025-03-31  limit=7471
+2026-11-08 08:23:35 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:35 [INFO] [162/181] 2025-04-01 ~ 2025-04-30  limit=7230
+2026-11-08 08:23:37 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:37 [INFO] [163/181] 2025-05-01 ~ 2025-05-31  limit=7471
+2026-11-08 08:23:39 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:39 [INFO] [164/181] 2025-06-01 ~ 2025-06-30  limit=7230
+2026-11-08 08:23:41 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:41 [INFO] [165/181] 2025-07-01 ~ 2025-07-31  limit=7471
+2026-11-08 08:23:43 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:43 [INFO] [166/181] 2025-08-01 ~ 2025-08-31  limit=7471
+2026-11-08 08:23:45 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:45 [INFO] [167/181] 2025-09-01 ~ 2025-09-30  limit=7230
+2026-11-08 08:23:47 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:47 [INFO] [168/181] 2025-10-01 ~ 2025-10-31  limit=7471
+2026-11-08 08:23:50 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:50 [INFO] [169/181] 2025-11-01 ~ 2025-11-30  limit=7230
+2026-11-08 08:23:52 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:52 [INFO] [170/181] 2025-12-01 ~ 2025-12-31  limit=7471
+2026-11-08 08:23:54 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:54 [INFO] [171/181] 2026-01-01 ~ 2026-01-31  limit=7471
+2026-11-08 08:23:56 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:56 [INFO] [172/181] 2026-02-01 ~ 2026-02-28  limit=6748
+2026-11-08 08:23:58 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:23:58 [INFO] [173/181] 2026-03-01 ~ 2026-03-31  limit=7471
+2026-11-08 08:24:00 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:00 [INFO] [174/181] 2026-04-01 ~ 2026-04-30  limit=7230
+2026-11-08 08:24:02 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:02 [INFO] [175/181] 2026-05-01 ~ 2026-05-31  limit=7471
+2026-11-08 08:24:04 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:04 [INFO] [176/181] 2026-06-01 ~ 2026-06-30  limit=7230
+2026-11-08 08:24:06 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:06 [INFO] [177/181] 2026-07-01 ~ 2026-07-31  limit=7471
+2026-11-08 08:24:08 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:08 [INFO] [178/181] 2026-08-01 ~ 2026-08-31  limit=7471
+2026-11-08 08:24:10 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:10 [INFO] [179/181] 2026-09-01 ~ 2026-09-30  limit=7230
+2026-11-08 08:24:12 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:12 [INFO] [180/181] 2026-10-01 ~ 2026-10-31  limit=7471
+2026-11-08 08:24:14 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:14 [INFO] [181/181] 2026-11-01 ~ 2026-11-03  limit=723
+2026-11-08 08:24:16 [INFO]     API 异常: HTTPConnectionPool(host='127.0.0.1', port=7890): Max retries exceeded with url: http://api.waditu.com/dataapi/stk_mins (Caused by ProxyError('Unable to connect to proxy', NewConnectionError("HTTPConnection(host='127.0.0.1', port=7890): Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。")))
+2026-11-08 08:24:16 [INFO] 所有任务完成，累计 0 行
+2026-11-08 08:24:16 [INFO] CSV 文件不存在，跳过排序/去重
+2026-11-08 08:24:16 [INFO] 已打开文件夹: d:\0001_VScodePython股票分析系统\0002_股票分析_悟空001\我的PNP_MCSD大项目20260304\Tab01_数据设置\Tab0101_TuShareAPI接口参数下载
+2026-11-08 08:24:16 [INFO] ============================================================
+2026-11-08 08:24:16 [INFO] 全部完成
