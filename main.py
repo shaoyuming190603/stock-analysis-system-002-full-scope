@@ -77,6 +77,7 @@ class MainWindow(QMainWindow):
             PERSIST_FILE_NAME,
         )
 
+        # 加载上次持久化数据（包含 txt_SQL_path_DB_name）
         self._load_persist()
         self._init_date_edit_today()
 
@@ -132,6 +133,23 @@ class MainWindow(QMainWindow):
         else:
             print("[Main] 未找到 pushBttn_ChangeDate 控件")
 
+        # ------------------------------------------------------------
+        # 需求 5：pushBttn_InitialPath_SQL 由主窗口统一处理
+        #   - 打开资源管理器选择 *.mdf 文件
+        #   - 完整路径（含文件名+扩展名）写入 txt_SQL_path_DB_name
+        #   - 立即持久化到 app_persist.json
+        # ------------------------------------------------------------
+        if hasattr(self.ui, "pushBttn_InitialPath_SQL"):
+            try:
+                self.ui.pushBttn_InitialPath_SQL.clicked.connect(
+                    self.on_pushBttn_InitialPath_SQL_clicked
+                )
+                print("[Main] 已连接 pushBttn_InitialPath_SQL")
+            except Exception as e:
+                print(f"[Main] 连接 pushBttn_InitialPath_SQL 失败: {e}")
+        else:
+            print("[Main] 警告：未找到 pushBttn_InitialPath_SQL 控件")
+
         # Tab 颜色切换
         self.ui.tabWidget_mainWindow.currentChanged.connect(self.on_tab_changed)
         self.on_tab_changed(self.ui.tabWidget_mainWindow.currentIndex())
@@ -169,6 +187,75 @@ class MainWindow(QMainWindow):
             print(f"[Main] 持久化数据已保存: {self._persist_file}")
         except Exception as e:
             print(f"[Main] 保存持久化数据失败: {e}")
+
+    # ---------------- 需求 5：SQL 初始路径按钮 ----------------
+    def on_pushBttn_InitialPath_SQL_clicked(self):
+        """
+        按下 pushBttn_InitialPath_SQL 时：
+          1) 打开资源管理器文件对话框，指定文件夹和文件（*.mdf）；
+          2) 将所选文件的完整路径+文件名+扩展名写入 txt_SQL_path_DB_name；
+          3) 立即持久化，供下次启动加载。
+        """
+        try:
+            # 目标控件（兼容旧控件名 txt_SQL_path）
+            target = getattr(self.ui, "txt_SQL_path_DB_name", None)
+            if target is None:
+                target = getattr(self.ui, "txt_SQL_path", None)
+            if target is None:
+                QMessageBox.warning(
+                    self, "提示",
+                    "未找到 txt_SQL_path_DB_name 控件，无法写入选择结果。",
+                )
+                return
+
+            current = self._get_text(target)
+
+            # 计算起始目录：优先使用当前已选文件的完整路径
+            initial = ""
+            if current:
+                if os.path.isfile(current):
+                    initial = current
+                elif os.path.isdir(current):
+                    initial = os.path.join(current, "*.mdf")
+                else:
+                    parent = os.path.dirname(current)
+                    if parent and os.path.isdir(parent):
+                        initial = parent
+
+            if not initial:
+                try:
+                    from Tab02_数据下载.Tab02_minute_data_downloader_SQL import (
+                        DEFAULT_SQL_DB_PATH,
+                    )
+                    initial = DEFAULT_SQL_DB_PATH
+                except Exception:
+                    initial = os.path.expanduser("~")
+
+            fname, _ = QFileDialog.getOpenFileName(
+                self,
+                "选择 SQL Server 数据文件（*.mdf）",
+                initial,
+                "SQL Server 数据文件 (*.mdf);;所有文件 (*.*)",
+            )
+            if not fname:
+                return
+
+            # 规范化完整路径（含文件名与扩展名）
+            fname = os.path.normpath(fname)
+            self._set_text(target, fname)
+            print(f"[Main] 数据库文件完整路径已更新为: {fname}")
+
+            # 立即持久化，避免意外退出导致丢失
+            self._save_persist()
+
+            try:
+                self.statusBar().showMessage(f"已选择数据库文件：{fname}", 5000)
+            except Exception:
+                pass
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            QMessageBox.critical(self, "错误", f"选择数据库文件失败：\n{e}")
 
     # ---------------- dateEdit 控件接口 ----------------
     def _init_date_edit_today(self):

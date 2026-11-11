@@ -19,11 +19,24 @@ Tab02_数据下载 标签页：从 tushare pro 提取分钟数据 → 写入 SQL
   4) 表不存在→创建（trade_time 主键，DATETIME2(0)）；存在→逐行检查 trade_time 去重；
   5) 分批（5000 行/批）executemany 写入，加速插入；
   6) pushBttn_abort → 置中止标志，非关窗；
-  7) pushBttn_SQL_InitialPath             → 选 *.mdf 文件，写入 txt_SQL_path_DB_name；
+  7) pushBttn_SQL_InitialPath 由 main.py 统一处理（选 *.mdf → 写入 txt_SQL_path_DB_name
+     并立即持久化到 app_persist.json）。本模块仅保留 on_sql_initial_path_clicked 作为
+     备用接口，不在 _connect_signals 中自动连接，避免与 main.py 重复连接造成双弹窗；
   8) pushBttn_InitialPath_download_file   → 选文件夹，构造 minute_data_<code>_<freq>，
      写入 txt_path_file；
   9) txt_SQL_path_DB_name / txt_SQL_table_name / txt_path_file 由 main.py 持久化；
  10) txt_SQL_table_name 与 txt_path_file 的文件名部分随 ts_code / freq 自动联动。
+
+进度提示（本次已加入）：
+  * 主批次循环 —— 每批开始时输出日志形如：
+      [180/181] 2026-10-01 ~ 2026-10-31  limit=155  |
+      已运行1时23分45秒，预计剩余1分05秒，预计总计181个批次全部完成时间：15时30分完成。
+  * 数据写入分块循环 —— 每块写完后输出日志形如：
+      写入分块 [2/3] 已运行0分12秒，预计剩余0分06秒，预计总计3个写入分块全部完成时间：15时30分完成。
+  * 主窗体左下方状态栏 —— 每批 / 每分块刷新：
+      已用时0时12分34秒，预计完成时间15时30分45秒
+  * 任务完成 / 中止的弹窗 —— 追加：
+      总用时    ：0时15分22秒
 """
 
 import os
@@ -31,13 +44,15 @@ import re
 import json
 import calendar
 import logging
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 
 import pandas as pd
 import tushare as ts
 
 from PySide6.QtCore import QObject, Signal
-from PySide6.QtWidgets import QMessageBox, QApplication, QFileDialog
+from PySide6.QtWidgets import (
+    QMessageBox, QApplication, QFileDialog, QStatusBar,
+)
 
 # pyodbc 延迟导入（便于给出清晰错误提示）
 try:
@@ -201,6 +216,45 @@ def _to_py_value(v):
     return v
 
 
+# --------------------------------------------------------------
+# 进度/耗时格式化工具
+# --------------------------------------------------------------
+def _format_duration(seconds: float) -> str:
+    """把秒数格式化为 'X时X分X秒' / 'X分X秒' / 'X秒'（智能省略前导零）。"""
+    try:
+        seconds = int(max(0.0, round(float(seconds))))
+    except Exception:
+        seconds = 0
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    if h > 0:
+        return f"{h}时{m}分{s}秒"
+    if m > 0:
+        return f"{m}分{s}秒"
+    return f"{s}秒"
+
+
+def _format_hms(seconds: float) -> str:
+    """强制输出 'X时XX分XX秒'，用于 '总用时' / 状态栏 '已用时'。"""
+    try:
+        seconds = int(max(0.0, round(float(seconds))))
+    except Exception:
+        seconds = 0
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    return f"{h}时{m:02d}分{s:02d}秒"
+
+
+def _format_eta(eta_dt: datetime, now_dt: datetime) -> str:
+    """预计完成时间（用于日志行）：同一天用 'HH时MM分'，跨天加 'MM-DD ' 前缀。"""
+    try:
+        if eta_dt.date() == now_dt.date():
+            return eta_dt.strftime("%H时%M分")
+        return eta_dt.strftime("%m-%d %H时%M分")
+    except Exception:
+        return "未知"
+
+
 # ==============================================================
 # 主控制器
 # ==============================================================
@@ -246,12 +300,12 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         else:
             print("[Tab02-SQL] 警告：未找到 pushBttn_abort 控件")
 
-        # 需求：MDF 文件选择按钮
-        sql_path_btn = getattr(self.ui, "pushBttn_SQL_InitialPath", None)
-        if sql_path_btn is not None:
-            sql_path_btn.pressed.connect(self.on_sql_initial_path_clicked)
-        else:
-            print("[Tab02-SQL] 警告：未找到 pushBttn_SQL_InitialPath 控件")
+        # ----------------------------------------------------------
+        # 注意：pushBttn_SQL_InitialPath 已改由 main.py 统一处理
+        #      （打开 *.mdf 文件 → 写入 txt_SQL_path_DB_name → 立即持久化），
+        #      此处不再自动连接，避免双弹窗。
+        #      self.on_sql_initial_path_clicked 保留为备用接口，可按需手动连接。
+        # ----------------------------------------------------------
 
         # 需求：选择下载文件所在文件夹 → 写入 txt_path_file
         dl_path_btn = getattr(self.ui, "pushBttn_InitialPath_download_file", None)
@@ -310,6 +364,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         self._recalc_limit_for_current_dates()
 
         # txt_SQL_path_DB_name 为空时补默认值（兼容旧控件名 txt_SQL_path）
+        # 注意：若 main.py 已从 app_persist.json 加载了用户上次选择，则此处不会被覆盖。
         for wname in ("txt_SQL_path_DB_name", "txt_SQL_path"):
             w = getattr(self.ui, wname, None)
             if w is not None and not widget_get_text(w):
@@ -399,6 +454,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
 
     # ----------------------------------------------------------
     # pushBttn_SQL_InitialPath 选 MDF 文件 → txt_SQL_path_DB_name
+    #   （备用接口；现已由 main.py 统一处理，此处不再自动连接）
     # ----------------------------------------------------------
     def on_sql_initial_path_clicked(self):
         target = getattr(self.ui, "txt_SQL_path_DB_name", None) \
@@ -424,7 +480,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         if not fname:
             return
 
-        widget_set_text(target, fname)
+        widget_set_text(target, os.path.normpath(fname))
         print(f"[Tab02-SQL] 数据库文件路径已更新为：{fname}")
         self._persist_via_parent()
 
@@ -514,6 +570,133 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             pass
 
     # ----------------------------------------------------------
+    # 主窗体左下方状态栏更新
+    #   优先 QMainWindow.statusBar()（QStatusBar.showMessage 默认显示在左侧）
+    #   若不存在，则回退到 QStatusBar 子控件查找，再回退到常见 label
+    # ----------------------------------------------------------
+    def _update_main_status(self, text: str):
+        if self.parent_window is None:
+            return
+        try:
+            sb = None
+            if hasattr(self.parent_window, "statusBar"):
+                try:
+                    sb = self.parent_window.statusBar()
+                except Exception:
+                    sb = None
+            if sb is None:
+                try:
+                    sb = self.parent_window.findChild(QStatusBar)
+                except Exception:
+                    sb = None
+            if sb is not None:
+                sb.showMessage(text)
+                QApplication.processEvents()
+                return
+
+            # 退路：常见状态 label 名称
+            for name in (
+                "label_status", "lbl_status", "label_info_status",
+                "status_label", "label_bottom_status", "label_progress",
+                "label_message", "lbl_message",
+            ):
+                w = getattr(self.parent_window, name, None)
+                if w is not None and hasattr(w, "setText"):
+                    w.setText(text)
+                    QApplication.processEvents()
+                    return
+        except Exception as e:
+            print(f"[Tab02-SQL] 更新主窗体状态栏失败: {e}")
+
+    def _clear_main_status(self, final_text: str = ""):
+        if self.parent_window is None:
+            return
+        try:
+            sb = None
+            if hasattr(self.parent_window, "statusBar"):
+                try:
+                    sb = self.parent_window.statusBar()
+                except Exception:
+                    sb = None
+            if sb is None:
+                try:
+                    sb = self.parent_window.findChild(QStatusBar)
+                except Exception:
+                    sb = None
+            if sb is not None:
+                if final_text:
+                    sb.showMessage(final_text)
+                else:
+                    sb.clearMessage()
+                QApplication.processEvents()
+                return
+
+            for name in (
+                "label_status", "lbl_status", "label_info_status",
+                "status_label", "label_bottom_status", "label_progress",
+                "label_message", "lbl_message",
+            ):
+                w = getattr(self.parent_window, name, None)
+                if w is not None and hasattr(w, "setText"):
+                    w.setText(final_text or "")
+                    QApplication.processEvents()
+                    return
+        except Exception as e:
+            print(f"[Tab02-SQL] 清除主窗体状态栏失败: {e}")
+
+    # ----------------------------------------------------------
+    # 状态栏文案生成
+    #   返回："已用时X时XX分XX秒，预计完成时间HH时MM分SS秒"
+    # ----------------------------------------------------------
+    def _build_status_bar_text(self, done, total, start_dt):
+        now_dt = datetime.now()
+        try:
+            elapsed = (now_dt - start_dt).total_seconds()
+        except Exception:
+            elapsed = 0.0
+        elapsed_str = _format_hms(elapsed)
+
+        if done <= 0 or total <= 0:
+            return f"已用时{elapsed_str}，预计完成时间正在估算"
+
+        avg = elapsed / done
+        remaining = max(0.0, avg * (total - done))
+        eta_dt = now_dt + timedelta(seconds=remaining)
+        if eta_dt.date() == now_dt.date():
+            eta_str = eta_dt.strftime("%H时%M分%S秒")
+        else:
+            eta_str = eta_dt.strftime("%m-%d %H时%M分%S秒")
+        return f"已用时{elapsed_str}，预计完成时间{eta_str}"
+
+    # ----------------------------------------------------------
+    # 日志用的进度信息
+    #   返回："已运行...时间，预计剩余...，预计总计N个批次全部完成时间：...时...分完成。"
+    # ----------------------------------------------------------
+    def _build_progress_info(self, done, total, start_dt, unit_name="批次"):
+        now_dt = datetime.now()
+        try:
+            elapsed = (now_dt - start_dt).total_seconds()
+        except Exception:
+            elapsed = 0.0
+        elapsed_str = _format_duration(elapsed)
+
+        if done <= 0 or total <= 0:
+            return (
+                f"已运行{elapsed_str}，预计剩余：正在估算，"
+                f"预计总计{total}个{unit_name}全部完成时间：正在估算"
+            )
+
+        avg = elapsed / done
+        remaining = max(0.0, avg * (total - done))
+        remaining_str = _format_duration(remaining)
+        eta_dt = now_dt + timedelta(seconds=remaining)
+        eta_str = _format_eta(eta_dt, now_dt)
+        return (
+            f"已运行{elapsed_str}，预计剩余{remaining_str}，"
+            f"预计总计{total}个{unit_name}全部完成时间：{eta_str}完成。"
+        )
+
+    # ----------------------------------------------------------
     # 触发按钮
     # ----------------------------------------------------------
     def on_generate_clicked(self):
@@ -552,6 +735,8 @@ class Tab02MinuteDataDownloaderSQL(QObject):
     # ----------------------------------------------------------
     def _run_download(self):
         self._abort_requested = False
+        # 记录整个任务的总开始时间（用于"总用时"统计）
+        run_start_dt = datetime.now()
 
         # 0. 依赖检查
         if not _PYODBC_AVAILABLE:
@@ -650,6 +835,8 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 self._log(f"日期跨度 {span} 天 > {SPAN_THRESHOLD_DAYS} 天 "
                           f"-> 拆分为 {len(tasks)} 个月度任务")
 
+            total_tasks = len(tasks)
+
             # 初始化 tushare
             try:
                 pro = ts.pro_api(self.api_token)
@@ -657,7 +844,13 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 self._log(f"pro_api 初始化失败: {e}")
                 raise RuntimeError(f"tushare 初始化失败：\n{e}")
 
-            # 逐任务下载 & 写入
+            # 逐任务下载 & 写入（主批次循环计时开始）
+            cycle_start_dt = datetime.now()
+            # 启动时先刷一次状态栏（估算中）
+            self._update_main_status(
+                self._build_status_bar_text(0, total_tasks, cycle_start_dt)
+            )
+
             for idx, (ms, me, lim) in enumerate(tasks, start=1):
                 if self._abort_requested:
                     self._log("检测到中止标志，停止后续任务")
@@ -670,7 +863,25 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 widget_set_text(getattr(self.ui, "txt_limit", None),      str(lim))
                 QApplication.processEvents()
 
-                self._log(f"[{idx}/{len(tasks)}] {format_date(ms)} ~ {format_date(me)}  limit={lim}")
+                # 主循环进度提示（done = idx - 1，已完成的批次数）
+                progress_info = self._build_progress_info(
+                    done=idx - 1,
+                    total=total_tasks,
+                    start_dt=cycle_start_dt,
+                    unit_name="批次",
+                )
+                self._log(
+                    f"[{idx}/{total_tasks}] {format_date(ms)} ~ {format_date(me)}  "
+                    f"limit={lim}  |  {progress_info}"
+                )
+
+                # 刷新主窗体左下方状态栏
+                self._update_main_status(
+                    self._build_status_bar_text(
+                        done=idx - 1, total=total_tasks, start_dt=cycle_start_dt,
+                    )
+                )
+
                 params = {
                     "ts_code": ts_code, "freq": freq,
                     "start_date": format_date(ms),
@@ -699,6 +910,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 try:
                     inserted, skipped_dup = self._insert_dataframe(
                         conn=conn, df=df, ts_code=ts_code, table_name=table_name,
+                        batch_idx=idx, batch_total=total_tasks,
                     )
                     total_inserted    += inserted
                     total_skipped_dup += skipped_dup
@@ -720,8 +932,19 @@ class Tab02MinuteDataDownloaderSQL(QObject):
 
         self._save_settings()
 
+        # 计算总用时
+        total_elapsed = (datetime.now() - run_start_dt).total_seconds()
+        total_elapsed_str = _format_hms(total_elapsed)
+
         self._log("=" * 60)
         self._log("任务被用户中止" if aborted else "全部完成")
+        self._log(f"总用时: {total_elapsed_str}")
+
+        # 结束时清空/固定主窗体状态栏
+        if aborted:
+            self._clear_main_status(f"已中止，总用时{total_elapsed_str}")
+        else:
+            self._clear_main_status(f"完成，总用时{total_elapsed_str}")
 
         msg_lines = [
             "下载已被用户中止。" if aborted else "分钟数据已写入 SQL Server LocalDB。",
@@ -732,6 +955,8 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             f"API 返回累计：{total_api_rows} 行",
             f"新写入      ：{total_inserted} 行",
             f"已存在跳过  ：{total_skipped_dup} 行",
+            "",
+            f"总用时    ：{total_elapsed_str}",
         ]
         if aborted:
             QMessageBox.information(self.parent_window, "已中止", "\n".join(msg_lines))
@@ -846,7 +1071,8 @@ class Tab02MinuteDataDownloaderSQL(QObject):
     # ----------------------------------------------------------
     # 需求 3：按 trade_time 去重 + 分批写入
     # ----------------------------------------------------------
-    def _insert_dataframe(self, conn, df, ts_code, table_name):
+    def _insert_dataframe(self, conn, df, ts_code, table_name,
+                          batch_idx=None, batch_total=None):
         """
         返回 (实际插入行数, 因 trade_time 已存在而跳过的行数)。
 
@@ -854,7 +1080,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
           1) 把 trade_time 规范为 Python datetime（无时区）；
           2) 查询该时间窗口内已存在的 trade_time 集合，预先过滤；
           3) 分批 executemany 插入（fast_executemany=True）；
-          4) 每批 commit；每批之间检查中止标志。
+          4) 每批 commit；每批之间检查中止标志，并输出日志 + 刷新主窗体状态栏。
         """
         if df is None or df.empty:
             return 0, 0
@@ -929,8 +1155,12 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             except Exception:
                 pass
 
+            total_chunks = (len(rows) + INSERT_CHUNK_SIZE - 1) // INSERT_CHUNK_SIZE
+            insert_start_dt = datetime.now()
+
             inserted = 0
             attempted = 0
+            chunk_idx = 0
             for i in range(0, len(rows), INSERT_CHUNK_SIZE):
                 if self._abort_requested:
                     self._log("    中止：跳过本批剩余写入")
@@ -940,6 +1170,30 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 conn.commit()
                 inserted += len(chunk)
                 attempted += len(chunk)
+                chunk_idx += 1
+
+                # 写入分块循环进度提示（done = chunk_idx，已写块数）
+                progress_info = self._build_progress_info(
+                    done=chunk_idx,
+                    total=total_chunks,
+                    start_dt=insert_start_dt,
+                    unit_name="写入分块",
+                )
+                self._log(f"    写入分块 [{chunk_idx}/{total_chunks}] {progress_info}")
+
+                # 刷新主窗体左下方状态栏（含批次上下文）
+                if batch_idx is not None and batch_total is not None:
+                    status_prefix = f"批次 [{batch_idx}/{batch_total}] "
+                else:
+                    status_prefix = ""
+                status_text = (
+                    f"{status_prefix}写入分块 [{chunk_idx}/{total_chunks}]  "
+                    + self._build_status_bar_text(
+                        done=chunk_idx, total=total_chunks, start_dt=insert_start_dt,
+                    )
+                )
+                self._update_main_status(status_text)
+
                 QApplication.processEvents()
 
             if attempted < len(rows):

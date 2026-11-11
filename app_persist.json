@@ -1,8 +1,8 @@
 {
-  "txt_Specify_Initial_Path": "D:\\0001_VScodePython股票分析系统\\0002_股票分析_悟空001\\我的PNP_MCSD大项目20260304\\Tab01_数据设置\\Tab0101_TuShareAPI接口参数下载",
+  "txt_Specify_Initial_Path": "d:\\0001_VScodePython股票分析系统\\0002_股票分析_悟空001\\我的PNP_MCSD大项目20260304\\Tab01_数据设置\\Tab0101_TuShareAPI接口参数下载",
   "txt_file_name": "TuShare 1分钟数据_2026-11-08",
   "txt_ts_code": "300274.SZ",
   "txt_SQL_path_DB_name": "D:\\ToolsInstall\\SQL2025\\myData\\股票数据\\股票数据.mdf",
-  "txt_SQL_table_name": "minute_data_300274_5min",
-  "txt_path_file": "minute_data_300274_5min"
+  "txt_SQL_table_name": "minute_data_300274_60min",
+  "txt_path_file": "minute_data_300274_60min"
 }
