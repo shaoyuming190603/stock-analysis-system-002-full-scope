@@ -17,8 +17,11 @@ from Tab01_数据设置.Tab01_API_tuShare_接口参数爬虫 import TushareDocSp
 from Tab01_数据设置.Tab01_settings_manager import Tab01SettingsManager
 from Tab01_数据设置.Tab01_ui_manager import Tab01UIManager
 
-# Tab02 分钟数据下载器
+# Tab02 分钟数据下载器（原 CSV/Excel 备用方案）
 from Tab02_数据下载.Tab02_minute_data_downloader import Tab02MinuteDataDownloader
+
+# Tab02 分钟数据下载器（SQL Server LocalDB 方案）
+from Tab02_数据下载.Tab02_minute_data_downloader_SQL import Tab02MinuteDataDownloaderSQL
 
 # Tab03 分时图组件（位于子目录 Tab03_分析设置 内）
 from Tab03_分析设置.Tab03_Minute_Data_Display_Qt import Tab03MinuteDataDisplay
@@ -28,11 +31,19 @@ from Tab03_分析设置.Tab03_Minute_Data_Display_Qt import Tab03MinuteDataDispl
 # 持久化临时文件配置
 # ============================================================
 PERSIST_FILE_NAME = "app_persist.json"
+
+# 说明：
+#  - txt_SQL_path 改名为 txt_SQL_path_DB_name（指向 *.mdf 完整路径）
+#  - txt_SQL_table_name 保留（自动生成，仍持久化以回显）
+#  - txt_path_file 新增（下载文件的完整路径，随 ts_code/freq 自动生成）
 PERSIST_KEYS = [
     "txt_Specify_Initial_Path",
     "txt_file_path",
     "txt_file_name",
     "txt_ts_code",
+    "txt_SQL_path_DB_name",
+    "txt_SQL_table_name",
+    "txt_path_file",
 ]
 
 
@@ -73,7 +84,7 @@ class MainWindow(QMainWindow):
         self.settings_manager = Tab01SettingsManager()
         self.ui_manager = Tab01UIManager(self.ui, self.settings_manager)
 
-        # Tab02 下载器
+        # Tab02 下载器（原 CSV/Excel 备用方案）
         self.tab02_downloader = Tab02MinuteDataDownloader(self.ui, self)
         try:
             self.tab02_downloader.finished_signal.connect(self.on_tab02_finished)
@@ -81,6 +92,15 @@ class MainWindow(QMainWindow):
             self.tab02_downloader.log_signal.connect(self.on_tab02_progress)
         except Exception as e:
             print(f"[Main] 连接下载器信号失败: {e}")
+
+        # Tab02 SQL 下载器（SQL Server LocalDB 方案）
+        self.tab02_sql_downloader = Tab02MinuteDataDownloaderSQL(self.ui, self)
+        try:
+            self.tab02_sql_downloader.finished_signal.connect(self.on_tab02_sql_finished)
+            self.tab02_sql_downloader.error_signal.connect(self.on_tab02_sql_error)
+            self.tab02_sql_downloader.log_signal.connect(self.on_tab02_sql_progress)
+        except Exception as e:
+            print(f"[Main] 连接 SQL 下载器信号失败: {e}")
 
         # Tab03 分时图组件
         self.tab03_display = None
@@ -217,6 +237,13 @@ class MainWindow(QMainWindow):
         except Exception as e:
             print(f"[Main] 关闭 Tab03 组件失败: {e}")
 
+        try:
+            if getattr(self, "tab02_sql_downloader", None) is not None:
+                self.tab02_sql_downloader.save_settings()
+        except Exception as e:
+            print(f"[Main] 保存 SQL 下载器设置失败: {e}")
+
+        # 关闭前保存所有持久化字段
         self._save_persist()
         super().closeEvent(event)
 
@@ -240,7 +267,7 @@ class MainWindow(QMainWindow):
         elif hasattr(widget, "setText"):
             widget.setText(text)
 
-    # ---------------- Tab02 状态回调 ----------------
+    # ---------------- Tab02 状态回调（原 CSV/Excel 备用方案） ----------------
     def on_tab02_progress(self, msg):
         self.statusBar().showMessage(msg)
         print("[Tab02]", msg)
@@ -256,6 +283,23 @@ class MainWindow(QMainWindow):
             self.ui.pushBttn_Generat_minute_List.setEnabled(True)
         self.statusBar().showMessage("Tab02 分钟数据下载失败")
         print(f"[Tab02] 错误: {msg}")
+
+    # ---------------- Tab02 SQL 状态回调（SQL Server 方案） ----------------
+    def on_tab02_sql_progress(self, msg):
+        self.statusBar().showMessage(msg)
+        print("[Tab02-SQL]", msg)
+
+    def on_tab02_sql_finished(self, *args):
+        if hasattr(self.ui, "pushBttn_Generat_minute_List_SQL"):
+            self.ui.pushBttn_Generat_minute_List_SQL.setEnabled(True)
+        self.statusBar().showMessage("Tab02 SQL 分钟数据写入完成")
+        self._save_persist()
+
+    def on_tab02_sql_error(self, msg):
+        if hasattr(self.ui, "pushBttn_Generat_minute_List_SQL"):
+            self.ui.pushBttn_Generat_minute_List_SQL.setEnabled(True)
+        self.statusBar().showMessage("Tab02 SQL 分钟数据写入失败")
+        print(f"[Tab02-SQL] 错误: {msg}")
 
     # ---------------- Tab01 原有逻辑 ----------------
     def handle_save_log(self):

@@ -1,0 +1,63 @@
+VS CODE, QT CREATOR, python 的项目，
+现在包含“main.py”和“Tab02_minute_data_downloader.py”，需要进行修改以全面符合以下业务需求。
+
+
+
+“Tab02_minute_data_downloader_SQL.py”的作用是从TUSHARE网站，通过API获得指定股票的1min/5min/30min/60min分时数据，写入SQL数据库存放数据，提高写入性能，也提高今后读取数据性能。
+
+本地SQL数据库说明：
+计算机名：PC
+用户名：邵宇明
+
+当前程序GUI界面控件和所需功能介绍：
+“txt_ts_code”文本框控件，用于填写股票代码，示例“300274.SZ”
+“txt_freq”文本框控件，用于填写股票分时数据的时间颗粒度，示例“1min”,“5min”，“15min”,“30min”,“60min”
+“txt_start_date”文本框控件，用于填写股票分时数据的开始日期，示例“2011-11-1”
+“txt_end_date”文本框控件，用于填写股票分时数据的开始日期，示例“2026-11-9”
+“txt_factor”文件框控件，作为备用，今后再定义具体用法
+ “txt_limit”文件框控件，作为备用，今后再定义具体用法
+“txt_offset”文件框控件，作为备用，今后再定义具体用法
+“pushBttn_InitialPath_download_file”命令按钮控件，用于在资源管理器中指定文件夹。指定了文件夹后，要把所选文件的完整路径填写到文本框控件“txt_path_file”。
+“txt_path_file”文件框控件，内容更新后，自动保存。下一次启动程序时，自动加载前一次运行程序时填写的历史记录。当文本框控件“txt_path_file”内容改变后，“txt_path_file”文件框内需更新文本内容。文本字符串格式示例为：“minute_data_300274_1min”
+	其中，
+		“minute_data_”为固定内容
+		“300274”为可变内容，来自“txt_ts_code”文本框控件内容的前6位字符
+		“_1min”为可变内容，来自“txt_freq”文本框控件中填写的字符串，要在“txt_freq”文本框控件中字符串前面加上“_”,构成“_1min”、“_5min”、“_15min”式样的字符串
+
+“pushBttn_SQL_InitialPath”命令按钮控件，用于在资源管理器中指定文件夹中的文件。指定了文件后，要把所选文件的完整路径填写到文本框控件“txt_SQL_path”，再把所选文件的文件名含扩展名填写到文本框控件“txt_SQL_table_name”中。
+文本框控件“txt_SQL_path”和文本框控件“txt_SQL_table_name” 内容更新后，自动保存。下一次启动程序时，自动加载前一次运行程序时填写的历史记录。
+
+
+控件文本框“txt_SQL_table_name”中的字符串，示例格式为minute_data_300274_1min，
+其中“minute_data_”为固定字符串，保持不变。
+“300274”是股票6位数代码，来自文本控件txt_ts_code的前6位数，
+“_1min”中的"_"是固定连接符，保持不变，其中的“1min”来自文本控件“txt_freq”
+
+运行程序，提取来自tushare pro的数据包含下列字段：
+ts_code	trade_time	close	open	high	low	vol	amount
+
+其中 trade_time 中的数据，不允许有重复，可以设置为数据表主键。
+
+需求描述：
+1、运行API从tushare网站提取数据后，首先检查在“股票数据.slnx”SQL数据库中，是否存在控件文本框“txt_SQL_table_name”中指定的数据表是否存在。
+2、如果数据表不存在，则在控件文本框“txt_SQL_table_name”中指定的数据库中创建数据表，包含下列字段：
+ts_code
+trade_time
+close
+open
+high
+low
+vol
+amount
+其中，“trade_time”为主键
+然后，直接分批向新创建的数据表中分批写入数据行
+3、如果数据表已存在，则每次向数据表内写入数据前，必须检查待写入数据表中的每一行数据是否已存在，即比对“trade_time”值是否存在。
+如果“trade_time”有相同值存在，则忽略这一行，继续比对下一行待写入数据。仅写入现有数据表内不存在的数据行。
+
+4、按下命令按钮控件“pushBttn_abort”，则终止运行（不是关闭整个程序）
+5、命令按钮控件“pushBttn_SQL_InitialPath”按下后，用于在资源管理器中指定文件夹和文件。指定了文件夹中的文件后，要把所选文件的完整路径+文件名及文件扩展名填写到文本框控件“txt_SQL_path”。
+保存“txt_SQL_path”，下一次再运行程序，要能够开到前一次运行程序所指定的文件夹和文件
+
+在以下“main.py”和“Tab02_minute_data_downloader.py”代码基础上修改为新的业务需求，并提供完整代码。
+
+当前“main.py”完整的代码如下：
