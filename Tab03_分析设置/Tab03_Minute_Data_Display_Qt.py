@@ -4,15 +4,13 @@ Tab03MinuteDataDisplayQt.py
 
 目标：严格提取 dateEdit 指定日期的 1min 分时数据，不用日线替代。
 
-关键修复：
-  client.minutes(symbol, date) 返回的是通达信原始分时快照：
-    - 只有 price / vol / volume 三列
-    - 索引为 RangeIndex（0..239）
-    - 没有 datetime 列，也没有 year/month/day 组合
-  因此时间信息必须根据 target_date 和索引顺序**重建**：
-    0..119  → 9:31–11:30
-    120..239 → 13:01–15:00
-  同时保留对 DatetimeIndex / datetime 列 / year-month-day 组合的兼容。
+v1.2 变更：
+  * 新增 data_updated 信号（供历史形态匹配模块订阅）
+  * 新增 self.current_df 属性（当前展示的 DataFrame）
+  * 新增 set_mapping_lines / clear_mapping_lines（叠加历史曲线）
+  * 新增 _update_y_limits / _update_legend（自适应 / 图例）
+  * 新增 QTableWidget 匹配列表（日期/开/收/高/低/涨跌幅）
+  * 定时刷新不触发 data_updated（节流：_is_timer_refresh / _notify_on_next）
 """
 import warnings
 warnings.filterwarnings('ignore')
@@ -33,9 +31,11 @@ except ImportError:
     from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 
 from PySide6.QtCore import Qt, QTimer, Signal, QObject, QDate
+from PySide6.QtGui import QColor
 from PySide6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton,
-    QMessageBox, QInputDialog
+    QMessageBox, QInputDialog,
+    QTableWidget, QTableWidgetItem, QHeaderView, QAbstractItemView,
 )
 
 # ---------- 绕过 tdxpy 的交易时间拦截 ----------
@@ -107,21 +107,12 @@ TDX_SERVERS = [
 
 # ------------------- 时间重建辅助函数 -------------------
 def _build_trading_minutes(target_date, n):
-    """根据 target_date 和条数 n 重建交易分钟时间戳。
-
-    通达信分时数据按分钟顺序排列，覆盖：
-      9:31–11:30（120 分钟）
-      13:01–15:00（120 分钟）
-    共 240 分钟。
-    """
     times = []
-    # 上午 9:31–11:30
     cur = datetime.combine(target_date, dtime(9, 31))
     end_am = datetime.combine(target_date, dtime(11, 30))
     while cur <= end_am and len(times) < n:
         times.append(cur)
         cur += timedelta(minutes=1)
-    # 下午 13:01–15:00
     cur = datetime.combine(target_date, dtime(13, 1))
     end_pm = datetime.combine(target_date, dtime(15, 0))
     while cur <= end_pm and len(times) < n:
@@ -165,6 +156,9 @@ class _FetchSignals(QObject):
 class Tab03MinuteDataDisplay(QWidget):
     """嵌入到 T302_实时行情历史匹配 页的分时图组件。"""
 
+    # 对外信号：当前分时数据更新（供历史形态匹配模块订阅）
+    data_updated = Signal(object)
+
     def __init__(self, ui, parent=None, persist_callback=None):
         super().__init__(parent)
         self.ui = ui
@@ -182,6 +176,14 @@ class Tab03MinuteDataDisplay(QWidget):
         self._gen = 0
         self._stop_evt = None
         self._fetch_in_progress = False
+
+        # ★ 当前展示的 DataFrame（供 mapping 组件读取）
+        self.current_df = None
+        # ★ 叠加的历史曲线 line 对象
+        self._mapping_lines = []
+        # ★ 是否在定时刷新（用于节流 data_updated）
+        self._is_timer_refresh = False
+        self._notify_on_next = True
 
         self._init_date_edit_today()
 
@@ -234,10 +236,23 @@ class Tab03MinuteDataDisplay(QWidget):
                                        linestyle='--', label='累计均价')
         self.ax.set_xlabel('时间')
         self.ax.set_ylabel('价格 (元)')
-        self.ax.legend(loc='upper left')
+        self.ax.legend(loc='upper left', fontsize=8)
         self.ax.grid(True, alpha=0.3)
         self.ax.set_xlim(-1, TOTAL_MINUTES)
         self.title = self.ax.set_title('分时图（1min K线）| 等待数据...')
+
+        # ★ 匹配结果列表（价格曲线图下方）
+        self.tbl_mapping = QTableWidget()
+        self.tbl_mapping.setColumnCount(6)
+        self.tbl_mapping.setHorizontalHeaderLabels(
+            ["匹配日期", "开盘", "收盘", "最高", "最低", "涨跌幅(%)"]
+        )
+        self.tbl_mapping.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.tbl_mapping.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.tbl_mapping.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+        self.tbl_mapping.verticalHeader().setVisible(False)
+        self.tbl_mapping.setMaximumHeight(180)
+        layout.addWidget(self.tbl_mapping)
 
     # ---------- dateEdit 读写 ----------
     def _init_date_edit_today(self):
@@ -360,6 +375,7 @@ class Tab03MinuteDataDisplay(QWidget):
         self._current_target_date = d
         self._adjust_count = 0
         self._auto_adjust_on_empty = True
+        self._notify_on_next = True
         self._refresh_for_date(d, adjust_on_empty=True)
 
     def _on_start_clicked(self):
@@ -376,6 +392,7 @@ class Tab03MinuteDataDisplay(QWidget):
         self._current_target_date = d
         self._adjust_count = 0
         self._auto_adjust_on_empty = True
+        self._notify_on_next = True
         self._refresh_for_date(d, adjust_on_empty=True)
 
     def _on_stop_clicked(self):
@@ -407,7 +424,6 @@ class Tab03MinuteDataDisplay(QWidget):
         threading.Thread(target=worker, daemon=True).start()
 
     def _make_client(self):
-        """连通性测试使用 client.minutes，选择最近的工作日。"""
         if not HAS_MOOTDX:
             raise RuntimeError("mootdx 未安装")
 
@@ -508,14 +524,8 @@ class Tab03MinuteDataDisplay(QWidget):
 
     @staticmethod
     def _normalize_minutes(raw, target_date):
-        """把 client.minutes 返回整理成 datetime / close 列。
-
-        ★ 通达信 minutes 返回只有 price/vol/volume，索引 RangeIndex，
-          需要根据 target_date 和索引顺序重建交易分钟时间戳。
-        """
         df = raw.copy()
 
-        # ---- 1) DatetimeIndex（部分版本/接口可能返回） ----
         if isinstance(df.index, pd.DatetimeIndex):
             idx_name = df.index.name
             df = df.reset_index()
@@ -527,7 +537,6 @@ class Tab03MinuteDataDisplay(QWidget):
         else:
             df = df.reset_index(drop=True)
 
-        # ---- 2) 已有时间列 ----
         dt_series = None
         for c in ('datetime', 'date', 'time'):
             if c in df.columns:
@@ -538,7 +547,6 @@ class Tab03MinuteDataDisplay(QWidget):
                 except Exception:
                     dt_series = None
 
-        # ---- 3) year/month/day 组合 ----
         if dt_series is None and {'year', 'month', 'day'}.issubset(df.columns):
             hour = df['hour'] if 'hour' in df.columns else 0
             minute = df['minute'] if 'minute' in df.columns else 0
@@ -551,7 +559,6 @@ class Tab03MinuteDataDisplay(QWidget):
             except Exception:
                 dt_series = None
 
-        # ---- 4) ★ 核心修复：无时间列，根据 target_date + RangeIndex 重建 ----
         if dt_series is None:
             n = len(df)
             print(f"[Tab03] _normalize_minutes: 无时间列，根据 target_date={target_date} "
@@ -568,7 +575,6 @@ class Tab03MinuteDataDisplay(QWidget):
             print("[Tab03] _normalize_minutes: 时间重建/转换后为空")
             return pd.DataFrame()
 
-        # ---- 5) 价格列 ----
         if 'close' not in df.columns:
             if 'price' in df.columns:
                 df['close'] = df['price']
@@ -577,7 +583,6 @@ class Tab03MinuteDataDisplay(QWidget):
         df['close'] = pd.to_numeric(df['close'], errors='coerce')
         df = df.dropna(subset=['close']).reset_index(drop=True)
 
-        # ---- 6) 严格过滤到 target_date ----
         df = df[df['datetime'].dt.date == target_date].copy()
         df = df.sort_values('datetime').reset_index(drop=True)
         df = df.drop_duplicates(subset=['datetime']).reset_index(drop=True)
@@ -663,7 +668,11 @@ class Tab03MinuteDataDisplay(QWidget):
 
         self._adjust_count = 0
         self._auto_adjust_on_empty = False
-        self._render_df(df)
+
+        notify = getattr(self, "_notify_on_next", True)
+        self._notify_on_next = False
+        self._render_df(df, notify=notify)
+
         self.lab_status.setText(
             f"状态: 已显示 {self._current_target_date.strftime('%Y-%m-%d')} "
             f"数据（{len(df)} 条）"
@@ -675,10 +684,12 @@ class Tab03MinuteDataDisplay(QWidget):
         today = datetime.now().date()
         if self._current_target_date != today:
             return
+        # ★ 定时刷新不 emit data_updated
+        self._is_timer_refresh = True
         self._refresh_for_date(today, adjust_on_empty=False)
 
     # ---------- 绘图 ----------
-    def _render_df(self, df):
+    def _render_df(self, df, notify=True):
         try:
             x = np.arange(len(df))
             y = df['close'].astype(float).values
@@ -692,15 +703,8 @@ class Tab03MinuteDataDisplay(QWidget):
                 with np.errstate(divide='ignore', invalid='ignore'):
                     vwap = np.where(cum_vol > 0, cum_amount / cum_vol, np.nan)
                 self.line_vwap.set_data(x, vwap)
-                valid_vwap = vwap[~np.isnan(vwap)]
-                all_y = np.concatenate([y, valid_vwap]) if len(valid_vwap) else y
             else:
                 self.line_vwap.set_data([], [])
-                all_y = y
-
-            y_min, y_max = float(np.nanmin(all_y)), float(np.nanmax(all_y))
-            pad = (y_max - y_min) * 0.02 if y_max > y_min else max(abs(y_max) * 0.01, 0.1)
-            self.ax.set_ylim(y_min - pad, y_max + pad)
 
             positions, labels = _build_tick_positions_labels(df['datetime'].tolist())
             self.ax.set_xticks(positions)
@@ -714,11 +718,156 @@ class Tab03MinuteDataDisplay(QWidget):
                 f'| 最新：{latest:.2f}  较首条：{chg:+.2f}%  '
                 f'| K线数：{len(df)}  更新：{datetime.now().strftime("%H:%M:%S")}'
             )
+
+            # ★ 更新 current_df（供匹配模块读取）
+            self.current_df = df.copy()
+
+            # ★ 统一刷新 y 范围（包含叠加曲线）
+            self._update_y_limits()
+            self._update_legend()
+
             self.canvas.draw_idle()
+
+            # ★ 通知匹配模块（仅非定时刷新时）
+            if notify:
+                try:
+                    self.data_updated.emit(self.current_df)
+                except Exception as e:
+                    print(f"[Tab03] emit data_updated 失败: {e}")
+
         except Exception as e:
             print(f"[Tab03] 绘图失败：{e}")
             self.title.set_text(f'{self.symbol} | 绘图异常：{e}')
             self.canvas.draw_idle()
+
+    # ---------- 叠加历史曲线 ----------
+    def set_mapping_lines(self, data_list):
+        """把历史分时曲线叠加到 ax 上，并更新下方统计表格。
+
+        data_list: list of dict
+            {'label','y','color','date_str','open','close','high','low','pct_change'}
+        """
+        self.clear_mapping_lines()
+
+        if not data_list:
+            self.canvas.draw_idle()
+            return
+
+        for item in data_list:
+            try:
+                y = np.asarray(item["y"], dtype=float)
+                x = np.arange(len(y))
+                line, = self.ax.plot(
+                    x, y,
+                    lw=0.9,
+                    color=item["color"],
+                    alpha=0.75,
+                    label=item["label"],
+                )
+                self._mapping_lines.append(line)
+            except Exception as e:
+                print(f"[Tab03] 叠加 {item.get('label')} 失败: {e}")
+
+        self._update_y_limits()
+        self._update_legend()
+        self._update_stats_table(data_list)
+        self.canvas.draw_idle()
+
+    def clear_mapping_lines(self):
+        for line in self._mapping_lines:
+            try:
+                line.remove()
+            except Exception:
+                pass
+        self._mapping_lines = []
+        self._update_stats_table([])
+        self._update_legend()
+        self._update_y_limits()
+        self.canvas.draw_idle()
+
+    def _update_legend(self):
+        try:
+            handles, labels = self.ax.get_legend_handles_labels()
+            if handles:
+                self.ax.legend(handles, labels, loc='upper left', fontsize=8)
+            else:
+                legend = self.ax.get_legend()
+                if legend is not None:
+                    legend.remove()
+        except Exception as e:
+            print(f"[Tab03] 更新图例失败: {e}")
+
+    def _update_y_limits(self):
+        try:
+            arrays = []
+
+            # 当前价格
+            try:
+                y_cur = self.line_price.get_ydata()
+                if y_cur is not None and len(y_cur) > 0:
+                    arr = np.asarray(y_cur, dtype=float)
+                    arr = arr[np.isfinite(arr)]
+                    if len(arr) > 0:
+                        arrays.append(arr)
+            except Exception:
+                pass
+
+            # VWAP
+            try:
+                y_v = self.line_vwap.get_ydata()
+                if y_v is not None and len(y_v) > 0:
+                    arr = np.asarray(y_v, dtype=float)
+                    arr = arr[np.isfinite(arr)]
+                    if len(arr) > 0:
+                        arrays.append(arr)
+            except Exception:
+                pass
+
+            # 叠加的历史曲线
+            for line in self._mapping_lines:
+                try:
+                    arr = np.asarray(line.get_ydata(), dtype=float)
+                    arr = arr[np.isfinite(arr)]
+                    if len(arr) > 0:
+                        arrays.append(arr)
+                except Exception:
+                    pass
+
+            if not arrays:
+                return
+
+            flat = np.concatenate(arrays)
+            if len(flat) == 0:
+                return
+
+            y_min, y_max = float(np.min(flat)), float(np.max(flat))
+            pad = (y_max - y_min) * 0.02 if y_max > y_min else max(abs(y_max) * 0.01, 0.1)
+            self.ax.set_ylim(y_min - pad, y_max + pad)
+        except Exception as e:
+            print(f"[Tab03] 更新 y 范围失败: {e}")
+
+    def _update_stats_table(self, stats_list):
+        try:
+            if not stats_list:
+                self.tbl_mapping.setRowCount(0)
+                return
+            self.tbl_mapping.setRowCount(len(stats_list))
+            for i, s in enumerate(stats_list):
+                self.tbl_mapping.setItem(i, 0, QTableWidgetItem(str(s.get("date_str", ""))))
+                self.tbl_mapping.setItem(i, 1, QTableWidgetItem(f"{float(s.get('open', 0)):.2f}"))
+                self.tbl_mapping.setItem(i, 2, QTableWidgetItem(f"{float(s.get('close', 0)):.2f}"))
+                self.tbl_mapping.setItem(i, 3, QTableWidgetItem(f"{float(s.get('high', 0)):.2f}"))
+                self.tbl_mapping.setItem(i, 4, QTableWidgetItem(f"{float(s.get('low', 0)):.2f}"))
+
+                pct = float(s.get('pct_change', 0.0))
+                item = QTableWidgetItem(f"{pct:+.2f}%")
+                if pct > 0:
+                    item.setForeground(QColor(214, 39, 40))     # 红：涨
+                elif pct < 0:
+                    item.setForeground(QColor(44, 160, 44))     # 绿：跌
+                self.tbl_mapping.setItem(i, 5, item)
+        except Exception as e:
+            print(f"[Tab03] 更新统计表格失败: {e}")
 
     # ---------- 对外接口 ----------
     def change_date_reload(self):
@@ -735,6 +884,7 @@ class Tab03MinuteDataDisplay(QWidget):
         self._current_target_date = d
         self._adjust_count = 0
         self._auto_adjust_on_empty = False
+        self._notify_on_next = True
 
         if not self.symbol:
             sym = self.ensure_symbol(interactive=True)
@@ -795,7 +945,7 @@ if __name__ == "__main__":
         def __init__(self):
             super().__init__()
             self.setWindowTitle("Tab03 独立测试 | 1min 分时数据（按 dateEdit 提取）")
-            self.resize(1200, 720)
+            self.resize(1200, 800)
 
             self.ui = _StandaloneUI()
 

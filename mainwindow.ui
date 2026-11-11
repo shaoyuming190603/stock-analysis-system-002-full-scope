@@ -34,7 +34,7 @@
      <enum>Qt::LayoutDirection::LeftToRight</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <property name="iconSize">
      <size>
@@ -1017,6 +1017,84 @@
         </property>
         <property name="text">
          <string>时间段_120分钟</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_01">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>50</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_01</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_03">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>100</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_03</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_05">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>150</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_05</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_10">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>200</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_10</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_20">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>240</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_20</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="checkBox_price_mapping_50">
+        <property name="geometry">
+         <rect>
+          <x>940</x>
+          <y>280</y>
+          <width>231</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>分时图形态匹配数_50</string>
         </property>
        </widget>
       </widget>

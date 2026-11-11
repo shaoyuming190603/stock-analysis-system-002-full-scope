@@ -1,9 +1,9 @@
 {
   "txt_ts_code": "300274.SZ",
-  "txt_freq": "60min",
+  "txt_freq": "1min",
   "txt_start_date": "2011-11-01",
-  "txt_end_date": "2026-11-03",
-  "txt_factor": "5",
-  "txt_limit": "155",
+  "txt_end_date": "2026-11-10",
+  "txt_factor": "241",
+  "txt_limit": "7471",
   "txt_offset": ""
 }

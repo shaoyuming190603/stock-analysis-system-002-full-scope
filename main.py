@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
+import re
 import json
 from datetime import datetime, date as date_cls
 
@@ -11,7 +12,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, QThread, Signal, QObject, QDate
 
 # 导入自定义模块
-from Tab01_数据设置 import Tab01_Specify_API_FileNamePath
+from Tab01_数据设置 import Tab01_Specify_API_FileNamePath  # noqa: F401
 from ui_mainwindow import Ui_MainWindow
 from Tab01_数据设置.Tab01_API_tuShare_接口参数爬虫 import TushareDocSpider
 from Tab01_数据设置.Tab01_settings_manager import Tab01SettingsManager
@@ -26,16 +27,15 @@ from Tab02_数据下载.Tab02_minute_data_downloader_SQL import Tab02MinuteDataD
 # Tab03 分时图组件（位于子目录 Tab03_分析设置 内）
 from Tab03_分析设置.Tab03_Minute_Data_Display_Qt import Tab03MinuteDataDisplay
 
+# === MOD: Tab03 历史分时形态匹配 / 叠加 ===
+from Tab03_分析设置.Tab03_Minute_Data_mapping_similarity import Tab03MappingSimilarity
+
 
 # ============================================================
 # 持久化临时文件配置
 # ============================================================
 PERSIST_FILE_NAME = "app_persist.json"
 
-# 说明：
-#  - txt_SQL_path 改名为 txt_SQL_path_DB_name（指向 *.mdf 完整路径）
-#  - txt_SQL_table_name 保留（自动生成，仍持久化以回显）
-#  - txt_path_file 新增（下载文件的完整路径，随 ts_code/freq 自动生成）
 PERSIST_KEYS = [
     "txt_Specify_Initial_Path",
     "txt_file_path",
@@ -45,6 +45,23 @@ PERSIST_KEYS = [
     "txt_SQL_table_name",
     "txt_path_file",
 ]
+
+
+# ============================================================
+# 【关键修复】不可见字符正则（与 Tab02 SQL 下载器保持一致）
+# 覆盖：C0/C1 控制字符、NBSP、欧甘/蒙古空格、
+#       \u2000-\u200f 各种空格 + 零宽字符、
+#       \u2028-\u202f、\u205f-\u206f、全角空格、BOM
+# ============================================================
+_INVISIBLE_RE = re.compile(
+    "[\u0000-\u0008\u000b-\u001f\u007f-\u009f"
+    "\u00a0\u1680\u180e"
+    "\u2000-\u200f"
+    "\u2028-\u202f"
+    "\u205f-\u206f"
+    "\u3000"
+    "\ufeff\ufff9-\ufffb]"
+)
 
 
 # ---------- 后台爬虫线程 ----------
@@ -77,7 +94,6 @@ class MainWindow(QMainWindow):
             PERSIST_FILE_NAME,
         )
 
-        # 加载上次持久化数据（包含 txt_SQL_path_DB_name）
         self._load_persist()
         self._init_date_edit_today()
 
@@ -121,6 +137,24 @@ class MainWindow(QMainWindow):
             print(f"[Main] Tab03 分时图组件加载失败: {e}")
             self.tab03_display = None
 
+        # === MOD: 创建历史形态匹配组件 ===
+        self.tab03_mapping = None
+        if self.tab03_display is not None:
+            try:
+                self.tab03_mapping = Tab03MappingSimilarity(
+                    ui=self.ui,
+                    tab03_display=self.tab03_display,
+                    parent_window=self,
+                )
+                print("[Main] Tab03 历史形态匹配组件已加载")
+            except Exception as e:
+                import traceback
+                traceback.print_exc()
+                print(f"[Main] Tab03 历史形态匹配组件加载失败: {e}")
+                self.tab03_mapping = None
+        else:
+            print("[Main] Tab03 未加载，跳过历史形态匹配组件")
+
         # ChangeDate 按钮
         if hasattr(self.ui, 'pushBttn_ChangeDate'):
             try:
@@ -133,12 +167,7 @@ class MainWindow(QMainWindow):
         else:
             print("[Main] 未找到 pushBttn_ChangeDate 控件")
 
-        # ------------------------------------------------------------
-        # 需求 5：pushBttn_InitialPath_SQL 由主窗口统一处理
-        #   - 打开资源管理器选择 *.mdf 文件
-        #   - 完整路径（含文件名+扩展名）写入 txt_SQL_path_DB_name
-        #   - 立即持久化到 app_persist.json
-        # ------------------------------------------------------------
+        # SQL MDF 路径选择
         if hasattr(self.ui, "pushBttn_InitialPath_SQL"):
             try:
                 self.ui.pushBttn_InitialPath_SQL.clicked.connect(
@@ -188,16 +217,9 @@ class MainWindow(QMainWindow):
         except Exception as e:
             print(f"[Main] 保存持久化数据失败: {e}")
 
-    # ---------------- 需求 5：SQL 初始路径按钮 ----------------
+    # ---------------- SQL 初始路径按钮 ----------------
     def on_pushBttn_InitialPath_SQL_clicked(self):
-        """
-        按下 pushBttn_InitialPath_SQL 时：
-          1) 打开资源管理器文件对话框，指定文件夹和文件（*.mdf）；
-          2) 将所选文件的完整路径+文件名+扩展名写入 txt_SQL_path_DB_name；
-          3) 立即持久化，供下次启动加载。
-        """
         try:
-            # 目标控件（兼容旧控件名 txt_SQL_path）
             target = getattr(self.ui, "txt_SQL_path_DB_name", None)
             if target is None:
                 target = getattr(self.ui, "txt_SQL_path", None)
@@ -210,7 +232,6 @@ class MainWindow(QMainWindow):
 
             current = self._get_text(target)
 
-            # 计算起始目录：优先使用当前已选文件的完整路径
             initial = ""
             if current:
                 if os.path.isfile(current):
@@ -240,13 +261,18 @@ class MainWindow(QMainWindow):
             if not fname:
                 return
 
-            # 规范化完整路径（含文件名与扩展名）
             fname = os.path.normpath(fname)
             self._set_text(target, fname)
             print(f"[Main] 数据库文件完整路径已更新为: {fname}")
 
-            # 立即持久化，避免意外退出导致丢失
             self._save_persist()
+
+            # === MOD: 更换数据库后立即触发重匹配 ===
+            if getattr(self, "tab03_mapping", None) is not None:
+                try:
+                    self.tab03_mapping._trigger_mapping()
+                except Exception:
+                    pass
 
             try:
                 self.statusBar().showMessage(f"已选择数据库文件：{fname}", 5000)
@@ -259,7 +285,6 @@ class MainWindow(QMainWindow):
 
     # ---------------- dateEdit 控件接口 ----------------
     def _init_date_edit_today(self):
-        """程序启动时，自动在 dateEdit 中填写当天日期"""
         if not hasattr(self.ui, 'dateEdit'):
             print("[Main] 未找到 dateEdit 控件")
             return
@@ -271,7 +296,6 @@ class MainWindow(QMainWindow):
             print(f"[Main] 设置 dateEdit 日期失败: {e}")
 
     def get_date_edit_date(self):
-        """对外接口：返回 dateEdit 当前日期 (datetime.date)；无法读取返回 None"""
         if not hasattr(self.ui, 'dateEdit'):
             print("[Main] get_date_edit_date: 未找到 dateEdit 控件")
             return None
@@ -285,7 +309,6 @@ class MainWindow(QMainWindow):
             return None
 
     def set_date_edit_date(self, d):
-        """对外接口：设置 dateEdit 日期，d 为 datetime.date"""
         if not hasattr(self.ui, 'dateEdit') or d is None:
             return
         try:
@@ -296,7 +319,6 @@ class MainWindow(QMainWindow):
 
     # ---------------- pushBttn_ChangeDate 按钮接口 ----------------
     def on_pushBttn_ChangeDate_clicked(self):
-        """终止 Tab03 当前提取；按 dateEdit 日期重新提取。"""
         if getattr(self, 'tab03_display', None) is None:
             QMessageBox.warning(self, "提示", "Tab03 分时图组件尚未加载，无法按日期提取数据。")
             return
@@ -324,35 +346,71 @@ class MainWindow(QMainWindow):
         except Exception as e:
             print(f"[Main] 关闭 Tab03 组件失败: {e}")
 
+        # === MOD: 关闭 mapping 组件 ===
+        try:
+            if getattr(self, "tab03_mapping", None) is not None:
+                self.tab03_mapping.shutdown()
+        except Exception as e:
+            print(f"[Main] 关闭 Tab03 匹配组件失败: {e}")
+
         try:
             if getattr(self, "tab02_sql_downloader", None) is not None:
                 self.tab02_sql_downloader.save_settings()
         except Exception as e:
             print(f"[Main] 保存 SQL 下载器设置失败: {e}")
 
-        # 关闭前保存所有持久化字段
         self._save_persist()
         super().closeEvent(event)
 
-    # ---------------- 通用控件读写 ----------------
+    # ---------------- 通用控件读写（加固：清洗不可见字符） ----------------
+    @staticmethod
+    def _clean(value):
+        """清除 C0/C1、NBSP、零宽、BOM、全角空格等不可见字符，并 strip。"""
+        if value is None:
+            return ""
+        s = str(value)
+        if not s:
+            return ""
+        return _INVISIBLE_RE.sub("", s).strip()
+
     @staticmethod
     def _get_text(widget):
         if widget is None:
             return ""
+        # QPlainTextEdit / QTextEdit
         if hasattr(widget, "toPlainText"):
-            return widget.toPlainText().strip()
+            try:
+                return MainWindow._clean(widget.toPlainText())
+            except Exception:
+                pass
+        # QLineEdit / QLabel / QSpinBox 等
         if hasattr(widget, "text"):
-            return widget.text().strip()
+            try:
+                return MainWindow._clean(widget.text())
+            except Exception:
+                pass
+        # QComboBox
+        if hasattr(widget, "currentText"):
+            try:
+                return MainWindow._clean(widget.currentText())
+            except Exception:
+                pass
         return ""
 
     @staticmethod
     def _set_text(widget, text):
         if widget is None:
             return
+        val = MainWindow._clean(text)
         if hasattr(widget, "setPlainText"):
-            widget.setPlainText(text)
+            widget.setPlainText(val)
         elif hasattr(widget, "setText"):
-            widget.setText(text)
+            widget.setText(val)
+        elif hasattr(widget, "setCurrentText"):
+            try:
+                widget.setCurrentText(val)
+            except Exception:
+                pass
 
     # ---------------- Tab02 状态回调（原 CSV/Excel 备用方案） ----------------
     def on_tab02_progress(self, msg):
@@ -381,6 +439,13 @@ class MainWindow(QMainWindow):
             self.ui.pushBttn_Generat_minute_List_SQL.setEnabled(True)
         self.statusBar().showMessage("Tab02 SQL 分钟数据写入完成")
         self._save_persist()
+        # === MOD: 数据写入后清缓存并触发重匹配 ===
+        if getattr(self, "tab03_mapping", None) is not None:
+            try:
+                self.tab03_mapping._history_cache.clear()
+                self.tab03_mapping._trigger_mapping()
+            except Exception:
+                pass
 
     def on_tab02_sql_error(self, msg):
         if hasattr(self.ui, "pushBttn_Generat_minute_List_SQL"):

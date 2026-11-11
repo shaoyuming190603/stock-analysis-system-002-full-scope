@@ -4,6 +4,18 @@ Tab02_minute_data_downloader_SQL.py
 ===================================
 Tab02_数据下载 标签页：从 tushare pro 提取分钟数据 → 写入 SQL Server LocalDB。
 
+【本次修复要点】
+  1. 修复 "freq 无效：1min 可选：..." 报错。
+     根因：freq 字符串中混入零宽字符 / BOM / NBSP / 全角等不可见字符，
+     导致 `freq not in FREQ_FACTOR_MAP` 误判。
+     方案：
+       a) 新增 _INVISIBLE_RE + _clean_text()，清洗所有不可见字符；
+       b) widget_get_text / widget_set_text 统一走清洗，覆盖 UI / JSON / Tab03 回写；
+       c) widget_get_text 兼容 QComboBox.currentText()；
+       d) freq 校验增加 NFKC 半角化 + 去空白 + 小写的宽松匹配，可自愈；
+       e) 错误信息用 {freq!r}（长度 N）直接暴露脏字符；
+  2. main.py 里 _get_text / _set_text 同步加固（见 main.py 完整代码）。
+
 数据库连接设置（业务规定）：
   服务器   ： (localdb)\\MSSQLLocalDB
   认证     ： Windows 身份验证 (Trusted_Connection=yes)
@@ -27,7 +39,7 @@ Tab02_数据下载 标签页：从 tushare pro 提取分钟数据 → 写入 SQL
   9) txt_SQL_path_DB_name / txt_SQL_table_name / txt_path_file 由 main.py 持久化；
  10) txt_SQL_table_name 与 txt_path_file 的文件名部分随 ts_code / freq 自动联动。
 
-进度提示（本次已加入）：
+进度提示：
   * 主批次循环 —— 每批开始时输出日志形如：
       [180/181] 2026-10-01 ~ 2026-10-31  limit=155  |
       已运行1时23分45秒，预计剩余1分05秒，预计总计181个批次全部完成时间：15时30分完成。
@@ -44,6 +56,7 @@ import re
 import json
 import calendar
 import logging
+import unicodedata
 from datetime import date, datetime, timedelta
 
 import pandas as pd
@@ -111,28 +124,102 @@ ODBC_DRIVER_CANDIDATES = [
     "SQL Server",
 ]
 
+# ==============================================================
+# 【关键修复】不可见字符清洗
+# --------------------------------------------------------------
+# 覆盖范围：
+#   \u0000-\u0008  C0 控制字符（不含 \t \n \r，但这里一并清掉更保险）
+#   \u000b-\u001f  C0 控制字符其余部分
+#   \u007f-\u009f  DEL 及 C1 控制字符
+#   \u00a0         NBSP（不换行空格）
+#   \u1680         欧甘文空格
+#   \u180e         蒙古文元音分隔符
+#   \u2000-\u200f  各种空格 + 零宽空格(\u200b)/零宽非连接符/零宽连接符/LRM/RLM
+#   \u2028-\u202f  行/段分隔符 + 窄空格等
+#   \u205f-\u206f  中数学空格 + 无形操作符
+#   \u3000         全角空格
+#   \ufeff         BOM / 零宽不换行空格
+#   \ufff9-\ufffb  特殊
+# ==============================================================
+_INVISIBLE_RE = re.compile(
+    "[\u0000-\u0008\u000b-\u001f\u007f-\u009f"
+    "\u00a0\u1680\u180e"
+    "\u2000-\u200f"
+    "\u2028-\u202f"
+    "\u205f-\u206f"
+    "\u3000"
+    "\ufeff\ufff9-\ufffb]"
+)
+
+
+def _clean_text(value) -> str:
+    """清除所有不可见 / 零宽 / 兼容空白字符，并 strip 首尾。"""
+    if value is None:
+        return ""
+    s = str(value)
+    if not s:
+        return ""
+    s = _INVISIBLE_RE.sub("", s)
+    return s.strip()
+
+
+def _normalize_freq(value) -> str:
+    """把 freq 归一化为 FREQ_FACTOR_MAP 中使用的规范形式。
+    处理：全角→半角（NFKC）、去所有空白、小写。
+    """
+    s = _clean_text(value)
+    if not s:
+        return ""
+    # NFKC：全角数字/字母 → 半角，连字分解等
+    s = unicodedata.normalize("NFKC", s)
+    # 去掉所有空白（含中间空格）
+    s = re.sub(r"\s+", "", s)
+    return s.lower()
+
 
 # ==============================================================
 # 小工具函数
 # ==============================================================
 def widget_get_text(widget):
+    """读取控件文本，并做不可见字符清洗。兼容 QPlainTextEdit / QTextEdit /
+    QLineEdit / QComboBox 等常见控件。"""
     if widget is None:
         return ""
+    # QPlainTextEdit / QTextEdit
     if hasattr(widget, "toPlainText"):
-        return widget.toPlainText().strip()
+        try:
+            return _clean_text(widget.toPlainText())
+        except Exception:
+            pass
+    # QLineEdit / QLabel / QSpinBox 等
     if hasattr(widget, "text"):
-        return str(widget.text()).strip()
+        try:
+            return _clean_text(widget.text())
+        except Exception:
+            pass
+    # QComboBox（无 text()，用 currentText()）
+    if hasattr(widget, "currentText"):
+        try:
+            return _clean_text(widget.currentText())
+        except Exception:
+            pass
     return ""
 
 
 def widget_set_text(widget, value):
+    """向控件写入文本，写入前先做不可见字符清洗，防止脏数据落到 UI。"""
     if widget is None:
         return
-    value = "" if value is None else str(value)
+    val = _clean_text(value)
     if hasattr(widget, "setPlainText"):
-        widget.setPlainText(value)
+        widget.setPlainText(val)
     elif hasattr(widget, "setText"):
-        widget.setText(value)
+        widget.setText(val)
+    elif hasattr(widget, "setCurrentText"):
+        try:
+            widget.setCurrentText(val)
+        except Exception:
+            pass
 
 
 def parse_date(s):
@@ -165,9 +252,11 @@ def split_by_month(start: date, end: date):
 
 def make_table_name(ts_code: str, freq: str) -> str:
     """表名：minute_data_<6位 code>_<freq>"""
-    code = (ts_code or "")[:6]
+    code = _clean_text(ts_code)[:6]
     code = re.sub(r"[^A-Za-z0-9]", "", code) or "unknown"
-    freq_s = re.sub(r"[^A-Za-z0-9]", "", str(freq or "")) or "unknown"
+    # 先按规范规则处理 freq，再去非字母数字
+    norm_freq = _normalize_freq(freq)
+    freq_s = re.sub(r"[^A-Za-z0-9]", "", norm_freq) or "unknown"
     return f"minute_data_{code}_{freq_s}"
 
 
@@ -300,14 +389,9 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         else:
             print("[Tab02-SQL] 警告：未找到 pushBttn_abort 控件")
 
-        # ----------------------------------------------------------
-        # 注意：pushBttn_SQL_InitialPath 已改由 main.py 统一处理
-        #      （打开 *.mdf 文件 → 写入 txt_SQL_path_DB_name → 立即持久化），
-        #      此处不再自动连接，避免双弹窗。
-        #      self.on_sql_initial_path_clicked 保留为备用接口，可按需手动连接。
-        # ----------------------------------------------------------
+        # 注意：pushBttn_SQL_InitialPath 由 main.py 统一处理，不在此自动连接。
 
-        # 需求：选择下载文件所在文件夹 → 写入 txt_path_file
+        # 选择下载文件所在文件夹 → 写入 txt_path_file
         dl_path_btn = getattr(self.ui, "pushBttn_InitialPath_download_file", None)
         if dl_path_btn is not None:
             dl_path_btn.pressed.connect(self.on_initial_path_download_file_clicked)
@@ -334,7 +418,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             if w is not None and hasattr(w, "editingFinished"):
                 w.editingFinished.connect(self._on_date_changed)
 
-        # 文本框内容变化时立即持久化（需求："内容更新后自动保存"）
+        # 文本框内容变化时立即持久化
         for wname in ("txt_SQL_path_DB_name", "txt_SQL_table_name", "txt_path_file"):
             w = getattr(self.ui, wname, None)
             if w is None and wname == "txt_SQL_path_DB_name":
@@ -356,6 +440,15 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         self._orig_start_date = widget_get_text(getattr(self.ui, "txt_start_date", None))
         self._orig_end_date   = widget_get_text(getattr(self.ui, "txt_end_date", None))
 
+        # 强制把 txt_freq 归一化为规范形式（自愈历史脏数据）
+        freq_w = getattr(self.ui, "txt_freq", None)
+        if freq_w is not None:
+            raw = widget_get_text(freq_w)
+            norm = _normalize_freq(raw)
+            if norm in FREQ_FACTOR_MAP and norm != raw:
+                widget_set_text(freq_w, norm)
+                print(f"[Tab02-SQL] txt_freq 已自愈：{raw!r} → {norm!r}")
+
         freq = widget_get_text(getattr(self.ui, "txt_freq", None))
         if freq in FREQ_FACTOR_MAP:
             widget_set_text(getattr(self.ui, "txt_factor", None), str(FREQ_FACTOR_MAP[freq]))
@@ -363,8 +456,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         widget_set_text(getattr(self.ui, "txt_limit", None), str(DEFAULT_LIMIT))
         self._recalc_limit_for_current_dates()
 
-        # txt_SQL_path_DB_name 为空时补默认值（兼容旧控件名 txt_SQL_path）
-        # 注意：若 main.py 已从 app_persist.json 加载了用户上次选择，则此处不会被覆盖。
+        # txt_SQL_path_DB_name 为空时补默认值
         for wname in ("txt_SQL_path_DB_name", "txt_SQL_path"):
             w = getattr(self.ui, wname, None)
             if w is not None and not widget_get_text(w):
@@ -454,7 +546,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
 
     # ----------------------------------------------------------
     # pushBttn_SQL_InitialPath 选 MDF 文件 → txt_SQL_path_DB_name
-    #   （备用接口；现已由 main.py 统一处理，此处不再自动连接）
+    #   （备用接口；现已由 main.py 统一处理，不再自动连接）
     # ----------------------------------------------------------
     def on_sql_initial_path_clicked(self):
         target = getattr(self.ui, "txt_SQL_path_DB_name", None) \
@@ -488,9 +580,15 @@ class Tab02MinuteDataDownloaderSQL(QObject):
     # 控件联动：freq / 日期
     # ----------------------------------------------------------
     def _on_freq_changed(self, *args):
-        freq = widget_get_text(getattr(self.ui, "txt_freq", None))
-        if freq in FREQ_FACTOR_MAP:
-            widget_set_text(getattr(self.ui, "txt_factor", None), str(FREQ_FACTOR_MAP[freq]))
+        raw = widget_get_text(getattr(self.ui, "txt_freq", None))
+        norm = _normalize_freq(raw)
+        # 自愈：如果归一化后能匹配且与当前不同，则回写规范值
+        if norm in FREQ_FACTOR_MAP and norm != raw:
+            widget_set_text(getattr(self.ui, "txt_freq", None), norm)
+            raw = norm
+
+        if raw in FREQ_FACTOR_MAP:
+            widget_set_text(getattr(self.ui, "txt_factor", None), str(FREQ_FACTOR_MAP[raw]))
         self._recalc_limit_for_current_dates()
         self._auto_generate_table_name()
         self._auto_generate_path_file()
@@ -570,9 +668,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             pass
 
     # ----------------------------------------------------------
-    # 主窗体左下方状态栏更新
-    #   优先 QMainWindow.statusBar()（QStatusBar.showMessage 默认显示在左侧）
-    #   若不存在，则回退到 QStatusBar 子控件查找，再回退到常见 label
+    # 主窗体状态栏更新
     # ----------------------------------------------------------
     def _update_main_status(self, text: str):
         if self.parent_window is None:
@@ -594,7 +690,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 QApplication.processEvents()
                 return
 
-            # 退路：常见状态 label 名称
             for name in (
                 "label_status", "lbl_status", "label_info_status",
                 "status_label", "label_bottom_status", "label_progress",
@@ -644,10 +739,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         except Exception as e:
             print(f"[Tab02-SQL] 清除主窗体状态栏失败: {e}")
 
-    # ----------------------------------------------------------
-    # 状态栏文案生成
-    #   返回："已用时X时XX分XX秒，预计完成时间HH时MM分SS秒"
-    # ----------------------------------------------------------
     def _build_status_bar_text(self, done, total, start_dt):
         now_dt = datetime.now()
         try:
@@ -668,10 +759,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             eta_str = eta_dt.strftime("%m-%d %H时%M分%S秒")
         return f"已用时{elapsed_str}，预计完成时间{eta_str}"
 
-    # ----------------------------------------------------------
-    # 日志用的进度信息
-    #   返回："已运行...时间，预计剩余...，预计总计N个批次全部完成时间：...时...分完成。"
-    # ----------------------------------------------------------
     def _build_progress_info(self, done, total, start_dt, unit_name="批次"):
         now_dt = datetime.now()
         try:
@@ -735,7 +822,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
     # ----------------------------------------------------------
     def _run_download(self):
         self._abort_requested = False
-        # 记录整个任务的总开始时间（用于"总用时"统计）
         run_start_dt = datetime.now()
 
         # 0. 依赖检查
@@ -764,12 +850,22 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             QMessageBox.warning(self.parent_window, "警告", "请填写 txt_ts_code")
             return
 
+        # === 【修复核心】freq 校验：先做宽松归一化，能自愈则回写，否则报错 ===
         if freq not in FREQ_FACTOR_MAP:
-            QMessageBox.warning(
-                self.parent_window, "警告",
-                f"freq 无效：{freq}\n可选：{', '.join(FREQ_FACTOR_MAP.keys())}",
-            )
-            return
+            candidate = _normalize_freq(freq)
+            if candidate in FREQ_FACTOR_MAP:
+                # 成功自愈：回写规范值
+                print(f"[Tab02-SQL] freq 已自愈：{freq!r} → {candidate!r}")
+                widget_set_text(getattr(self.ui, "txt_freq", None), candidate)
+                freq = candidate
+            else:
+                # 报错时用 repr 直接暴露真实内容 + 长度，便于排查脏字符
+                QMessageBox.warning(
+                    self.parent_window, "警告",
+                    f"freq 无效：{freq!r}（长度 {len(freq)}）\n"
+                    f"可选：{', '.join(FREQ_FACTOR_MAP.keys())}",
+                )
+                return
 
         sd = parse_date(start_s)
         ed = parse_date(end_s)
@@ -817,7 +913,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         try:
             conn = self._connect_sql_server(db_path)
 
-            # 需求 1 & 2：检查/创建数据表
             self._ensure_table(conn, table_name)
 
             # 拆分任务（月度）
@@ -844,9 +939,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 self._log(f"pro_api 初始化失败: {e}")
                 raise RuntimeError(f"tushare 初始化失败：\n{e}")
 
-            # 逐任务下载 & 写入（主批次循环计时开始）
             cycle_start_dt = datetime.now()
-            # 启动时先刷一次状态栏（估算中）
             self._update_main_status(
                 self._build_status_bar_text(0, total_tasks, cycle_start_dt)
             )
@@ -863,7 +956,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 widget_set_text(getattr(self.ui, "txt_limit", None),      str(lim))
                 QApplication.processEvents()
 
-                # 主循环进度提示（done = idx - 1，已完成的批次数）
                 progress_info = self._build_progress_info(
                     done=idx - 1,
                     total=total_tasks,
@@ -875,7 +967,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                     f"limit={lim}  |  {progress_info}"
                 )
 
-                # 刷新主窗体左下方状态栏
                 self._update_main_status(
                     self._build_status_bar_text(
                         done=idx - 1, total=total_tasks, start_dt=cycle_start_dt,
@@ -932,7 +1023,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
 
         self._save_settings()
 
-        # 计算总用时
         total_elapsed = (datetime.now() - run_start_dt).total_seconds()
         total_elapsed_str = _format_hms(total_elapsed)
 
@@ -940,7 +1030,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         self._log("任务被用户中止" if aborted else "全部完成")
         self._log(f"总用时: {total_elapsed_str}")
 
-        # 结束时清空/固定主窗体状态栏
         if aborted:
             self._clear_main_status(f"已中止，总用时{total_elapsed_str}")
         else:
@@ -980,12 +1069,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         return found or []
 
     def _connect_sql_server(self, db_path: str):
-        """
-        连接策略：
-          A) 优先 DATABASE=股票数据（若数据库已附加到 LocalDB）
-          B) 若失败且 MDF 路径存在，用 AttachDbFilename 自动附加
-          C) 若仍失败，抛出汇总异常
-        """
         if not _PYODBC_AVAILABLE:
             raise RuntimeError("缺少 pyodbc 库，请先 pip install pyodbc")
 
@@ -997,7 +1080,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             )
 
         errors = []
-        # A) 直接连接 DATABASE
         for drv in drivers:
             conn_str = (
                 f"DRIVER={{{drv}}};"
@@ -1013,7 +1095,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             except Exception as e:
                 errors.append(f"[{drv}] DATABASE 模式失败：{e}")
 
-        # B) AttachDbFilename 附加
         if db_path and os.path.exists(db_path):
             for drv in drivers:
                 conn_str = (
@@ -1046,7 +1127,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         )
 
     # ----------------------------------------------------------
-    # 需求 1 & 2：检查/创建数据表
+    # 检查/创建数据表
     # ----------------------------------------------------------
     def _ensure_table(self, conn, table_name):
         cur = conn.cursor()
@@ -1069,19 +1150,10 @@ class Tab02MinuteDataDownloaderSQL(QObject):
             cur.close()
 
     # ----------------------------------------------------------
-    # 需求 3：按 trade_time 去重 + 分批写入
+    # 按 trade_time 去重 + 分批写入
     # ----------------------------------------------------------
     def _insert_dataframe(self, conn, df, ts_code, table_name,
                           batch_idx=None, batch_total=None):
-        """
-        返回 (实际插入行数, 因 trade_time 已存在而跳过的行数)。
-
-        实现：
-          1) 把 trade_time 规范为 Python datetime（无时区）；
-          2) 查询该时间窗口内已存在的 trade_time 集合，预先过滤；
-          3) 分批 executemany 插入（fast_executemany=True）；
-          4) 每批 commit；每批之间检查中止标志，并输出日志 + 刷新主窗体状态栏。
-        """
         if df is None or df.empty:
             return 0, 0
 
@@ -1091,7 +1163,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 df2[col] = None
         df2 = df2[API_FIELDS]
 
-        # trade_time → Python datetime
         df2["trade_time"] = df2["trade_time"].apply(
             lambda v: _to_py_value(pd.to_datetime(v, errors="coerce"))
             if v is not None else None
@@ -1100,7 +1171,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         if df2.empty:
             return 0, 0
 
-        # 批内去重
         before = len(df2)
         df2 = df2.drop_duplicates(subset=["trade_time"], keep="first")
         in_batch_dup = before - len(df2)
@@ -1109,7 +1179,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
 
         df2["ts_code"] = df2["ts_code"].where(df2["ts_code"].notna(), ts_code)
 
-        # 查询已存在 trade_time（窗口内）
         min_tt = df2["trade_time"].min()
         max_tt = df2["trade_time"].max()
         existing = set()
@@ -1140,7 +1209,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
         if df2.empty:
             return 0, in_batch_dup + pre_skipped
 
-        # 构造行
         rows = []
         for rec in df2.itertuples(index=False, name=None):
             rows.append(tuple(_to_py_value(v) for v in rec))
@@ -1172,7 +1240,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 attempted += len(chunk)
                 chunk_idx += 1
 
-                # 写入分块循环进度提示（done = chunk_idx，已写块数）
                 progress_info = self._build_progress_info(
                     done=chunk_idx,
                     total=total_chunks,
@@ -1181,7 +1248,6 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 )
                 self._log(f"    写入分块 [{chunk_idx}/{total_chunks}] {progress_info}")
 
-                # 刷新主窗体左下方状态栏（含批次上下文）
                 if batch_idx is not None and batch_total is not None:
                     status_prefix = f"批次 [{batch_idx}/{batch_total}] "
                 else:
@@ -1221,6 +1287,7 @@ class Tab02MinuteDataDownloaderSQL(QObject):
                 data = json.load(f)
             for key in PERSIST_KEYS:
                 if key in data and hasattr(self.ui, key):
+                    # widget_set_text 会做不可见字符清洗
                     widget_set_text(getattr(self.ui, key), data[key])
             print(f"[Tab02-SQL] 已加载上次保存的参数：{self._persist_path}")
         except Exception as e:
